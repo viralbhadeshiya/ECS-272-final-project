@@ -172,7 +172,7 @@ function GeoChart({ data, dimensions }) {
         setSelectedDate(dates[nextIndex]);
         return nextIndex;
       });
-    }, 100);
+    }, 10);
 
     return () => clearInterval(interval);
   }, [isPlaying, dates]);

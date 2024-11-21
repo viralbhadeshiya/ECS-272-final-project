@@ -23,7 +23,7 @@ const globalMapPreprotionData = async() => {
         fs.createReadStream(dailyDataFile).pipe(csv()).on("data", (row) => {
             const date = row["date"];
             const country = row["country"];
-            const activeCases = parseFloat(row["active_cases"] || 0);
+            const activeCases = parseFloat(row["cumulative_total_cases"] || 0);
             const population = countryData[country] || 1;
 
             const fraction = activeCases / population;
