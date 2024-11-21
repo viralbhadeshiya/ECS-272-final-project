@@ -36,7 +36,7 @@ const globalMapPreprotionData = async() => {
         .on("end", resolve);
     });
 
-    const outputFileName = "./final_data/global_map_data.json";
+    const outputFileName = "./src/global_map_data.json";
     fs.writeFileSync(outputFileName, JSON.stringify(resultData, null, 2));
     console.log("Global data prepared succesfully");
 }
