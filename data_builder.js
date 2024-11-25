@@ -5,7 +5,7 @@ const { json } = require("body-parser");
 
 const dailyDataFile = "./data/worldometer_coronavirus_daily_data.csv";
 const summaryDataFile = "./data/worldometer_coronavirus_summary_data.csv";
-const globalMapPreprotionDataOutputfileName = "./src/global_map_data.json";
+const globalMapProportionDataOutputfileName = "./src/global_map_data.json";
 
 // Prepare preprotion data for global map
 const globalMapPreprotionData = async() => {
@@ -15,8 +15,8 @@ const globalMapPreprotionData = async() => {
     await new Promise((resolve) => {
         fs.createReadStream(summaryDataFile).pipe(csv()).on("data", (row) => {
             const country = row["country"];
-            const population = parseFloat(row["population"]);
-            countryData[country] = population;
+            const totalConfirmed = parseFloat(row["total_confirmed"]);
+            countryData[country] = totalConfirmed;
         })
         .on("end", resolve);
     });
@@ -25,10 +25,10 @@ const globalMapPreprotionData = async() => {
         fs.createReadStream(dailyDataFile).pipe(csv()).on("data", (row) => {
             const date = row["date"];
             const country = row["country"];
-            const activeCases = parseFloat(row["cumulative_total_cases"] || 0);
-            const population = countryData[country] || 1;
+            const confirmedCases = parseFloat(row["cumulative_total_cases"] || 0);
+            const totalConfirmed = countryData[country] || 1;
 
-            const fraction = activeCases / population;
+            const fraction = confirmedCases / totalConfirmed;
 
             if (!resultData[date]) {
                 resultData[date] = {};
@@ -38,8 +38,8 @@ const globalMapPreprotionData = async() => {
         .on("end", resolve);
     });
 
-    fs.writeFileSync(outputFileName, JSON.stringify(globalMapPreprotionDataOutputfileName, null, 2));
-    console.log("Global data prepared succesfully");
+    fs.writeFileSync(globalMapProportionDataOutputfileName, JSON.stringify(resultData, null, 2));
+    console.log("Global data prepared successfully");
 }
 
 // Country name conflict solve
@@ -48,7 +48,7 @@ const countryNameConflict = async () => {
     const geoData = JSON.parse(fs.readFileSync('./src/GeoChart.world.geo.json', 'utf8'));
 
     // Load the COVID-19 data file
-    const covidData = JSON.parse(fs.readFileSync(globalMapPreprotionDataOutputfileName, 'utf8'));
+    const covidData = JSON.parse(fs.readFileSync(globalMapProportionDataOutputfileName, 'utf8'));
 
     // Extract country names from GeoJSON
     const geoCountryNames = geoData.features.map(
@@ -94,7 +94,7 @@ const countryNameConflict = async () => {
 
     // Save the updated COVID data
     fs.writeFileSync(
-    globalMapPreprotionDataOutputfileName,
+    globalMapProportionDataOutputfileName,
     JSON.stringify(updatedCovidData, null, 2),
     'utf8'
     );
