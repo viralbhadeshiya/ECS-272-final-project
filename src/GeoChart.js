@@ -25,7 +25,7 @@ function extractCovidData(globalMapData) {
 function GeoChart({ data, dimensions }) {
   const svgRef = useRef();
   const wrapperRef = useRef();
-  const [selectedDate, setSelectedDate] = useState("2020-2-15"); // Default date
+  const [selectedDate, setSelectedDate] = useState("2020-1-22"); // Default date
   const [isPlaying, setIsPlaying] = useState(false);
   const [animationIndex, setAnimationIndex] = useState(0); // Progress index
   //const [selectedCountry, setSelectedCountry] = useState(null);
@@ -68,53 +68,42 @@ function GeoChart({ data, dimensions }) {
         const bounds = pathGenerator.bounds(feature);
         const totalHeight = bounds[1][1] - bounds[0][1];
 
-        console.log(`Feature country name: ${feature.properties.name}`);
         const currentDateData = covidData.find((d) => d.date === selectedDate);
         const countryData = currentDateData?.countries.find(
           (country) => country.country === feature.properties.name
         );
+
+        const proportion = parseFloat(countryData?.proportion || 0);
   
-        if (!countryData) {
-          console.log(`No matching data for: ${feature.properties.name}`);
-        }
+        // Ensure proportion is valid (0 <= proportion <= 1)
+        const validProportion = Math.max(0, Math.min(1, proportion));
+        const yValue = bounds[1][1] - totalHeight * validProportion;
 
-        const proportion =
-          parseFloat(
-            currentDateData?.countries.find(
-              (country) => country.country === feature.properties.name
-            )?.proportion || 0
-          );
-  
-      // Ensure proportion is valid (0 <= proportion <= 1)
-      const validProportion = Math.max(0, Math.min(1, proportion));
-
-      // Check if the proportion is too small to avoid negative heights
-      if (validProportion === 0) {
-        return bounds[1][1]; // Keep it at the bottom if no proportion
-      }
-
-      return bounds[1][1] - totalHeight * validProportion;
+        console.log(
+          `Country: ${feature.properties.name}, Proportion: ${validProportion}, Total Height: ${totalHeight}, Y-Position: ${yValue}`
+        );
+    
+        return yValue;
       })
       .attr("width", (feature) => pathGenerator.bounds(feature)[1][0] - pathGenerator.bounds(feature)[0][0])
       .attr("height", (feature) => {
         const bounds = pathGenerator.bounds(feature);
         const totalHeight = bounds[1][1] - bounds[0][1];
         const currentDateData = covidData.find((d) => d.date === selectedDate);
-        const proportion =
-          parseFloat(
-            currentDateData?.countries.find(
-              (country) => country.country === feature.properties.name
-            )?.proportion || 0
-          );
+        const countryData = currentDateData?.countries.find(
+          (country) => country.country === feature.properties.name
+        );
+    
+        const proportion = parseFloat(countryData?.proportion || 0);
 
         // Ensure proportion is valid (0 <= proportion <= 1)
         const validProportion = Math.max(0, Math.min(1, proportion));
-
-        // Check if the proportion is too small to avoid negative heights
-        if (validProportion === 0) {
-          return 0; // No height if no proportion
-        }
-        return totalHeight * validProportion;
+        const fillHeight = totalHeight * validProportion;
+        console.log(
+          `Country: ${feature.properties.name}, Proportion: ${validProportion}, Total Height: ${totalHeight}, Fill Height: ${fillHeight}`
+        );
+    
+        return fillHeight;
       });
 
     // Render base map
@@ -133,33 +122,18 @@ function GeoChart({ data, dimensions }) {
       .data(data.features)
       .join("path")
       .attr("class", "red-fill")
-      .attr("fill", (feature) => {
-        const currentDateData = covidData.find((d) => d.date === selectedDate);
-        const countryData = currentDateData?.countries.find(
-          (country) => country.country === feature.properties.name
-        );
+      .attr("d", (feature) => pathGenerator(feature))
+      .attr("fill", "red")
+      .attr("clip-path", (feature) => `url(#clip-${feature.properties.name})`);
 
-        // Debugging: Log country name and the result of matching
-        console.log(`Checking red fill for country: ${feature.properties.name}`);
-        console.log(`Proportion found: ${countryData ? countryData.proportion : 'Not found'}`);
-
-
-        // If the proportion is greater than 0, fill it with red
-        return countryData?.proportion > 0 ? "red" : "none";
-      })
-      .attr("clip-path", (feature) => `url(#clip-${feature.properties.name})`)
-      .attr("d", (feature) => pathGenerator(feature));
-
-    // Add the strokes again (to be on top of the shaded regions)
     mapGroup
-    .selectAll(".country-stroke")
-    .data(data.features)
-    .join("path")
-    .attr("class", "country-stroke")
-    .attr("fill", "none") // No fill for the stroke
-    .attr("stroke", "black") // Stroke color
-    .attr("stroke-width", 1) // Optional, set stroke width
-    .attr("d", (feature) => pathGenerator(feature));
+      .selectAll(".country")
+      .data(data.features)
+      .join("path")
+      .attr("class", "country")
+      .attr("fill", "#f0f0f0")
+      .attr("stroke", "black")
+      .attr("d", (feature) => pathGenerator(feature));
 
   }, [data, covidData, dimensions, selectedDate]);
 
