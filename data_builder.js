@@ -252,7 +252,7 @@ const normalizeDate = (date) => {
   };
 
 const sortGlobalDataDateWise = async () => {
-    const globalDataString = await fs.readFileSync(globalMapPreprotionDataOutputfileName);
+    const globalDataString = await fs.readFileSync(globalMapProportionDataOutputfileName);
     const globalData = JSON.parse(globalDataString);
 
     const dates = Object.keys(globalData);
@@ -266,15 +266,15 @@ const sortGlobalDataDateWise = async () => {
         sortedData[date] = globalData[date];
     });
 
-    await fs.writeFileSync(globalMapPreprotionDataOutputfileName, JSON.stringify(sortedData, null, 2));
+    await fs.writeFileSync(globalMapProportionDataOutputfileName, JSON.stringify(sortedData, null, 2));
 }
 
 // Invoke data funtions from here as needed
 (async () => {
     // Prepare global fraction data
-    // await globalMapPreprotionData();
+    await globalMapPreprotionData();
 
     // Solve country name conflict in data
-    // await countryNameConflict();
+    await countryNameConflict();
     await sortGlobalDataDateWise();
 })()
