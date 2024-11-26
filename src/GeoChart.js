@@ -1,11 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
-import { select, geoPath, geoMercator } from "d3";
+import { select, geoPath, geoMercator, zoom } from "d3";
 import globalMapData from './global_map_data.json';
 
 function extractCovidData(globalMapData) {
   // Extract all the dates (keys of the outer object)
   const dates = Object.keys(globalMapData);
-
   // Transform the data into a format usable for animation
   const structuredData = dates.map((date) => {
     const countries = Object.entries(globalMapData[date]).map(([country, proportion]) => ({
@@ -43,6 +42,10 @@ function GeoChart({ data, dimensions }) {
     const { width, height } =
       dimensions || wrapperRef.current.getBoundingClientRect();
 
+    svg.selectAll("*").remove();
+
+    svg.append("rect").attr("width", width).attr("height", height).attr("fill", "#ADD8E6");
+
     // projects geo-coordinates on a 2D plane
     const projection = geoMercator()
       .fitSize([width, height], data)
@@ -78,11 +81,7 @@ function GeoChart({ data, dimensions }) {
         // Ensure proportion is valid (0 <= proportion <= 1)
         const validProportion = Math.max(0, Math.min(1, proportion));
         const yValue = bounds[1][1] - totalHeight * validProportion;
-
-        console.log(
-          `Country: ${feature.properties.name}, Proportion: ${validProportion}, Total Height: ${totalHeight}, Y-Position: ${yValue}`
-        );
-    
+        
         return yValue;
       })
       .attr("width", (feature) => pathGenerator.bounds(feature)[1][0] - pathGenerator.bounds(feature)[0][0])
@@ -98,13 +97,72 @@ function GeoChart({ data, dimensions }) {
 
         // Ensure proportion is valid (0 <= proportion <= 1)
         const validProportion = Math.max(0, Math.min(1, proportion));
+
         const fillHeight = totalHeight * validProportion;
+        const yValue = bounds[1][1] - fillHeight;
         console.log(
-          `Country: ${feature.properties.name}, Proportion: ${validProportion}, Total Height: ${totalHeight}, Fill Height: ${fillHeight}`
+          `Country: ${feature.properties.name}, Date: ${selectedDate}, Proportion: ${validProportion}, ` +
+          `Bounds: ${JSON.stringify(bounds)}, Total Height: ${totalHeight}, ` +
+          `Fill Height: ${fillHeight}, Y-Value: ${yValue}, Country Data: `,
+          countryData
         );
     
         return fillHeight;
-      });
+      });     
+
+// Select and highlight the United States with a static rectangle
+// mapGroup.selectAll(".debug-rect")
+// .data(data.features.filter((feature) => feature.properties.name === "United States")) // Filter for United States
+// .join("rect")
+// .attr("class", "debug-rect")
+// .attr("x", (feature) => pathGenerator.bounds(feature)[0][0])
+// .attr("y", (feature) => {
+//   const bounds = pathGenerator.bounds(feature);
+//   const totalHeight = bounds[1][1] - bounds[0][1];
+
+//   const currentDateData = covidData.find((d) => d.date === selectedDate);
+//   const countryData = currentDateData?.countries.find(
+//     (country) => country.country === feature.properties.name
+//   );
+
+//   const proportion = parseFloat(countryData?.proportion || 0);
+
+//   // Ensure proportion is valid (0 <= proportion <= 1)
+//   const validProportion = Math.max(0, Math.min(1, proportion));
+//   const yValue = bounds[1][1] - totalHeight * validProportion - 17;
+
+//   console.log(
+//     `Static Rect Debug - United States: Total Height: ${totalHeight}, Proportion: ${validProportion}, y: ${yValue}`
+//   );
+
+//   if (validProportion === 0) return bounds[1][1];
+//   return yValue;
+// })
+// .attr("width", (feature) => pathGenerator.bounds(feature)[1][0] - pathGenerator.bounds(feature)[0][0])
+// .attr("height", (feature) => {
+//   const bounds = pathGenerator.bounds(feature);
+//   const totalHeight = bounds[1][1] - bounds[0][1];
+
+//   const currentDateData = covidData.find((d) => d.date === selectedDate);
+//   const countryData = currentDateData?.countries.find(
+//     (country) => country.country === feature.properties.name
+//   );
+
+//   const proportion = parseFloat(countryData?.proportion || 0);
+
+//   // Ensure proportion is valid (0 <= proportion <= 1)
+//   const validProportion = Math.max(0, Math.min(1, proportion));
+//   const fillHeight = totalHeight * validProportion;
+
+//   console.log(
+//     `Static Rect Debug - United States: Fill Height: ${fillHeight}`
+//   );
+
+//   return fillHeight;
+// })
+// .attr("fill", "red") // Color the rectangle to make it visible
+// .attr("stroke", "black") // Add a border for better visibility
+// .attr("stroke-width", 1);
 
     // Render base map
     mapGroup
@@ -123,8 +181,22 @@ function GeoChart({ data, dimensions }) {
       .join("path")
       .attr("class", "red-fill")
       .attr("d", (feature) => pathGenerator(feature))
-      .attr("fill", "red")
-      .attr("clip-path", (feature) => `url(#clip-${feature.properties.name})`);
+      .attr("clip-path", (feature) => `url(#clip-${feature.properties.name})`)
+      .attr("fill", (feature) => {
+        const currentDateData = covidData.find((d) => d.date === selectedDate);
+        const countryData = currentDateData?.countries.find(
+          (country) => country.country === feature.properties.name
+        );
+
+        const proportion = parseFloat(countryData?.proportion || 0);
+        return proportion === 0 ? "none" : "red";
+      });
+
+    const zoomBehavior = zoom()
+      .scaleExtent([1,8])
+      .on("zoom", (event) => {
+        mapGroup.attr("transform", event.transform);
+      });
 
     mapGroup
       .selectAll(".country")
@@ -135,6 +207,7 @@ function GeoChart({ data, dimensions }) {
       .attr("stroke", "black")
       .attr("d", (feature) => pathGenerator(feature));
 
+      svg.call(zoomBehavior);
   }, [data, covidData, dimensions, selectedDate]);
 
   useEffect(() => {
@@ -153,7 +226,7 @@ function GeoChart({ data, dimensions }) {
 
   return (
     <div ref={wrapperRef}>
-      <svg ref={svgRef} style={{ width: "150%", height: "150%" }}></svg>
+      <svg ref={svgRef} style={{ width: "100%", height: "70vh" }}></svg>
       <div style={{ display: "flex", alignItems: "center", marginTop: "10px" }}>
         <button onClick={() => setIsPlaying(!isPlaying)}>
           {isPlaying ? "Pause" : "Play"}

@@ -7,10 +7,34 @@ const dailyDataFile = "./data/worldometer_coronavirus_daily_data.csv";
 const summaryDataFile = "./data/worldometer_coronavirus_summary_data.csv";
 const globalMapProportionDataOutputfileName = "./src/global_map_data.json";
 
+const generateAllDates = (startDate, endDate) => {
+    const dates = [];
+    let current = new Date(startDate);
+    const end = new Date(endDate);
+    while (current <= end) {
+        dates.push(current.toISOString().split("T")[0]);
+        current.setDate(current.getDate() + 1);
+    }
+    return dates;
+}
+
+const normalizeDate = (date) => {
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
 // Prepare preprotion data for global map
 const globalMapPreprotionData = async() => {
     const countryData = {};
     const resultData = {};
+    const allDates = generateAllDates("2020-01-22", "2022-05-16");
+
+    allDates.forEach((date) => {
+        resultData[date] = {};
+    });
 
     await new Promise((resolve) => {
         fs.createReadStream(summaryDataFile).pipe(csv()).on("data", (row) => {
@@ -23,7 +47,8 @@ const globalMapPreprotionData = async() => {
 
     await new Promise((resolve) => {
         fs.createReadStream(dailyDataFile).pipe(csv()).on("data", (row) => {
-            const date = row["date"];
+            const rawDate = row["date"];
+            const date = normalizeDate(rawDate);
             const country = row["country"];
             const confirmedCases = parseFloat(row["cumulative_total_cases"] || 0);
             const totalConfirmed = countryData[country] || 1;
@@ -131,7 +156,7 @@ const countryNameConflict = async () => {
         "Jordan": "Jordan",
         "Kazakhstan": "Kazakhstan",
         "Kenya": "Kenya",
-        "South Korea": "South Korea",
+        "South Korea": "Korea",
         "Kuwait": "Kuwait",
         "Kyrgyzstan": "Kyrgyzstan",
         "Lao PDR": "Laos",
@@ -246,19 +271,14 @@ const countryNameConflict = async () => {
     console.log('Updated COVID data saved to updated_covid_data.json');
 }
 
-const normalizeDate = (date) => {
-    const [year, month, day] = date.split('-');
-    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
-  };
-
 const sortGlobalDataDateWise = async () => {
     const globalDataString = await fs.readFileSync(globalMapProportionDataOutputfileName);
     const globalData = JSON.parse(globalDataString);
 
     const dates = Object.keys(globalData);
     const sortedDates = dates
-  .map(normalizeDate)
-  .sort((a, b) => new Date(a) - new Date(b));
+        .map(normalizeDate)
+        .sort((a, b) => new Date(a) - new Date(b));
 
     const sortedData = {};
 
