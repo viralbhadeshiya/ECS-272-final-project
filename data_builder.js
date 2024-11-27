@@ -1,7 +1,5 @@
 const fs = require("fs");
 const csv = require("csv-parser");
-const { resolve } = require("path");
-const { json } = require("body-parser");
 
 const dailyDataFile = "./data/worldometer_coronavirus_daily_data.csv";
 const summaryDataFile = "./data/worldometer_coronavirus_summary_data.csv";
@@ -44,205 +42,50 @@ const globalMapPreprotionData = async() => {
 
 // Country name conflict solve
 const countryNameConflict = async () => {
-    // Load the GeoJSON file
-    const geoData = JSON.parse(fs.readFileSync('./src/GeoChart.world.geo.json', 'utf8'));
-
     // Load the COVID-19 data file
     const covidData = JSON.parse(fs.readFileSync(globalMapProportionDataOutputfileName, 'utf8'));
-
-    // Extract country names from GeoJSON
-    const geoCountryNames = geoData.features.map(
-    (feature) => feature.properties.name
-    );
-
-    const geo_covid_mapping_name_field = {
-        "Afghanistan": "Afghanistan",
-        "Albania": "Albania",
-        "Algeria": "Algeria",
-        "Angola": "Angola",
-        "Argentina": "Argentina",
-        "Armenia": "Armenia",
-        "Australia": "Australia",
-        "Austria": "Austria",
-        "Azerbaijan": "Azerbaijan",
-        "Bahamas": "Bahamas",
-        "Bangladesh": "Bangladesh",
-        "Belarus": "Belarus",
-        "Belgium": "Belgium",
-        "Belize": "Belize",
-        "Benin": "Benin",
-        "Bhutan": "Bhutan",
-        "Bolivia": "Bolivia",
-        "Botswana": "Botswana",
-        "Brazil": "Brazil",
-        "Bulgaria": "Bulgaria",
-        "Burkina Faso": "Burkina Faso",
-        "Burundi": "Burundi",
-        "Cambodia": "Cambodia",
-        "Cameroon": "Cameroon",
-        "Canada": "Canada",
-        "Central African Republic": "Central African Republic",
-        "Chad": "Chad",
-        "Chile": "Chile",
-        "China": "China",
-        "Colombia": "Colombia",
-        "Congo": "Congo",
-        "Costa Rica": "Costa Rica",
-        "Croatia": "Croatia",
-        "Cuba": "Cuba",
-        "Cyprus": "Cyprus",
-        "Czech Republic": "Czechia",
-        "Denmark": "Denmark",
-        "Djibouti": "Djibouti",
-        "Dominican Republic": "Dominican Republic",
-        "Ecuador": "Ecuador",
-        "Egypt": "Egypt",
-        "El Salvador": "El Salvador",
-        "Equatorial Guinea": "Equatorial Guinea",
-        "Eritrea": "Eritrea",
-        "Estonia": "Estonia",
-        "Eswatini": "Eswatini",
-        "Ethiopia": "Ethiopia",
-        "Fiji": "Fiji",
-        "Finland": "Finland",
-        "France": "France",
-        "Gabon": "Gabon",
-        "Gambia": "Gambia",
-        "Georgia": "Georgia",
-        "Germany": "Germany",
-        "Ghana": "Ghana",
-        "Greece": "Greece",
-        "Guatemala": "Guatemala",
-        "Guinea": "Guinea",
-        "Guyana": "Guyana",
-        "Haiti": "Haiti",
-        "Honduras": "Honduras",
-        "Hungary": "Hungary",
-        "Iceland": "Iceland",
-        "India": "India",
-        "Indonesia": "Indonesia",
-        "Iran": "Iran",
-        "Iraq": "Iraq",
-        "Ireland": "Ireland",
-        "Israel": "Israel",
-        "Italy": "Italy",
-        "Jamaica": "Jamaica",
-        "Japan": "Japan",
-        "Jordan": "Jordan",
-        "Kazakhstan": "Kazakhstan",
-        "Kenya": "Kenya",
-        "South Korea": "South Korea",
-        "Kuwait": "Kuwait",
-        "Kyrgyzstan": "Kyrgyzstan",
-        "Lao PDR": "Laos",
-        "Latvia": "Latvia",
-        "Lebanon": "Lebanon",
-        "Lesotho": "Lesotho",
-        "Liberia": "Liberia",
-        "Libya": "Libya",
-        "Lithuania": "Lithuania",
-        "Luxembourg": "Luxembourg",
-        "Madagascar": "Madagascar",
-        "Malawi": "Malawi",
-        "Malaysia": "Malaysia",
-        "Mali": "Mali",
-        "Malta": "Malta",
-        "Mauritania": "Mauritania",
-        "Mauritius": "Mauritius",
-        "Mexico": "Mexico",
-        "Moldova": "Moldova",
-        "Mongolia": "Mongolia",
-        "Montenegro": "Montenegro",
-        "Morocco": "Morocco",
-        "Mozambique": "Mozambique",
-        "Myanmar": "Myanmar",
-        "Namibia": "Namibia",
-        "Nepal": "Nepal",
-        "Netherlands": "Netherlands",
-        "New Zealand": "New Zealand",
-        "Nicaragua": "Nicaragua",
-        "Niger": "Niger",
-        "Nigeria": "Nigeria",
-        "North Macedonia": "North Macedonia",
-        "Norway": "Norway",
-        "Oman": "Oman",
-        "Pakistan": "Pakistan",
-        "Panama": "Panama",
-        "Papua New Guinea": "Papua New Guinea",
-        "Paraguay": "Paraguay",
-        "Peru": "Peru",
-        "Philippines": "Philippines",
-        "Poland": "Poland",
-        "Portugal": "Portugal",
-        "Qatar": "Qatar",
-        "Romania": "Romania",
-        "Russia": "Russia",
-        "Rwanda": "Rwanda",
-        "Saudi Arabia": "Saudi Arabia",
-        "Senegal": "Senegal",
-        "Serbia": "Serbia",
-        "Sierra Leone": "Sierra Leone",
-        "Singapore": "Singapore",
-        "Slovakia": "Slovakia",
-        "Slovenia": "Slovenia",
-        "Somalia": "Somalia",
-        "South Africa": "South Africa",
-        "Spain": "Spain",
-        "Sri Lanka": "Sri Lanka",
-        "Sudan": "Sudan",
-        "Suriname": "Suriname",
-        "Sweden": "Sweden",
-        "Switzerland": "Switzerland",
-        "Syria": "Syria",
-        "Taiwan": "Taiwan",
-        "Tajikistan": "Tajikistan",
-        "Tanzania": "Tanzania",
-        "Thailand": "Thailand",
-        "Togo": "Togo",
-        "Tunisia": "Tunisia",
-        "Turkey": "Turkey",
-        "Uganda": "Uganda",
-        "Ukraine": "Ukraine",
-        "United Arab Emirates": "United Arab Emirates",
-        "United Kingdom": "United Kingdom",
+    const countryNames = ["Bahamas","Belize","Canada","Costa Rica","Cuba","Dominican Rep.","Greenland","Guatemala","Honduras","Haiti","Jamaica","Mexico","Nicaragua","Panama","Puerto Rico","El Salvador","Trinidad and Tobago","United States","Argentina","Bolivia","Brazil","Chile","Colombia","Ecuador","Falkland Is.","Guyana","Peru","Paraguay","Suriname","Uruguay","Venezuela","Afghanistan","United Arab Emirates","Armenia","Azerbaijan","Bangladesh","Brunei","Bhutan","China","N. Cyprus","Cyprus","Georgia","Indonesia","India","Iran","Iraq","Israel","Jordan","Japan","Kazakhstan","Kyrgyzstan","Cambodia","Korea","Kuwait","Lao PDR","Lebanon","Sri Lanka","Myanmar","Mongolia","Malaysia","Nepal","Oman","Pakistan","Philippines","Dem. Rep. Korea","Palestine","Qatar","Saudi Arabia","Syria","Thailand","Tajikistan","Turkmenistan","Timor-Leste","Turkey","Taiwan","Uzbekistan","Vietnam","Yemen","Australia","Fiji","New Caledonia","New Zealand","Papua New Guinea","Solomon Is.","Vanuatu","Albania","Austria","Belgium","Bulgaria","Bosnia and Herz.","Belarus","Switzerland","Czech Rep.","Denmark","Germany","Spain","Estonia","Finland","France","United Kingdom","Greece","Croatia","Hungary","Ireland","Iceland","Italy","Kosovo","Lithuania","Luxembourg","Latvia","Moldova","Macedonia","Montenegro","Netherlands","Norway","Poland","Portugal","Romania","Russia","Serbia","Slovakia","Slovenia","Sweden","Ukraine","Angola","Burundi","Benin","Burkina Faso","Botswana","Central African Rep.","Côte d'Ivoire","Cameroon","Dem. Rep. Congo","Congo","Djibouti","Algeria","Egypt","Eritrea","Ethiopia","Gabon","Ghana","Guinea-Bissau","Guinea","Gambia","Eq. Guinea","Kenya","Liberia","Libya","Lesotho","Morocco","Madagascar","Mali","Mozambique","Mauritania","Malawi","Namibia","Niger","Nigeria","Rwanda","W. Sahara","Sudan","S. Sudan","Senegal","Sierra Leone","Somaliland","Somalia","Swaziland","Chad","Togo","Tunisia","Tanzania","Uganda","South Africa","Zambia","Zimbabwe"];
+    const countryConflictMap = {
+        "Guinea Bissau": "Guinea-Bissau",
+        "Timor Leste": "Timor-Leste",
+        "UK": "United Kingdom",
         "USA": "United States",
-        "Uruguay": "Uruguay",
-        "Uzbekistan": "Uzbekistan",
-        "Venezuela": "Venezuela",
-        "Vietnam": "Vietnam",
-        "Yemen": "Yemen",
-        "Zambia": "Zambia",
-        "Zimbabwe": "Zimbabwe",
+        "Viet Nam": "Vietnam",
+        "South Sudan": "S. Sudan",
+        "Western Sahara": "W. Sahara",
+        "Equatorial Guinea": "Eq. Guinea",
+        "Democratic Republic Of The Congo": "Dem. Rep. Congo",
+        "Cote D Ivoire": "Côte d'Ivoire",
+        "Central African Republic": "Central African Rep.",
+        "Czech Republic": "Czech Rep.",
+        "Bosnia And Herzegovina": "Bosnia and Herz.",
+        "Solomon Islands": "Solomon Is.",
+        "State Of Palestine": "Palestine",
+        "South Korea": "Korea",
+        "Cyprus": "N. Cyprus",
+        "Brunei Darussalam": "Brunei",
+        "Falkland Islands Malvinas": "Falkland Is.",
+        "Dominican Republic": "Dominican Rep.",
     }
 
-    // Reverse mapping for lookup
-    const geoCountryNameLookup = geoCountryNames.reduce((acc, name) => {
-    acc[name] = name;
-    return acc;
-    }, {});
+    Object.keys(covidData).forEach(date => {
+        Object.keys(covidData[date]).forEach(country => {
+            if (Object.keys(countryConflictMap).includes(country)) {
+                covidData[date][countryConflictMap[country]] = covidData[date][country];
+                delete covidData[date][country];
+            }
+        })
+    });
 
-    // Update COVID data to match GeoJSON countries
-    const updatedCovidData = {};
+    Object.keys(covidData).forEach(date => {
+        Object.keys(covidData[date]).forEach(country => {
+            if (!countryNames.includes(country)) {
+                delete covidData[date][country];
+            }
+        })
+    });
 
-    for (const [date, data] of Object.entries(covidData)) {
-    const filteredData = {};
-    for (const [country, value] of Object.entries(data)) {
-        // Standardize country name
-        const mappedName = geo_covid_mapping_name_field[country] || country;
-        if (geoCountryNameLookup[mappedName]) {
-        filteredData[mappedName] = value;
-        }
-    }
-    updatedCovidData[date] = filteredData;
-    }
-
-    // Save the updated COVID data
-    fs.writeFileSync(
-    globalMapProportionDataOutputfileName,
-    JSON.stringify(updatedCovidData, null, 2),
-    'utf8'
-    );
-
+    await fs.writeFileSync(globalMapProportionDataOutputfileName, JSON.stringify(covidData, null ,2));
     console.log('Updated COVID data saved to updated_covid_data.json');
 }
 
