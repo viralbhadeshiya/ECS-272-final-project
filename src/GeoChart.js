@@ -21,6 +21,20 @@ function extractCovidData(globalMapData) {
   return structuredData;
 }
 
+const getWave = (selectedDate) => {
+  const selectedDateObj = new Date(selectedDate);
+  const wave1End = new Date('2020-05-01');
+  const wave2End = new Date('2021-10-01');
+
+  if (selectedDateObj <= wave1End) {
+    return "Wave 1";
+  } else if (selectedDateObj <= wave2End) {
+    return "Wave 2";
+  } else {
+    return "Wave 3";
+  }
+};
+
 const tooltip = select("body")
   .append("div")
   .attr("class", "tooltip")
@@ -76,10 +90,17 @@ function GeoChart({ data, dimensions }) {
       .attr("class", "map-group")
       .attr("transform", transform ? transform.toString() : null);
 
-    const clipPaths = svg.selectAll("clipPath")
+    const clipPaths = svg
+      .append("defs")
+      .selectAll("clipPath")
       .data(data.features)
       .join("clipPath")
-      .attr("id", (feature) => `clip-${feature.properties.name}`);
+      .attr("id", (feature) => {
+        const sanitizedName = feature.properties.name.replace(/[^a-zA-Z0-9]/g, "_");
+        const id = `clip-${sanitizedName}`;
+        console.log(`Generated clipPath ID: ${id}`);
+        return id;
+      });
 
     clipPaths.selectAll("rect")
       .data((feature) => [feature])
@@ -117,16 +138,9 @@ function GeoChart({ data, dimensions }) {
         const validProportion = Math.max(0, Math.min(1, proportion));
 
         const fillHeight = totalHeight * validProportion;
-        const yValue = bounds[1][1] - fillHeight;
-        console.log(
-          `Country: ${feature.properties.name}, Date: ${selectedDate}, Proportion: ${validProportion}, ` +
-          `Bounds: ${JSON.stringify(bounds)}, Total Height: ${totalHeight}, ` +
-          `Fill Height: ${fillHeight}, Y-Value: ${yValue}, Country Data: `,
-          countryData
-        );
     
         return fillHeight;
-      });     
+      });
 
     // Render base map
     mapGroup
@@ -165,7 +179,12 @@ function GeoChart({ data, dimensions }) {
         const proportion = parseFloat(countryData?.proportion || 0);
         return proportion === 0 ? "none" : "red";
       })
-      .attr("clip-path", (feature) => `url(#clip-${feature.properties.name})`)
+      .attr("clip-path", (feature) => {
+        const sanitizedName = feature.properties.name.replace(/[^a-zA-Z0-9]/g, "_");
+        const clipPathReference = `url(#clip-${sanitizedName})`;
+        console.log(`Country: ${feature.properties.name}, ClipPath Reference: ${clipPathReference}`);
+        return clipPathReference;
+      })
       .style("pointer-events", "none");
     
     mapGroup
@@ -246,19 +265,7 @@ function GeoChart({ data, dimensions }) {
         />
         <span>{selectedDate}</span>
         <span style={{ marginLeft: "10px", fontWeight: "bold" }}>
-          {(() => {
-            const selectedDateObj = new Date(selectedDate);
-            const wave1End = new Date('2020-05-01');
-            const wave2End = new Date('2021-10-01');
-
-            if (selectedDateObj <= wave1End) {
-              return "Wave 1";
-            } else if (selectedDateObj <= wave2End) {
-              return "Wave 2";
-            } else {
-              return "Wave 3";
-            }
-          })()}
+          {getWave(selectedDate)}
         </span>
       </div>
       {hoveredCountry && (
