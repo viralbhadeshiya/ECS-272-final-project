@@ -212,7 +212,7 @@ function GeoChart({ data, dimensions }) {
       } else if (isPlaying && animationIndex === dates.length - 1) {
         setIsPlaying(false);
       }
-    }, 100); // Adjust the speed of the animation (500 ms per step)
+    }, 50); // Adjust the speed of the animation (50 ms per step)
 
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, [isPlaying, animationIndex, dates]);
@@ -234,9 +234,32 @@ function GeoChart({ data, dimensions }) {
             setAnimationIndex(index);
             setSelectedDate(dates[index]);
           }}
-          style={{ flex: 1, margin: "0 10px" }}
+          style={{ 
+            flex: 1, 
+            margin: "0 10px",
+            appearance: "none",
+            height: "8px",
+            borderRadius: "4px",
+            background: "linear-gradient(to right, palegreen 11.86%, green 73.31%, darkgreen 100%)",
+            outline: "none",
+          }}
         />
         <span>{selectedDate}</span>
+        <span style={{ marginLeft: "10px", fontWeight: "bold" }}>
+          {(() => {
+            const selectedDateObj = new Date(selectedDate);
+            const wave1End = new Date('2020-05-01');
+            const wave2End = new Date('2021-10-01');
+
+            if (selectedDateObj <= wave1End) {
+              return "Wave 1";
+            } else if (selectedDateObj <= wave2End) {
+              return "Wave 2";
+            } else {
+              return "Wave 3";
+            }
+          })()}
+        </span>
       </div>
       {hoveredCountry && (
       <div
