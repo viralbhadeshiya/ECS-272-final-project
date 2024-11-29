@@ -4,6 +4,7 @@ const csv = require("csv-parser");
 const dailyDataFile = "./data/worldometer_coronavirus_daily_data.csv";
 const summaryDataFile = "./data/worldometer_coronavirus_summary_data.csv";
 const globalMapProportionDataOutputfileName = "./src/global_map_data.json";
+const lineGraphDataOutputfileName = "./src/line_graph_data.json";
 
 const generateAllDates = (startDate, endDate) => {
     const dates = [];
@@ -66,9 +67,9 @@ const globalMapPreprotionData = async() => {
 }
 
 // Country name conflict solve
-const countryNameConflict = async () => {
+const countryNameConflict = async (filename) => {
     // Load the COVID-19 data file
-    const covidData = JSON.parse(fs.readFileSync(globalMapProportionDataOutputfileName, 'utf8'));
+    const covidData = JSON.parse(fs.readFileSync(filename, 'utf8'));
     const countryNames = ["Bahamas","Belize","Canada","Costa Rica","Cuba","Dominican Rep.","Greenland","Guatemala","Honduras","Haiti","Jamaica","Mexico","Nicaragua","Panama","Puerto Rico","El Salvador","Trinidad and Tobago","United States","Argentina","Bolivia","Brazil","Chile","Colombia","Ecuador","Falkland Is.","Guyana","Peru","Paraguay","Suriname","Uruguay","Venezuela","Afghanistan","United Arab Emirates","Armenia","Azerbaijan","Bangladesh","Brunei","Bhutan","China","N. Cyprus","Cyprus","Georgia","Indonesia","India","Iran","Iraq","Israel","Jordan","Japan","Kazakhstan","Kyrgyzstan","Cambodia","Korea","Kuwait","Lao PDR","Lebanon","Sri Lanka","Myanmar","Mongolia","Malaysia","Nepal","Oman","Pakistan","Philippines","Dem. Rep. Korea","Palestine","Qatar","Saudi Arabia","Syria","Thailand","Tajikistan","Turkmenistan","Timor-Leste","Turkey","Taiwan","Uzbekistan","Vietnam","Yemen","Australia","Fiji","New Caledonia","New Zealand","Papua New Guinea","Solomon Is.","Vanuatu","Albania","Austria","Belgium","Bulgaria","Bosnia and Herz.","Belarus","Switzerland","Czech Rep.","Denmark","Germany","Spain","Estonia","Finland","France","United Kingdom","Greece","Croatia","Hungary","Ireland","Iceland","Italy","Kosovo","Lithuania","Luxembourg","Latvia","Moldova","Macedonia","Montenegro","Netherlands","Norway","Poland","Portugal","Romania","Russia","Serbia","Slovakia","Slovenia","Sweden","Ukraine","Angola","Burundi","Benin","Burkina Faso","Botswana","Central African Rep.","Côte d'Ivoire","Cameroon","Dem. Rep. Congo","Congo","Djibouti","Algeria","Egypt","Eritrea","Ethiopia","Gabon","Ghana","Guinea-Bissau","Guinea","Gambia","Eq. Guinea","Kenya","Liberia","Libya","Lesotho","Morocco","Madagascar","Mali","Mozambique","Mauritania","Malawi","Namibia","Niger","Nigeria","Rwanda","W. Sahara","Sudan","S. Sudan","Senegal","Sierra Leone","Somaliland","Somalia","Swaziland","Chad","Togo","Tunisia","Tanzania","Uganda","South Africa","Zambia","Zimbabwe"];
     const countryConflictMap = {
         "Guinea Bissau": "Guinea-Bissau",
@@ -110,8 +111,8 @@ const countryNameConflict = async () => {
         })
     });
 
-    await fs.writeFileSync(globalMapProportionDataOutputfileName, JSON.stringify(covidData, null ,2));
-    console.log('Updated COVID data saved to updated_covid_data.json');
+    await fs.writeFileSync(filename, JSON.stringify(covidData, null ,2));
+    console.log('Updated COVID data saved');
 }
 
 const sortGlobalDataDateWise = async () => {
@@ -132,12 +133,73 @@ const sortGlobalDataDateWise = async () => {
     await fs.writeFileSync(globalMapProportionDataOutputfileName, JSON.stringify(sortedData, null, 2));
 }
 
+const createDataForLineGraph = async () => {
+    const resultData = {};
+    const allDates = generateAllDates("2020-01-22", "2022-05-16");
+
+    allDates.forEach((date) => {
+        resultData[date] = {};
+    });
+
+    await new Promise((resolve) => {
+        fs.createReadStream(dailyDataFile).pipe(csv()).on("data", (row) => {
+            const rawDate = row["date"];
+            const date = normalizeDate(rawDate);
+            const country = row["country"];
+            const confirmedCases = parseFloat(row["cumulative_total_cases"] || 0);
+            const confirmedDeaths = parseFloat(row["cumulative_total_deaths"] || 0);
+
+
+            if (!resultData[date]) {
+                resultData[date] = {};
+            }
+            resultData[date][country] = {
+                TotalCases: confirmedCases,
+                TotalDeath: confirmedDeaths,
+            }
+        })
+        .on("end", resolve);
+    });
+
+    fs.writeFileSync(lineGraphDataOutputfileName, JSON.stringify(resultData, null, 2));
+    console.log("Line graph data is ready");
+}
+const wave1Timeline = [(new Date("2020-01-22")).getTime(), (new Date("2020-04-30")).getTime()];
+const wave2Timeline = [(new Date("2020-05-01")).getTime(), (new Date("2021-09-30")).getTime()];
+const wave3Timeline = [(new Date("2021-10-01")).getTime(), (new Date("2022-05-14")).getTime()];
+const groupWaveData = async () => {
+    const lineGraphData = JSON.parse(await fs.readFileSync(lineGraphDataOutputfileName));
+    const resultData = {
+        wave1: {},
+        wave2: {},
+        wave3: {}
+    }
+
+    Object.keys(lineGraphData).forEach(date => {
+        if(wave1Timeline[0] <= (new Date(date)).getTime() && (new Date(date)).getTime() <= wave1Timeline[1]) {
+            resultData.wave1[date] = lineGraphData[date];
+        } else if (wave2Timeline[0] <= (new Date(date)).getTime()  && (new Date(date)).getTime() <= wave2Timeline[1]) {
+            resultData.wave2[date] = lineGraphData[date];
+        } else if (wave3Timeline[0] <= (new Date(date)).getTime() && (new Date(date)).getTime() <= wave3Timeline[1]) {
+            resultData.wave3[date] = lineGraphData[date];
+        }
+    });
+
+    await fs.writeFileSync(lineGraphDataOutputfileName, JSON.stringify(resultData, null, 2));
+    console.log("wave data is been grouped");
+}
+
 // Invoke data funtions from here as needed
 (async () => {
     // Prepare global fraction data
-    await globalMapPreprotionData();
+    // await globalMapPreprotionData();
 
     // Solve country name conflict in data
-    await countryNameConflict();
-    await sortGlobalDataDateWise();
+    // await countryNameConflict(globalMapProportionDataOutputfileName);
+    // await sortGlobalDataDateWise();
+
+    // Generate Line graph data
+    await createDataForLineGraph();
+    await countryNameConflict(lineGraphDataOutputfileName);
+    await groupWaveData();
 })()
