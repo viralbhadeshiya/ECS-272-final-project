@@ -1,10 +1,12 @@
 const fs = require("fs");
 const csv = require("csv-parser");
+const csvToJson = require("csvtojson");
 
 const dailyDataFile = "./data/worldometer_coronavirus_daily_data.csv";
 const summaryDataFile = "./data/worldometer_coronavirus_summary_data.csv";
 const globalMapProportionDataOutputfileName = "./src/global_map_data.json";
 const lineGraphDataOutputfileName = "./src/line_graph_data.json";
+const barRaisingDataOutputfileName = "./src/bar_chart_raising_data.json";
 
 const generateAllDates = (startDate, endDate) => {
     const dates = [];
@@ -189,6 +191,43 @@ const groupWaveData = async () => {
     console.log("wave data is been grouped");
 }
 
+const barRaisingChartData = async () => {
+    const proportionData = JSON.parse(await fs.readFileSync(globalMapProportionDataOutputfileName));
+
+    const top5Data = {};
+    Object.keys(proportionData).forEach(date => {
+        const dateData = proportionData[date];
+        const tops = Object.entries(dateData).map(([country, value]) =>[country, parseFloat(value)])
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 5);
+        top5Data[date] = []
+        tops.forEach(entry => {
+            top5Data[date].push(entry[0]);
+        });
+    });
+
+    const dailyCovidData = await csvToJson().fromFile(dailyDataFile);
+    const resultData = {};
+
+    Object.keys(top5Data).forEach(date => {
+        resultData[date] = []
+        dailyCovidData.forEach(row => {
+            if (normalizeDate(row.date) === date && top5Data[date].includes(row.country)) {
+                resultData[date].push({
+                    Country: row.country,
+                    TotalCases: parseFloat(row.cumulative_total_cases || 0),
+                    NewCases: parseFloat(row.daily_new_cases || 0),
+                    TotalDeath: parseFloat(row.cumulative_total_deaths || 0),
+                    NewDeath: parseFloat(row.daily_new_deaths || 0),
+                });
+            }
+        })
+    });
+
+    await fs.writeFileSync(barRaisingDataOutputfileName, JSON.stringify(resultData, null ,2));
+    console.log("Bar chart raising data is done");
+}
+
 // Invoke data funtions from here as needed
 (async () => {
     // Prepare global fraction data
@@ -199,7 +238,10 @@ const groupWaveData = async () => {
     // await sortGlobalDataDateWise();
 
     // Generate Line graph data
-    await createDataForLineGraph();
-    await countryNameConflict(lineGraphDataOutputfileName);
-    await groupWaveData();
+    // await createDataForLineGraph();
+    // await countryNameConflict(lineGraphDataOutputfileName);
+    // await groupWaveData();
+
+    // Bar chart raising graph data
+    await barRaisingChartData();
 })()
