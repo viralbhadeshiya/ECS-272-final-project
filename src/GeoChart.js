@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { select, geoPath, geoMercator, zoom, pointer } from "d3";
+import { select, geoPath, geoMercator, zoom } from "d3";
 import globalMapData from './global_map_data.json';
 
 function extractCovidData(globalMapData) {
@@ -26,13 +26,15 @@ const getWave = (selectedDate) => {
   const wave1End = new Date('2020-05-01');
   const wave2End = new Date('2021-10-01');
 
+  let wave;
   if (selectedDateObj <= wave1End) {
-    return "Wave 1";
+    wave = "wave1";
   } else if (selectedDateObj <= wave2End) {
-    return "Wave 2";
+    wave = "wave2";
   } else {
-    return "Wave 3";
+    wave = "wave3";
   }
+  return wave;
 };
 
 const tooltip = select("body")
@@ -47,7 +49,7 @@ const tooltip = select("body")
   .style("font-size", "12px")
   .style("visibility", "hidden");
 
-function GeoChart({ data, dimensions }) {
+function GeoChart({ data, dimensions, onCountryClick, onWaveChange }) {
   const svgRef = useRef();
   const wrapperRef = useRef();
   const [transform, setTransform] = useState(null);
@@ -98,7 +100,7 @@ function GeoChart({ data, dimensions }) {
       .attr("id", (feature) => {
         const sanitizedName = feature.properties.name.replace(/[^a-zA-Z0-9]/g, "_");
         const id = `clip-${sanitizedName}`;
-        console.log(`Generated clipPath ID: ${id}`);
+        // console.log(`Generated clipPath ID: ${id}`);
         return id;
       });
 
@@ -152,13 +154,17 @@ function GeoChart({ data, dimensions }) {
       .attr("stroke", "black")
       .attr("stroke-width", 0.5)
       .attr("d", (feature) => pathGenerator(feature))
+      .style("cursor", "pointer")
+      .on("click", function(event, feature) {
+        onCountryClick(feature.properties.name);
+        // console.log(`Clicked on country: ${feature.properties.name}`);
+      })
       .on("mouseover", function (event, feature) {
         select(this).attr("stroke", "black").attr("stroke-width", 2);
         setHoveredCountry(feature.properties.name);
       })
       .on("mouseout", function() {
         select(this).attr("stroke", "black").attr("stroke-width", 0.5);
-
         setHoveredCountry(null);
         tooltip.style("visibility", "hidden");
       });
@@ -182,7 +188,7 @@ function GeoChart({ data, dimensions }) {
       .attr("clip-path", (feature) => {
         const sanitizedName = feature.properties.name.replace(/[^a-zA-Z0-9]/g, "_");
         const clipPathReference = `url(#clip-${sanitizedName})`;
-        console.log(`Country: ${feature.properties.name}, ClipPath Reference: ${clipPathReference}`);
+        // console.log(`Country: ${feature.properties.name}, ClipPath Reference: ${clipPathReference}`);
         return clipPathReference;
       })
       .style("pointer-events", "none");
@@ -196,13 +202,13 @@ function GeoChart({ data, dimensions }) {
       .attr("stroke", "black")
       .attr("stroke-width", 0.5)
       .attr("d", (feature) => pathGenerator(feature))
+      .style("cursor", "pointer")
       .on("mouseover", function (event, feature) {
         select(this).attr("stroke", "black").attr("stroke-width", 2);
         setHoveredCountry(feature.properties.name);
       })
       .on("mouseout", function() {
         select(this).attr("stroke", "black").attr("stroke-width", 0.5);
-
         setHoveredCountry(null);
         tooltip.style("visibility", "hidden");
       });
@@ -219,8 +225,9 @@ function GeoChart({ data, dimensions }) {
         mapGroup.attr("transform", transform);
       });
 
+      onWaveChange(getWave(selectedDate));
       svg.call(zoomBehavior);
-  }, [data, covidData, dimensions, selectedDate, transform, hoveredCountry]);
+  }, [data, covidData, dimensions, selectedDate, transform, hoveredCountry, onCountryClick, onWaveChange]);
 
   // Function to handle the animation of the date change
   useEffect(() => {
