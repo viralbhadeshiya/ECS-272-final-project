@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 
 function LineChart({ country, wave, globalMapData }) {
     const [lineChartData, setLineChartData] = useState([]);
+    const [selectedMetric, setSelectedMetric] = useState("totalCases");
     const svgRef = useRef();
 
     // Helper function to filter the data for the selected Country & Wave
@@ -13,9 +14,11 @@ function LineChart({ country, wave, globalMapData }) {
 
         const countryData = Object.entries(waveData).reduce((acc, [date, countries]) => {
             const countryInfo = countries[country];
+            const currentDate = new Date(date);
+
             if (countryInfo) {
                 acc.push({
-                    date: new Date(date),
+                    date: new Date(currentDate.setDate(currentDate.getDate() + 1)),
                     totalCases: countryInfo.TotalCases,
                     totalDeaths: countryInfo.TotalDeath,
                 });
@@ -23,7 +26,8 @@ function LineChart({ country, wave, globalMapData }) {
             return acc;
         }, []);
 
-        // console.log(`Filtered data for ${country} in wave ${wave}:, countryData`);
+        countryData.sort((a,b) => a.date - b.date);
+
         return countryData;
     };
 
@@ -48,14 +52,14 @@ function LineChart({ country, wave, globalMapData }) {
                 .range([0, width]);
 
             const y = d3.scaleLinear()
-                .domain([0, d3.max(lineChartData, (d) => Math.max(d.totalCases, d.totalDeaths))])
+                .domain([0, d3.max(lineChartData, (d) => d[selectedMetric])])
                 .range([height, 0]);
-
+            
             const xAxis = d3.axisBottom(x)
-                .tickFormat(d3.timeFormat("%b %Y"))
+                .tickFormat(d3.timeFormat("%b %Y"));
 
             const xAxisGroup = svg.append('g')
-                .attr('transform',`translate(0, ${height})`)
+                .attr('transform', `translate(0, ${height})`)
                 .call(xAxis)
 
             xAxisGroup.selectAll('text')
@@ -67,46 +71,47 @@ function LineChart({ country, wave, globalMapData }) {
             svg.append('g')
                 .call(d3.axisLeft(y));
 
-            // Line for Total Cases
+            // Line for Total Cases OR Total Deaths
             svg.append('path')
                 .data([lineChartData])
                 .attr('fill', 'none')
-                .attr('stroke', '#8884d8')
+                .attr('stroke', selectedMetric === "totalCases" ? 'red' : 'blue')
                 .attr('stroke-width', 2)
                 .attr('d', d3.line()
                     .x((d) => x(d.date))
-                    .y((d) => y(d.totalCases))
+                    .y((d) => y(d[selectedMetric]))
                 );
-
-            // Line for Total Deaths
-            svg.append('path')
-               .data([lineChartData])
-               .attr('fill', 'none')
-               .attr('stroke', '#82ca9d')
-               .attr('stroke-width', 2)
-               .attr('d', d3.line()
-                   .x((d) => x(d.date))
-                   .y((d) => y(d.totalDeaths))
-               );
             
             svg.append('text')
                 .attr('x', width / 2)
                 .attr('y', -7)
                 .attr('text-anchor', 'middle')
                 .style('font-size', '16px')
-                .text(`${country} - ${wave} (Total Cases & Deaths)`);
+                .text(`${country} - ${wave} (${selectedMetric})`);
         }
-    }, [lineChartData, country, wave]);
+    }, [lineChartData, country, wave, selectedMetric]);
 
     useEffect(() => {
         if (country && wave && globalMapData) {
             const dataForWave = getWaveData(country, wave, globalMapData);
+            // console.log(`Filtered data for ${country} in wave ${wave}:`, dataForWave);
             setLineChartData(dataForWave);
         }
     }, [country, wave, globalMapData]);
 
+    const handleMetricChange = (e) => {
+        setSelectedMetric(e.target.value);
+    };
+
     return (
         <div>
+            <label>
+                Select Metric: 
+                <select value={selectedMetric} onChange={handleMetricChange}>
+                    <option value="totalCases"> Total Cases</option>
+                    <option value="totalDeaths"> Total Deaths</option>
+                </select>
+            </label>
             <div ref={svgRef}></div>
         </div>
     );

@@ -8,7 +8,7 @@ h2 {
   width: 100%;
   justify-content: center; /* Center-align the GeoChart */
   overflow: visible; /* Prevent GeoChart from being clipped */
-  margin-bottom: 50px; /* Space between GeoChart and LineChart */
+  margin-bottom: 10px; /* Space between GeoChart and LineChart */
 }
 
 .line-chart-container {

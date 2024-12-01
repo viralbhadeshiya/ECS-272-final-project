@@ -23,8 +23,8 @@ function extractCovidData(globalMapData) {
 
 const getWave = (selectedDate) => {
   const selectedDateObj = new Date(selectedDate);
-  const wave1End = new Date('2020-05-01');
-  const wave2End = new Date('2021-10-01');
+  const wave1End = new Date('2020-04-30');
+  const wave2End = new Date('2021-09-30');
 
   let wave;
   if (selectedDateObj <= wave1End) {
