@@ -18,8 +18,8 @@ function EconomyChart({ data }) {
     // Render the grouped bar chart
     useEffect(() => {
         if (chartData.length > 0) {
-            const margin = { top: 40, right: 30, bottom: 60, left: 60 };
-            const width = 800 - margin.left - margin.right;
+            const margin = { top: 40, right: 60, bottom: 60, left: 60 };
+            const width = 1800 - margin.left - margin.right;
             const height = 500 - margin.top - margin.bottom;
 
             d3.select(svgRef.current).selectAll('*').remove();
@@ -42,8 +42,14 @@ function EconomyChart({ data }) {
                 .rangeRound([0, x0.bandwidth()])
                 .padding(0.05);
 
+            // Range of y-axis, so it also includes negative values for consumer confidence
+            const isConsumerConfidence = selectedMetric === "consumer_confidence";
+            const yMax = d3.max(chartData, (d) => Math.max(d.wave1, d.wave2, d.wave3));
+            const yMin = d3.min(chartData, (d) => Math.min(d.wave1, d.wave2, d.wave3));
+            const n = isConsumerConfidence ? Math.max(Math.abs(yMax), Math.abs(yMin)) : yMax; // Ensure symmetric range
+
             const y = d3.scaleLinear()
-                .domain([0, d3.max(chartData, (d) => Math.max(d.wave1, d.wave2, d.wave3))])
+                .domain(isConsumerConfidence ? [-n, n]: [0, n])
                 .nice()
                 .range([height, 0]);
 
@@ -51,8 +57,10 @@ function EconomyChart({ data }) {
             const yAxis = d3.axisLeft(y);
 
             svg.append('g')
-                .attr('transform', `translate(0, ${height})`)
-                .call(xAxis);
+                .attr('transform', `translate(0, ${isConsumerConfidence ? y(0) : height})`)
+                .call(xAxis)
+                .selectAll('text')
+                .remove();
 
             svg.append('g')
                 .call(yAxis);
@@ -62,6 +70,18 @@ function EconomyChart({ data }) {
                 .domain(['wave1', 'wave2', 'wave3'])
                 .range(d3.schemeBuGn[3]);
 
+            // Zero line
+            if (isConsumerConfidence) {
+                svg.append('line')
+                    .attr('x1', 0)
+                    .attr('x2', width)
+                    .attr('y1', y(0))
+                    .attr('y2', y(0))
+                    .attr('stroke', '#000')
+                    .attr('stroke-width', 1)
+                    .attr('stroke-dasharray', '4 4');
+            }
+
             svg.append('g')
                 .selectAll('g')
                 .data(chartData)
@@ -69,23 +89,87 @@ function EconomyChart({ data }) {
                 .append('g')
                 .attr('transform', (d) => `translate(${x0(d.country)}, 0)`)
                 .selectAll('rect')
-                .data(d => ['wave1', 'wave2', 'wave3'].map(wave => d[wave]))
+                .data(d => ['wave1', 'wave2', 'wave3'].map(wave => ({ wave, value: d[wave], country: d.country })))
                 .enter()
                 .append('rect')
-                .attr('x', (d, i) => x1(['wave1', 'wave2', 'wave3'][i]))
-                .attr('y', (d) => y(d))
+                .attr('x', (d) => x1(d.wave))
+                .attr('y', (d) => Math.min(y(0), y(d.value)))
                 .attr('width', x1.bandwidth())
-                .attr('height', (d) => height - y(d))
-                .attr('fill', (d, i) => colorScale(['wave1', 'wave2', 'wave3'][i]));
-
-            // Add title
-            svg.append('text')
-                .attr('x', width / 2)
-                .attr('y', -7)
-                .attr('text-anchor', 'middle')
-                .style('font-size', '16px')
-                .text(`${selectedMetric} by Wave`);
+                .attr('height', (d) => Math.abs(y(d.value) - y(0)))
+                .attr('fill', (d) => colorScale(d.wave))
+                .on('mouseover', function(event, d) {
+                    const [x, y] = d3.pointer(event, svg.node());
+                    svg.append('rect')
+                       .attr('id', 'tooltip-bg')
+                       .attr('x', x - 20)
+                       .attr('y', y - 25)
+                       .attr('width', 40)
+                       .attr('height', 20)
+                       .attr('fill', 'white')
+                       .attr('opacity', 0.7)
+                       .attr('stroke', 'black')
+                       .attr('rx', 4);
+                    svg.append('text')
+                       .attr('id', 'tooltip')
+                       .attr('x', x)
+                       .attr('y', y - 10)
+                       .attr('text-anchor', 'middle')
+                       .style('font-size', '12px')
+                       .style('font-width', 'bold')
+                       .style('fill', 'black')
+                       .text(d.value);
+                })
+                .on('mouseout', () => {
+                    svg.select('#tooltip').remove();
+                    svg.select('#tooltip-bg').remove();
+                });
             
+            // Add country labels
+            svg.append('g')
+                .selectAll('text')
+                .data(chartData)
+                .enter()
+                .append('text')
+                .attr('x', (d) => x0(d.country) + x0.bandwidth() / 2)
+                .attr('y', (d) => {
+                    if (isConsumerConfidence) {
+                        if (d3.min(['wave1', 'wave2', 'wave3'].map(w => d[w])) < 0) {
+                            return y(0) - 5;
+                        } else {
+                            return y(0) + 15;
+                        }
+                    } else {
+                        return height + 15;
+                    }
+                })
+                .attr('text-anchor', 'middle')
+                .style('font-size', '12px')
+                .text((d) => d.country);
+                
+            // Legend
+            const legend = svg.append('g')
+                .attr('transorm', `translate(${width - 200}, ${margin.top})`);
+
+            const legendData = ['wave1', 'wave2', 'wave3'];
+
+            legend.selectAll('rect')
+                .data(legendData)
+                .enter()
+                .append('rect')
+                .attr('x', width)
+                .attr('y', (d, i) => i * 20)
+                .attr('width', 15)
+                .attr('height', 15)
+                .attr('fill', (d) => colorScale(d));
+
+            legend.selectAll('text')
+                .data(legendData)
+                .enter()
+                .append('text')
+                .attr('x', width + 20)
+                .attr('y', (d, i) => i * 20 + 12)
+                .style('font-size', '12px')
+                .text((d) => d);
         }
     }, [chartData, selectedMetric]);
 
