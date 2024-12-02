@@ -87,7 +87,7 @@ function LineChart({ country, wave, globalMapData }) {
                 .attr('y', -7)
                 .attr('text-anchor', 'middle')
                 .style('font-size', '16px')
-                .text(`${country} - ${wave} (${selectedMetric})`);
+                .text(`${country} - ${wave} (${selectedMetric.toUpperCase()})`);
         }
     }, [lineChartData, country, wave, selectedMetric]);
 
