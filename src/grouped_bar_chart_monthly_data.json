@@ -1,0 +1,2234 @@
+{
+  "australia": {
+    "wave1": {
+      "2020-01-01": {
+        "manufacturing_pmi": 49.6,
+        "services_pmi": 50.6,
+        "consumer_confidence": 93.4
+      },
+      "2020-02-01": {
+        "manufacturing_pmi": 50.2,
+        "services_pmi": 49,
+        "consumer_confidence": 95.5
+      },
+      "2020-03-01": {
+        "manufacturing_pmi": 49.7,
+        "services_pmi": 38.5,
+        "consumer_confidence": 91.9
+      },
+      "2020-04-01": {
+        "manufacturing_pmi": 44.1,
+        "services_pmi": 19.5,
+        "consumer_confidence": 75.6
+      }
+    },
+    "wave2": {
+      "2020-05-01": {
+        "manufacturing_pmi": 44,
+        "services_pmi": 26.9,
+        "consumer_confidence": 88.1
+      },
+      "2020-06-01": {
+        "manufacturing_pmi": 51.2,
+        "services_pmi": 53.1,
+        "consumer_confidence": 93.7
+      },
+      "2020-07-01": {
+        "manufacturing_pmi": 54,
+        "services_pmi": 58.2,
+        "consumer_confidence": 87.9
+      },
+      "2020-08-01": {
+        "manufacturing_pmi": 53.6,
+        "services_pmi": 49,
+        "consumer_confidence": 79.5
+      },
+      "2020-09-01": {
+        "manufacturing_pmi": 55.4,
+        "services_pmi": 50.8,
+        "consumer_confidence": 93.9
+      },
+      "2020-10-01": {
+        "manufacturing_pmi": 54.2,
+        "services_pmi": 53.7,
+        "consumer_confidence": 105
+      },
+      "2020-11-01": {
+        "manufacturing_pmi": 55.8,
+        "services_pmi": 55.1,
+        "consumer_confidence": 107.7
+      },
+      "2020-12-01": {
+        "manufacturing_pmi": 55.7,
+        "services_pmi": 57,
+        "consumer_confidence": 112
+      },
+      "2021-01-01": {
+        "manufacturing_pmi": 57.2,
+        "services_pmi": 55.6,
+        "consumer_confidence": 107
+      },
+      "2021-02-01": {
+        "manufacturing_pmi": 56.9,
+        "services_pmi": 53.4,
+        "consumer_confidence": 109.1
+      },
+      "2021-03-01": {
+        "manufacturing_pmi": 56.8,
+        "services_pmi": 55.5,
+        "consumer_confidence": 111.8
+      },
+      "2021-04-01": {
+        "manufacturing_pmi": 59.7,
+        "services_pmi": 58.8,
+        "consumer_confidence": 118.8
+      },
+      "2021-05-01": {
+        "manufacturing_pmi": 60.4,
+        "services_pmi": 58,
+        "consumer_confidence": 113.1
+      },
+      "2021-06-01": {
+        "manufacturing_pmi": 58.6,
+        "services_pmi": 56.8,
+        "consumer_confidence": 107.2
+      },
+      "2021-07-01": {
+        "manufacturing_pmi": 56.9,
+        "services_pmi": 44.2,
+        "consumer_confidence": 108.9
+      },
+      "2021-08-01": {
+        "manufacturing_pmi": 52,
+        "services_pmi": 42.9,
+        "consumer_confidence": 104.1
+      },
+      "2021-09-01": {
+        "manufacturing_pmi": 56.8,
+        "services_pmi": 45.5,
+        "consumer_confidence": 106.2
+      }
+    },
+    "wave3": {
+      "2021-10-01": {
+        "manufacturing_pmi": 58.2,
+        "services_pmi": 51.8,
+        "consumer_confidence": 104.6
+      },
+      "2021-11-01": {
+        "manufacturing_pmi": 59.2,
+        "services_pmi": 55.7,
+        "consumer_confidence": 105.3
+      },
+      "2021-12-01": {
+        "manufacturing_pmi": 57.7,
+        "services_pmi": 55.1,
+        "consumer_confidence": 104.3
+      },
+      "2022-01-01": {
+        "manufacturing_pmi": 55.1,
+        "services_pmi": 46.6,
+        "consumer_confidence": 102.2
+      },
+      "2022-02-01": {
+        "manufacturing_pmi": 57,
+        "services_pmi": 57.4,
+        "consumer_confidence": 100.8
+      },
+      "2022-03-01": {
+        "manufacturing_pmi": 57.7,
+        "services_pmi": 55.6,
+        "consumer_confidence": 96.6
+      },
+      "2022-04-01": {
+        "manufacturing_pmi": 58.8,
+        "services_pmi": 56.6,
+        "consumer_confidence": 95.8
+      },
+      "2022-05-01": {
+        "manufacturing_pmi": 55.7,
+        "services_pmi": 53.2,
+        "consumer_confidence": 90.4
+      },
+      "2022-06-01": {
+        "manufacturing_pmi": 56.2,
+        "services_pmi": 52.6,
+        "consumer_confidence": 86.4
+      },
+      "2022-07-01": {
+        "manufacturing_pmi": 55.7,
+        "services_pmi": 50.9,
+        "consumer_confidence": 83.8
+      },
+      "2022-08-01": {
+        "manufacturing_pmi": 53.8,
+        "services_pmi": 50.2,
+        "consumer_confidence": 81.2
+      },
+      "2022-09-01": {
+        "manufacturing_pmi": 53.5,
+        "services_pmi": 50.6,
+        "consumer_confidence": 84.5
+      },
+      "2022-10-01": {
+        "manufacturing_pmi": 52.7,
+        "services_pmi": 49.3,
+        "consumer_confidence": 83.7
+      },
+      "2022-11-01": {
+        "manufacturing_pmi": 51.3,
+        "services_pmi": 47.6,
+        "consumer_confidence": 78
+      },
+      "2022-12-01": {
+        "manufacturing_pmi": 50.2,
+        "services_pmi": 47.3,
+        "consumer_confidence": 80.3
+      },
+      "2023-01-01": {
+        "manufacturing_pmi": 50,
+        "services_pmi": 48.6,
+        "consumer_confidence": 84.3
+      },
+      "2023-02-01": {
+        "manufacturing_pmi": 50.5,
+        "services_pmi": 50.7,
+        "consumer_confidence": 78.5
+      },
+      "2023-03-01": {
+        "manufacturing_pmi": 49.1,
+        "services_pmi": 48.6,
+        "consumer_confidence": 78.5
+      },
+      "2023-04-01": {
+        "manufacturing_pmi": 48,
+        "services_pmi": 53.7,
+        "consumer_confidence": 85.8
+      },
+      "2023-05-01": {
+        "manufacturing_pmi": 48.4,
+        "services_pmi": 52.1,
+        "consumer_confidence": 79
+      },
+      "2023-06-01": {
+        "manufacturing_pmi": 48.2,
+        "services_pmi": 50.7,
+        "consumer_confidence": 79.2
+      },
+      "2023-07-01": {
+        "manufacturing_pmi": 49.6,
+        "services_pmi": 47.9,
+        "consumer_confidence": 81.3
+      },
+      "2023-08-01": {
+        "manufacturing_pmi": 49.6,
+        "services_pmi": 47.8,
+        "consumer_confidence": 81
+      },
+      "2023-09-01": {
+        "manufacturing_pmi": 48.7,
+        "services_pmi": 51.8,
+        "consumer_confidence": 79.7
+      },
+      "2023-10-01": {
+        "manufacturing_pmi": 48.2,
+        "services_pmi": 47.9,
+        "consumer_confidence": 82
+      },
+      "2023-11-01": {
+        "manufacturing_pmi": 47.7,
+        "services_pmi": 46,
+        "consumer_confidence": 79.9
+      },
+      "2023-12-01": {
+        "manufacturing_pmi": 47.6,
+        "services_pmi": 47.1,
+        "consumer_confidence": 82.1
+      }
+    }
+  },
+  "canada": {
+    "wave1": {
+      "2020-01-01": {
+        "manufacturing_pmi": 50.6,
+        "services_pmi": 48.3,
+        "consumer_confidence": 51.5
+      },
+      "2020-02-01": {
+        "manufacturing_pmi": 51.8,
+        "services_pmi": 42,
+        "consumer_confidence": 53.97
+      },
+      "2020-03-01": {
+        "manufacturing_pmi": 46.1,
+        "services_pmi": 37.8,
+        "consumer_confidence": 53.03
+      },
+      "2020-04-01": {
+        "manufacturing_pmi": 33,
+        "services_pmi": 19.7,
+        "consumer_confidence": 35.6
+      }
+    },
+    "wave2": {
+      "2020-05-01": {
+        "manufacturing_pmi": 40.6,
+        "services_pmi": 30,
+        "consumer_confidence": 38.45
+      },
+      "2020-06-01": {
+        "manufacturing_pmi": 47.8,
+        "services_pmi": 42.2,
+        "consumer_confidence": 42.33
+      },
+      "2020-07-01": {
+        "manufacturing_pmi": 52.9,
+        "services_pmi": 43.7,
+        "consumer_confidence": 44.09
+      },
+      "2020-08-01": {
+        "manufacturing_pmi": 55.1,
+        "services_pmi": 45.2,
+        "consumer_confidence": 43.96
+      },
+      "2020-09-01": {
+        "manufacturing_pmi": 56,
+        "services_pmi": 46.3,
+        "consumer_confidence": 45.35
+      },
+      "2020-10-01": {
+        "manufacturing_pmi": 55.5,
+        "services_pmi": 47,
+        "consumer_confidence": 42.08
+      },
+      "2020-11-01": {
+        "manufacturing_pmi": 55.8,
+        "services_pmi": 47.5,
+        "consumer_confidence": 44.5
+      },
+      "2020-12-01": {
+        "manufacturing_pmi": 57.9,
+        "services_pmi": 46.3,
+        "consumer_confidence": 45.25
+      },
+      "2021-01-01": {
+        "manufacturing_pmi": 54.4,
+        "services_pmi": 48.6,
+        "consumer_confidence": 47.98
+      },
+      "2021-02-01": {
+        "manufacturing_pmi": 54.8,
+        "services_pmi": 49,
+        "consumer_confidence": 46.34
+      },
+      "2021-03-01": {
+        "manufacturing_pmi": 58.5,
+        "services_pmi": 51.2,
+        "consumer_confidence": 50.25
+      },
+      "2021-04-01": {
+        "manufacturing_pmi": 57.2,
+        "services_pmi": 50.7,
+        "consumer_confidence": 52.41
+      },
+      "2021-05-01": {
+        "manufacturing_pmi": 57,
+        "services_pmi": 50.7,
+        "consumer_confidence": 48.63
+      },
+      "2021-06-01": {
+        "manufacturing_pmi": 56.5,
+        "services_pmi": 51.4,
+        "consumer_confidence": 51.49
+      },
+      "2021-07-01": {
+        "manufacturing_pmi": 56.2,
+        "services_pmi": 52.6,
+        "consumer_confidence": 55.7
+      },
+      "2021-08-01": {
+        "manufacturing_pmi": 57.2,
+        "services_pmi": 51.6,
+        "consumer_confidence": 55.01
+      },
+      "2021-09-01": {
+        "manufacturing_pmi": 57,
+        "services_pmi": 51.7,
+        "consumer_confidence": 52.98
+      }
+    },
+    "wave3": {
+      "2021-10-01": {
+        "manufacturing_pmi": 57.7,
+        "services_pmi": 52.3,
+        "consumer_confidence": 55.37
+      },
+      "2021-11-01": {
+        "manufacturing_pmi": 57.2,
+        "services_pmi": 51.9,
+        "consumer_confidence": 54.09
+      },
+      "2021-12-01": {
+        "manufacturing_pmi": 56.5,
+        "services_pmi": 51.4,
+        "consumer_confidence": 52.28
+      },
+      "2022-01-01": {
+        "manufacturing_pmi": 56.2,
+        "services_pmi": 50.3,
+        "consumer_confidence": 51.51
+      },
+      "2022-02-01": {
+        "manufacturing_pmi": 56.6,
+        "services_pmi": 51.9,
+        "consumer_confidence": 51.41
+      },
+      "2022-03-01": {
+        "manufacturing_pmi": 58.9,
+        "services_pmi": 56.1,
+        "consumer_confidence": 49.09
+      },
+      "2022-04-01": {
+        "manufacturing_pmi": 56.2,
+        "services_pmi": 55,
+        "consumer_confidence": 49.98
+      },
+      "2022-05-01": {
+        "manufacturing_pmi": 56.8,
+        "services_pmi": 53.8,
+        "consumer_confidence": 52.23
+      },
+      "2022-06-01": {
+        "manufacturing_pmi": 54.6,
+        "services_pmi": 50.4,
+        "consumer_confidence": 50.42
+      },
+      "2022-07-01": {
+        "manufacturing_pmi": 52.5,
+        "services_pmi": 48,
+        "consumer_confidence": 50.35
+      },
+      "2022-08-01": {
+        "manufacturing_pmi": 48.7,
+        "services_pmi": 46.6,
+        "consumer_confidence": 50.32
+      },
+      "2022-09-01": {
+        "manufacturing_pmi": 49.8,
+        "services_pmi": 48,
+        "consumer_confidence": 50.14
+      },
+      "2022-10-01": {
+        "manufacturing_pmi": 48.8,
+        "services_pmi": 47.2,
+        "consumer_confidence": 48.51
+      },
+      "2022-11-01": {
+        "manufacturing_pmi": 49.6,
+        "services_pmi": 48.2,
+        "consumer_confidence": 46.62
+      },
+      "2022-12-01": {
+        "manufacturing_pmi": 49.2,
+        "services_pmi": 47.9,
+        "consumer_confidence": 49.34
+      },
+      "2023-01-01": {
+        "manufacturing_pmi": 51,
+        "services_pmi": 47.7,
+        "consumer_confidence": 48.81
+      },
+      "2023-02-01": {
+        "manufacturing_pmi": 52.4,
+        "services_pmi": 49.5,
+        "consumer_confidence": 47.49
+      },
+      "2023-03-01": {
+        "manufacturing_pmi": 48.6,
+        "services_pmi": 50.1,
+        "consumer_confidence": 47.28
+      },
+      "2023-04-01": {
+        "manufacturing_pmi": 50.2,
+        "services_pmi": 51.3,
+        "consumer_confidence": 49.24
+      },
+      "2023-05-01": {
+        "manufacturing_pmi": 49,
+        "services_pmi": 50.8,
+        "consumer_confidence": 49.54
+      },
+      "2023-06-01": {
+        "manufacturing_pmi": 48.8,
+        "services_pmi": 49.7,
+        "consumer_confidence": 51.43
+      },
+      "2023-07-01": {
+        "manufacturing_pmi": 49.6,
+        "services_pmi": 48.5,
+        "consumer_confidence": 49.55
+      },
+      "2023-08-01": {
+        "manufacturing_pmi": 48,
+        "services_pmi": 47.2,
+        "consumer_confidence": 46.9
+      },
+      "2023-09-01": {
+        "manufacturing_pmi": 47.5,
+        "services_pmi": 47.8,
+        "consumer_confidence": 47.66
+      },
+      "2023-10-01": {
+        "manufacturing_pmi": 48.6,
+        "services_pmi": 46.6,
+        "consumer_confidence": 45.56
+      },
+      "2023-11-01": {
+        "manufacturing_pmi": 47.7,
+        "services_pmi": 44.5,
+        "consumer_confidence": 47.26
+      },
+      "2023-12-01": {
+        "manufacturing_pmi": 45.4,
+        "services_pmi": 44.6,
+        "consumer_confidence": 46.57
+      }
+    }
+  },
+  "china": {
+    "wave1": {
+      "2020-01-01": {
+        "manufacturing_pmi": 50,
+        "services_pmi": 54.1,
+        "consumer_confidence": 126.4
+      },
+      "2020-02-01": {
+        "manufacturing_pmi": 35.7,
+        "services_pmi": 29.6,
+        "consumer_confidence": 118.9
+      },
+      "2020-03-01": {
+        "manufacturing_pmi": 52,
+        "services_pmi": 52.3,
+        "consumer_confidence": 122.2
+      },
+      "2020-04-01": {
+        "manufacturing_pmi": 50.8,
+        "services_pmi": 53.2,
+        "consumer_confidence": 116.4
+      }
+    },
+    "wave2": {
+      "2020-05-01": {
+        "manufacturing_pmi": 50.6,
+        "services_pmi": 53.6,
+        "consumer_confidence": 115.8
+      },
+      "2020-06-01": {
+        "manufacturing_pmi": 50.9,
+        "services_pmi": 54.4,
+        "consumer_confidence": 112.6
+      },
+      "2020-07-01": {
+        "manufacturing_pmi": 51.1,
+        "services_pmi": 54.2,
+        "consumer_confidence": 117.2
+      },
+      "2020-08-01": {
+        "manufacturing_pmi": 51,
+        "services_pmi": 55.2,
+        "consumer_confidence": 116.4
+      },
+      "2020-09-01": {
+        "manufacturing_pmi": 51.5,
+        "services_pmi": 55.9,
+        "consumer_confidence": 120.5
+      },
+      "2020-10-01": {
+        "manufacturing_pmi": 51.4,
+        "services_pmi": 56.2,
+        "consumer_confidence": 121.7
+      },
+      "2020-11-01": {
+        "manufacturing_pmi": 52.1,
+        "services_pmi": 56.4,
+        "consumer_confidence": 124
+      },
+      "2020-12-01": {
+        "manufacturing_pmi": 51.9,
+        "services_pmi": 55.7,
+        "consumer_confidence": 122.1
+      },
+      "2021-01-01": {
+        "manufacturing_pmi": 51.3,
+        "services_pmi": 52.4,
+        "consumer_confidence": 122.8
+      },
+      "2021-02-01": {
+        "manufacturing_pmi": 50.6,
+        "services_pmi": 51.4,
+        "consumer_confidence": 127
+      },
+      "2021-03-01": {
+        "manufacturing_pmi": 51.9,
+        "services_pmi": 56.3,
+        "consumer_confidence": 122.2
+      },
+      "2021-04-01": {
+        "manufacturing_pmi": 51.1,
+        "services_pmi": 54.9,
+        "consumer_confidence": 121.5
+      },
+      "2021-05-01": {
+        "manufacturing_pmi": 51,
+        "services_pmi": 55.2,
+        "consumer_confidence": 121.8
+      },
+      "2021-06-01": {
+        "manufacturing_pmi": 50.9,
+        "services_pmi": 53.5,
+        "consumer_confidence": 122.8
+      },
+      "2021-07-01": {
+        "manufacturing_pmi": 50.4,
+        "services_pmi": 53.3,
+        "consumer_confidence": 117.8
+      },
+      "2021-08-01": {
+        "manufacturing_pmi": 50.1,
+        "services_pmi": 47.5,
+        "consumer_confidence": 117.5
+      },
+      "2021-09-01": {
+        "manufacturing_pmi": 49.6,
+        "services_pmi": 53.2,
+        "consumer_confidence": 121.2
+      }
+    },
+    "wave3": {
+      "2021-10-01": {
+        "manufacturing_pmi": 49.2,
+        "services_pmi": 52.4,
+        "consumer_confidence": 121.5
+      },
+      "2021-11-01": {
+        "manufacturing_pmi": 50.1,
+        "services_pmi": 52.3,
+        "consumer_confidence": 121.8
+      },
+      "2021-12-01": {
+        "manufacturing_pmi": 50.3,
+        "services_pmi": 52.7,
+        "consumer_confidence": 122.8
+      },
+      "2022-01-01": {
+        "manufacturing_pmi": 50.1,
+        "services_pmi": 51.1,
+        "consumer_confidence": 117.8
+      },
+      "2022-02-01": {
+        "manufacturing_pmi": 50.2,
+        "services_pmi": 51.6,
+        "consumer_confidence": 117.5
+      },
+      "2022-03-01": {
+        "manufacturing_pmi": 49.5,
+        "services_pmi": 48.4,
+        "consumer_confidence": 121.2
+      },
+      "2022-04-01": {
+        "manufacturing_pmi": 47.4,
+        "services_pmi": 41.9,
+        "consumer_confidence": 120.2
+      },
+      "2022-05-01": {
+        "manufacturing_pmi": 49.6,
+        "services_pmi": 47.8,
+        "consumer_confidence": 119.5
+      },
+      "2022-06-01": {
+        "manufacturing_pmi": 50.2,
+        "services_pmi": 54.7,
+        "consumer_confidence": 119.8
+      },
+      "2022-07-01": {
+        "manufacturing_pmi": 49,
+        "services_pmi": 53.8,
+        "consumer_confidence": 121.5
+      },
+      "2022-08-01": {
+        "manufacturing_pmi": 49.4,
+        "services_pmi": 52.6,
+        "consumer_confidence": 120.5
+      },
+      "2022-09-01": {
+        "manufacturing_pmi": 50.1,
+        "services_pmi": 50.6,
+        "consumer_confidence": 113.2
+      },
+      "2022-10-01": {
+        "manufacturing_pmi": 49.2,
+        "services_pmi": 48.7,
+        "consumer_confidence": 86.7
+      },
+      "2022-11-01": {
+        "manufacturing_pmi": 48,
+        "services_pmi": 46.7,
+        "consumer_confidence": 86.8
+      },
+      "2022-12-01": {
+        "manufacturing_pmi": 47,
+        "services_pmi": 41.6,
+        "consumer_confidence": 88.9
+      },
+      "2023-01-01": {
+        "manufacturing_pmi": 50.1,
+        "services_pmi": 54.4,
+        "consumer_confidence": 87.9
+      },
+      "2023-02-01": {
+        "manufacturing_pmi": 52.6,
+        "services_pmi": 56.3,
+        "consumer_confidence": 87
+      },
+      "2023-03-01": {
+        "manufacturing_pmi": 51.9,
+        "services_pmi": 58.2,
+        "consumer_confidence": 87.2
+      },
+      "2023-04-01": {
+        "manufacturing_pmi": 49.2,
+        "services_pmi": 56.4,
+        "consumer_confidence": 86.8
+      },
+      "2023-05-01": {
+        "manufacturing_pmi": 48.8,
+        "services_pmi": 54.5,
+        "consumer_confidence": 85.5
+      },
+      "2023-06-01": {
+        "manufacturing_pmi": 49,
+        "services_pmi": 53.2,
+        "consumer_confidence": 88.3
+      },
+      "2023-07-01": {
+        "manufacturing_pmi": 49.3,
+        "services_pmi": 51.5,
+        "consumer_confidence": 91.2
+      },
+      "2023-08-01": {
+        "manufacturing_pmi": 49.7,
+        "services_pmi": 51,
+        "consumer_confidence": 94.7
+      },
+      "2023-09-01": {
+        "manufacturing_pmi": 50.2,
+        "services_pmi": 51.7,
+        "consumer_confidence": 94.9
+      },
+      "2023-10-01": {
+        "manufacturing_pmi": 49.5,
+        "services_pmi": 50.6,
+        "consumer_confidence": 87.9
+      },
+      "2023-11-01": {
+        "manufacturing_pmi": 49.4,
+        "services_pmi": 50.2,
+        "consumer_confidence": 87
+      },
+      "2023-12-01": {
+        "manufacturing_pmi": 49,
+        "services_pmi": 50.4,
+        "consumer_confidence": 87.6
+      }
+    }
+  },
+  "europe": {
+    "wave1": {
+      "2020-01-01": {
+        "manufacturing_pmi": 47.9,
+        "services_pmi": 52.5,
+        "consumer_confidence": -7.2
+      },
+      "2020-02-01": {
+        "manufacturing_pmi": 49.2,
+        "services_pmi": 52.6,
+        "consumer_confidence": -6.1
+      },
+      "2020-03-01": {
+        "manufacturing_pmi": 44.5,
+        "services_pmi": 26.4,
+        "consumer_confidence": -12.3
+      },
+      "2020-04-01": {
+        "manufacturing_pmi": 33.4,
+        "services_pmi": 12,
+        "consumer_confidence": -24.8
+      }
+    },
+    "wave2": {
+      "2020-05-01": {
+        "manufacturing_pmi": 39.4,
+        "services_pmi": 30.5,
+        "consumer_confidence": -20.5
+      },
+      "2020-06-01": {
+        "manufacturing_pmi": 47.4,
+        "services_pmi": 48.3,
+        "consumer_confidence": -14.6
+      },
+      "2020-07-01": {
+        "manufacturing_pmi": 51.8,
+        "services_pmi": 54.7,
+        "consumer_confidence": -14.7
+      },
+      "2020-08-01": {
+        "manufacturing_pmi": 51.7,
+        "services_pmi": 50.5,
+        "consumer_confidence": -14.2
+      },
+      "2020-09-01": {
+        "manufacturing_pmi": 53.7,
+        "services_pmi": 48,
+        "consumer_confidence": -12.8
+      },
+      "2020-10-01": {
+        "manufacturing_pmi": 54.8,
+        "services_pmi": 46.9,
+        "consumer_confidence": -14.4
+      },
+      "2020-11-01": {
+        "manufacturing_pmi": 53.8,
+        "services_pmi": 41.7,
+        "consumer_confidence": -16.6
+      },
+      "2020-12-01": {
+        "manufacturing_pmi": 55.2,
+        "services_pmi": 46.4,
+        "consumer_confidence": -12.1
+      },
+      "2021-01-01": {
+        "manufacturing_pmi": 54.8,
+        "services_pmi": 45.4,
+        "consumer_confidence": -13.8
+      },
+      "2021-02-01": {
+        "manufacturing_pmi": 57.9,
+        "services_pmi": 45.7,
+        "consumer_confidence": -13
+      },
+      "2021-03-01": {
+        "manufacturing_pmi": 62.5,
+        "services_pmi": 49.6,
+        "consumer_confidence": -9.8
+      },
+      "2021-04-01": {
+        "manufacturing_pmi": 62.9,
+        "services_pmi": 50.5,
+        "consumer_confidence": -10
+      },
+      "2021-05-01": {
+        "manufacturing_pmi": 63.1,
+        "services_pmi": 55.2,
+        "consumer_confidence": -5.6
+      },
+      "2021-06-01": {
+        "manufacturing_pmi": 63.4,
+        "services_pmi": 58.3,
+        "consumer_confidence": -2.2
+      },
+      "2021-07-01": {
+        "manufacturing_pmi": 62.8,
+        "services_pmi": 59.8,
+        "consumer_confidence": -3.9
+      },
+      "2021-08-01": {
+        "manufacturing_pmi": 61.4,
+        "services_pmi": 59,
+        "consumer_confidence": -5.3
+      },
+      "2021-09-01": {
+        "manufacturing_pmi": 58.6,
+        "services_pmi": 56.4,
+        "consumer_confidence": -3.6
+      }
+    },
+    "wave3": {
+      "2021-10-01": {
+        "manufacturing_pmi": 58.3,
+        "services_pmi": 54.6,
+        "consumer_confidence": -5.1
+      },
+      "2021-11-01": {
+        "manufacturing_pmi": 58.4,
+        "services_pmi": 55.9,
+        "consumer_confidence": -8.1
+      },
+      "2021-12-01": {
+        "manufacturing_pmi": 58,
+        "services_pmi": 53.1,
+        "consumer_confidence": -9.2
+      },
+      "2022-01-01": {
+        "manufacturing_pmi": 58.7,
+        "services_pmi": 51.1,
+        "consumer_confidence": -9.5
+      },
+      "2022-02-01": {
+        "manufacturing_pmi": 58.2,
+        "services_pmi": 55.5,
+        "consumer_confidence": -9.4
+      },
+      "2022-03-01": {
+        "manufacturing_pmi": 56.5,
+        "services_pmi": 55.6,
+        "consumer_confidence": -22
+      },
+      "2022-04-01": {
+        "manufacturing_pmi": 55.5,
+        "services_pmi": 57.7,
+        "consumer_confidence": -22.4
+      },
+      "2022-05-01": {
+        "manufacturing_pmi": 54.6,
+        "services_pmi": 56.1,
+        "consumer_confidence": -21.5
+      },
+      "2022-06-01": {
+        "manufacturing_pmi": 52.1,
+        "services_pmi": 53,
+        "consumer_confidence": -24.1
+      },
+      "2022-07-01": {
+        "manufacturing_pmi": 49.8,
+        "services_pmi": 51.2,
+        "consumer_confidence": -27.4
+      },
+      "2022-08-01": {
+        "manufacturing_pmi": 49.6,
+        "services_pmi": 49.8,
+        "consumer_confidence": -25.1
+      },
+      "2022-09-01": {
+        "manufacturing_pmi": 48.4,
+        "services_pmi": 48.8,
+        "consumer_confidence": -28.6
+      },
+      "2022-10-01": {
+        "manufacturing_pmi": 46.4,
+        "services_pmi": 48.6,
+        "consumer_confidence": -27.4
+      },
+      "2022-11-01": {
+        "manufacturing_pmi": 47.1,
+        "services_pmi": 48.5,
+        "consumer_confidence": -23.7
+      },
+      "2022-12-01": {
+        "manufacturing_pmi": 47.8,
+        "services_pmi": 49.8,
+        "consumer_confidence": -22.1
+      },
+      "2023-01-01": {
+        "manufacturing_pmi": 48.8,
+        "services_pmi": 50.8,
+        "consumer_confidence": -20.7
+      },
+      "2023-02-01": {
+        "manufacturing_pmi": 48.5,
+        "services_pmi": 52.7,
+        "consumer_confidence": -19
+      },
+      "2023-03-01": {
+        "manufacturing_pmi": 47.3,
+        "services_pmi": 55,
+        "consumer_confidence": -19.1
+      },
+      "2023-04-01": {
+        "manufacturing_pmi": 45.8,
+        "services_pmi": 56.2,
+        "consumer_confidence": -17.5
+      },
+      "2023-05-01": {
+        "manufacturing_pmi": 44.8,
+        "services_pmi": 55.1,
+        "consumer_confidence": -17.4
+      },
+      "2023-06-01": {
+        "manufacturing_pmi": 43.4,
+        "services_pmi": 52,
+        "consumer_confidence": -16.1
+      },
+      "2023-07-01": {
+        "manufacturing_pmi": 42.7,
+        "services_pmi": 50.9,
+        "consumer_confidence": -15.2
+      },
+      "2023-08-01": {
+        "manufacturing_pmi": 43.5,
+        "services_pmi": 47.9,
+        "consumer_confidence": -16
+      },
+      "2023-09-01": {
+        "manufacturing_pmi": 43.4,
+        "services_pmi": 48.7,
+        "consumer_confidence": -17.7
+      },
+      "2023-10-01": {
+        "manufacturing_pmi": 43.1,
+        "services_pmi": 47.8,
+        "consumer_confidence": -17.9
+      },
+      "2023-11-01": {
+        "manufacturing_pmi": 44.2,
+        "services_pmi": 48.7,
+        "consumer_confidence": -17
+      },
+      "2023-12-01": {
+        "manufacturing_pmi": 44.4,
+        "services_pmi": 48.8,
+        "consumer_confidence": -15.1
+      }
+    }
+  },
+  "japan": {
+    "wave1": {
+      "2020-01-01": {
+        "manufacturing_pmi": 48.8,
+        "services_pmi": 51,
+        "consumer_confidence": 39.1
+      },
+      "2020-02-01": {
+        "manufacturing_pmi": 47.8,
+        "services_pmi": 46.8,
+        "consumer_confidence": 38.4
+      },
+      "2020-03-01": {
+        "manufacturing_pmi": 44.8,
+        "services_pmi": 33.8,
+        "consumer_confidence": 30.9
+      },
+      "2020-04-01": {
+        "manufacturing_pmi": 41.9,
+        "services_pmi": 21.5,
+        "consumer_confidence": 21.6
+      }
+    },
+    "wave2": {
+      "2020-05-01": {
+        "manufacturing_pmi": 38.4,
+        "services_pmi": 26.5,
+        "consumer_confidence": 24
+      },
+      "2020-06-01": {
+        "manufacturing_pmi": 40.1,
+        "services_pmi": 45,
+        "consumer_confidence": 28.4
+      },
+      "2020-07-01": {
+        "manufacturing_pmi": 45.2,
+        "services_pmi": 45.4,
+        "consumer_confidence": 29.5
+      },
+      "2020-08-01": {
+        "manufacturing_pmi": 47.2,
+        "services_pmi": 45,
+        "consumer_confidence": 29.3
+      },
+      "2020-09-01": {
+        "manufacturing_pmi": 47.7,
+        "services_pmi": 46.9,
+        "consumer_confidence": 32.7
+      },
+      "2020-10-01": {
+        "manufacturing_pmi": 48.7,
+        "services_pmi": 47.7,
+        "consumer_confidence": 33.6
+      },
+      "2020-11-01": {
+        "manufacturing_pmi": 49,
+        "services_pmi": 47.8,
+        "consumer_confidence": 33.7
+      },
+      "2020-12-01": {
+        "manufacturing_pmi": 50,
+        "services_pmi": 47.2,
+        "consumer_confidence": 31.8
+      },
+      "2021-01-01": {
+        "manufacturing_pmi": 49.8,
+        "services_pmi": 46.1,
+        "consumer_confidence": 29.6
+      },
+      "2021-02-01": {
+        "manufacturing_pmi": 51.4,
+        "services_pmi": 46.3,
+        "consumer_confidence": 33.8
+      },
+      "2021-03-01": {
+        "manufacturing_pmi": 52.7,
+        "services_pmi": 48.3,
+        "consumer_confidence": 36.1
+      },
+      "2021-04-01": {
+        "manufacturing_pmi": 53.6,
+        "services_pmi": 49.5,
+        "consumer_confidence": 34.7
+      },
+      "2021-05-01": {
+        "manufacturing_pmi": 53,
+        "services_pmi": 46.5,
+        "consumer_confidence": 34.1
+      },
+      "2021-06-01": {
+        "manufacturing_pmi": 52.4,
+        "services_pmi": 48,
+        "consumer_confidence": 37.4
+      },
+      "2021-07-01": {
+        "manufacturing_pmi": 53,
+        "services_pmi": 47.4,
+        "consumer_confidence": 37.5
+      },
+      "2021-08-01": {
+        "manufacturing_pmi": 52.7,
+        "services_pmi": 42.9,
+        "consumer_confidence": 36.7
+      },
+      "2021-09-01": {
+        "manufacturing_pmi": 51.5,
+        "services_pmi": 47.8,
+        "consumer_confidence": 37.8
+      }
+    },
+    "wave3": {
+      "2021-10-01": {
+        "manufacturing_pmi": 53.2,
+        "services_pmi": 50.7,
+        "consumer_confidence": 39.2
+      },
+      "2021-11-01": {
+        "manufacturing_pmi": 54.5,
+        "services_pmi": 53,
+        "consumer_confidence": 39.2
+      },
+      "2021-12-01": {
+        "manufacturing_pmi": 54.3,
+        "services_pmi": 52.1,
+        "consumer_confidence": 39.1
+      },
+      "2022-01-01": {
+        "manufacturing_pmi": 55.4,
+        "services_pmi": 47.6,
+        "consumer_confidence": 36.7
+      },
+      "2022-02-01": {
+        "manufacturing_pmi": 52.7,
+        "services_pmi": 44.2,
+        "consumer_confidence": 35.3
+      },
+      "2022-03-01": {
+        "manufacturing_pmi": 54.1,
+        "services_pmi": 49.4,
+        "consumer_confidence": 32.8
+      },
+      "2022-04-01": {
+        "manufacturing_pmi": 53.5,
+        "services_pmi": 50.7,
+        "consumer_confidence": 33
+      },
+      "2022-05-01": {
+        "manufacturing_pmi": 53.3,
+        "services_pmi": 52.6,
+        "consumer_confidence": 34.1
+      },
+      "2022-06-01": {
+        "manufacturing_pmi": 52.7,
+        "services_pmi": 54,
+        "consumer_confidence": 32.1
+      },
+      "2022-07-01": {
+        "manufacturing_pmi": 52.1,
+        "services_pmi": 50.3,
+        "consumer_confidence": 30.2
+      },
+      "2022-08-01": {
+        "manufacturing_pmi": 51.5,
+        "services_pmi": 49.5,
+        "consumer_confidence": 32.5
+      },
+      "2022-09-01": {
+        "manufacturing_pmi": 50.8,
+        "services_pmi": 52.2,
+        "consumer_confidence": 30.8
+      },
+      "2022-10-01": {
+        "manufacturing_pmi": 50.7,
+        "services_pmi": 53.2,
+        "consumer_confidence": 29.9
+      },
+      "2022-11-01": {
+        "manufacturing_pmi": 49,
+        "services_pmi": 50.3,
+        "consumer_confidence": 28.6
+      },
+      "2022-12-01": {
+        "manufacturing_pmi": 48.9,
+        "services_pmi": 50.3,
+        "consumer_confidence": 30.3
+      },
+      "2023-01-01": {
+        "manufacturing_pmi": 48.9,
+        "services_pmi": 52.3,
+        "consumer_confidence": 31
+      },
+      "2023-02-01": {
+        "manufacturing_pmi": 47.7,
+        "services_pmi": 54,
+        "consumer_confidence": 31.1
+      },
+      "2023-03-01": {
+        "manufacturing_pmi": 49.2,
+        "services_pmi": 55,
+        "consumer_confidence": 33.9
+      },
+      "2023-04-01": {
+        "manufacturing_pmi": 49.5,
+        "services_pmi": 55.4,
+        "consumer_confidence": 35.4
+      },
+      "2023-05-01": {
+        "manufacturing_pmi": 50.6,
+        "services_pmi": 55.9,
+        "consumer_confidence": 36
+      },
+      "2023-06-01": {
+        "manufacturing_pmi": 49.8,
+        "services_pmi": 54,
+        "consumer_confidence": 36.2
+      },
+      "2023-07-01": {
+        "manufacturing_pmi": 49.6,
+        "services_pmi": 53.8,
+        "consumer_confidence": 37.1
+      },
+      "2023-08-01": {
+        "manufacturing_pmi": 49.6,
+        "services_pmi": 54.3,
+        "consumer_confidence": 36.2
+      },
+      "2023-09-01": {
+        "manufacturing_pmi": 48.5,
+        "services_pmi": 53.8,
+        "consumer_confidence": 35.2
+      },
+      "2023-10-01": {
+        "manufacturing_pmi": 48.7,
+        "services_pmi": 51.6,
+        "consumer_confidence": 35.7
+      },
+      "2023-11-01": {
+        "manufacturing_pmi": 48.3,
+        "services_pmi": 50.8,
+        "consumer_confidence": 36.1
+      },
+      "2023-12-01": {
+        "manufacturing_pmi": 47.9,
+        "services_pmi": 51.5,
+        "consumer_confidence": 37.2
+      }
+    }
+  },
+  "new zealand": {
+    "wave1": {
+      "2020-01-01": {
+        "manufacturing_pmi": 47.9,
+        "services_pmi": 59,
+        "consumer_confidence": 104.2
+      },
+      "2020-02-01": {
+        "manufacturing_pmi": 54.8,
+        "services_pmi": 53.9,
+        "consumer_confidence": 104.2
+      },
+      "2020-03-01": {
+        "manufacturing_pmi": 38.9,
+        "services_pmi": 38.3,
+        "consumer_confidence": 104.2
+      },
+      "2020-04-01": {
+        "manufacturing_pmi": 26,
+        "services_pmi": 25.9,
+        "consumer_confidence": 97.2
+      }
+    },
+    "wave2": {
+      "2020-05-01": {
+        "manufacturing_pmi": 40.9,
+        "services_pmi": 38,
+        "consumer_confidence": 97.2
+      },
+      "2020-06-01": {
+        "manufacturing_pmi": 55.9,
+        "services_pmi": 52,
+        "consumer_confidence": 97.2
+      },
+      "2020-07-01": {
+        "manufacturing_pmi": 58.1,
+        "services_pmi": 54.5,
+        "consumer_confidence": 95.1
+      },
+      "2020-08-01": {
+        "manufacturing_pmi": 50.6,
+        "services_pmi": 46.1,
+        "consumer_confidence": 95.1
+      },
+      "2020-09-01": {
+        "manufacturing_pmi": 54,
+        "services_pmi": 49.7,
+        "consumer_confidence": 95.1
+      },
+      "2020-10-01": {
+        "manufacturing_pmi": 52,
+        "services_pmi": 50.4,
+        "consumer_confidence": 106
+      },
+      "2020-11-01": {
+        "manufacturing_pmi": 56.1,
+        "services_pmi": 47.2,
+        "consumer_confidence": 106
+      },
+      "2020-12-01": {
+        "manufacturing_pmi": 48.6,
+        "services_pmi": 49.3,
+        "consumer_confidence": 106
+      },
+      "2021-01-01": {
+        "manufacturing_pmi": 57.5,
+        "services_pmi": 50.3,
+        "consumer_confidence": 105.2
+      },
+      "2021-02-01": {
+        "manufacturing_pmi": 54.1,
+        "services_pmi": 50.6,
+        "consumer_confidence": 105.2
+      },
+      "2021-03-01": {
+        "manufacturing_pmi": 64.4,
+        "services_pmi": 54.4,
+        "consumer_confidence": 105.2
+      },
+      "2021-04-01": {
+        "manufacturing_pmi": 58.1,
+        "services_pmi": 60.6,
+        "consumer_confidence": 107.1
+      },
+      "2021-05-01": {
+        "manufacturing_pmi": 57.8,
+        "services_pmi": 54.3,
+        "consumer_confidence": 107.1
+      },
+      "2021-06-01": {
+        "manufacturing_pmi": 60,
+        "services_pmi": 54.9,
+        "consumer_confidence": 107.1
+      },
+      "2021-07-01": {
+        "manufacturing_pmi": 61.6,
+        "services_pmi": 58.2,
+        "consumer_confidence": 102.7
+      },
+      "2021-08-01": {
+        "manufacturing_pmi": 39.2,
+        "services_pmi": 33.9,
+        "consumer_confidence": 102.7
+      },
+      "2021-09-01": {
+        "manufacturing_pmi": 51.7,
+        "services_pmi": 46.1,
+        "consumer_confidence": 102.7
+      }
+    },
+    "wave3": {
+      "2021-10-01": {
+        "manufacturing_pmi": 55.1,
+        "services_pmi": 45,
+        "consumer_confidence": 99.1
+      },
+      "2021-11-01": {
+        "manufacturing_pmi": 52.2,
+        "services_pmi": 48.3,
+        "consumer_confidence": 99.1
+      },
+      "2021-12-01": {
+        "manufacturing_pmi": 55.1,
+        "services_pmi": 51.4,
+        "consumer_confidence": 99.1
+      },
+      "2022-01-01": {
+        "manufacturing_pmi": 51.9,
+        "services_pmi": 46.9,
+        "consumer_confidence": 92.1
+      },
+      "2022-02-01": {
+        "manufacturing_pmi": 52.8,
+        "services_pmi": 48.3,
+        "consumer_confidence": 92.1
+      },
+      "2022-03-01": {
+        "manufacturing_pmi": 54.7,
+        "services_pmi": 51.5,
+        "consumer_confidence": 92.1
+      },
+      "2022-04-01": {
+        "manufacturing_pmi": 50.7,
+        "services_pmi": 51.2,
+        "consumer_confidence": 78.7
+      },
+      "2022-05-01": {
+        "manufacturing_pmi": 52.4,
+        "services_pmi": 53.4,
+        "consumer_confidence": 78.7
+      },
+      "2022-06-01": {
+        "manufacturing_pmi": 49.6,
+        "services_pmi": 53.9,
+        "consumer_confidence": 78.7
+      },
+      "2022-07-01": {
+        "manufacturing_pmi": 52.6,
+        "services_pmi": 54.7,
+        "consumer_confidence": 87.6
+      },
+      "2022-08-01": {
+        "manufacturing_pmi": 54.6,
+        "services_pmi": 58.5,
+        "consumer_confidence": 87.6
+      },
+      "2022-09-01": {
+        "manufacturing_pmi": 51.4,
+        "services_pmi": 55.2,
+        "consumer_confidence": 87.6
+      },
+      "2022-10-01": {
+        "manufacturing_pmi": 49,
+        "services_pmi": 57.3,
+        "consumer_confidence": 75.6
+      },
+      "2022-11-01": {
+        "manufacturing_pmi": 47.5,
+        "services_pmi": 53.6,
+        "consumer_confidence": 75.6
+      },
+      "2022-12-01": {
+        "manufacturing_pmi": 48.2,
+        "services_pmi": 52.7,
+        "consumer_confidence": 75.6
+      },
+      "2023-01-01": {
+        "manufacturing_pmi": 51.1,
+        "services_pmi": 54.3,
+        "consumer_confidence": 77.7
+      },
+      "2023-02-01": {
+        "manufacturing_pmi": 51.7,
+        "services_pmi": 54.8,
+        "consumer_confidence": 77.7
+      },
+      "2023-03-01": {
+        "manufacturing_pmi": 48.2,
+        "services_pmi": 53.4,
+        "consumer_confidence": 77.7
+      },
+      "2023-04-01": {
+        "manufacturing_pmi": 48.7,
+        "services_pmi": 48.6,
+        "consumer_confidence": 83.1
+      },
+      "2023-05-01": {
+        "manufacturing_pmi": 48.63,
+        "services_pmi": 52.5,
+        "consumer_confidence": 83.1
+      },
+      "2023-06-01": {
+        "manufacturing_pmi": 47.49,
+        "services_pmi": 49.8,
+        "consumer_confidence": 83.1
+      },
+      "2023-07-01": {
+        "manufacturing_pmi": 46.65,
+        "services_pmi": 48.4,
+        "consumer_confidence": 80.2
+      },
+      "2023-08-01": {
+        "manufacturing_pmi": 45.95,
+        "services_pmi": 47.7,
+        "consumer_confidence": 80.2
+      },
+      "2023-09-01": {
+        "manufacturing_pmi": 45.25,
+        "services_pmi": 50.8,
+        "consumer_confidence": 80.2
+      },
+      "2023-10-01": {
+        "manufacturing_pmi": 42.76,
+        "services_pmi": 49.1,
+        "consumer_confidence": 88.9
+      },
+      "2023-11-01": {
+        "manufacturing_pmi": 46.59,
+        "services_pmi": 51.1,
+        "consumer_confidence": 88.9
+      },
+      "2023-12-01": {
+        "manufacturing_pmi": 43.58,
+        "services_pmi": 48.9,
+        "consumer_confidence": 88.9
+      }
+    }
+  },
+  "switzerland": {
+    "wave1": {
+      "2020-01-01": {
+        "manufacturing_pmi": 48,
+        "services_pmi": 57.29,
+        "consumer_confidence": -8.8
+      },
+      "2020-02-01": {
+        "manufacturing_pmi": 49.2,
+        "services_pmi": 52.28,
+        "consumer_confidence": -8.8
+      },
+      "2020-03-01": {
+        "manufacturing_pmi": 43.5,
+        "services_pmi": 28.14,
+        "consumer_confidence": -8.8
+      },
+      "2020-04-01": {
+        "manufacturing_pmi": 41.2,
+        "services_pmi": 21.94,
+        "consumer_confidence": -39
+      }
+    },
+    "wave2": {
+      "2020-05-01": {
+        "manufacturing_pmi": 42.5,
+        "services_pmi": 36.82,
+        "consumer_confidence": -39
+      },
+      "2020-06-01": {
+        "manufacturing_pmi": 41.4,
+        "services_pmi": 47.49,
+        "consumer_confidence": -39
+      },
+      "2020-07-01": {
+        "manufacturing_pmi": 49.6,
+        "services_pmi": 51.04,
+        "consumer_confidence": -12.9
+      },
+      "2020-08-01": {
+        "manufacturing_pmi": 51,
+        "services_pmi": 49.85,
+        "consumer_confidence": -12.9
+      },
+      "2020-09-01": {
+        "manufacturing_pmi": 52.8,
+        "services_pmi": 53.26,
+        "consumer_confidence": -12.9
+      },
+      "2020-10-01": {
+        "manufacturing_pmi": 52.9,
+        "services_pmi": 50.44,
+        "consumer_confidence": -13.1
+      },
+      "2020-11-01": {
+        "manufacturing_pmi": 54.5,
+        "services_pmi": 48.88,
+        "consumer_confidence": -13.1
+      },
+      "2020-12-01": {
+        "manufacturing_pmi": 57.3,
+        "services_pmi": 50.68,
+        "consumer_confidence": -13.1
+      },
+      "2021-01-01": {
+        "manufacturing_pmi": 59.4,
+        "services_pmi": 50.79,
+        "consumer_confidence": -14
+      },
+      "2021-02-01": {
+        "manufacturing_pmi": 61.3,
+        "services_pmi": 52.19,
+        "consumer_confidence": -14
+      },
+      "2021-03-01": {
+        "manufacturing_pmi": 66.3,
+        "services_pmi": 54.91,
+        "consumer_confidence": -14
+      },
+      "2021-04-01": {
+        "manufacturing_pmi": 69.5,
+        "services_pmi": 57.88,
+        "consumer_confidence": -6.4
+      },
+      "2021-05-01": {
+        "manufacturing_pmi": 68.6,
+        "services_pmi": 57.61,
+        "consumer_confidence": -6.4
+      },
+      "2021-06-01": {
+        "manufacturing_pmi": 67.1,
+        "services_pmi": 62.13,
+        "consumer_confidence": -6.4
+      },
+      "2021-07-01": {
+        "manufacturing_pmi": 70,
+        "services_pmi": 60.86,
+        "consumer_confidence": 7.6
+      },
+      "2021-08-01": {
+        "manufacturing_pmi": 67,
+        "services_pmi": 60.23,
+        "consumer_confidence": 7.6
+      },
+      "2021-09-01": {
+        "manufacturing_pmi": 67.6,
+        "services_pmi": 61.43,
+        "consumer_confidence": 7.6
+      }
+    },
+    "wave3": {
+      "2021-10-01": {
+        "manufacturing_pmi": 65.7,
+        "services_pmi": 59.59,
+        "consumer_confidence": 3.5
+      },
+      "2021-11-01": {
+        "manufacturing_pmi": 63.8,
+        "services_pmi": 58.97,
+        "consumer_confidence": 3.5
+      },
+      "2021-12-01": {
+        "manufacturing_pmi": 64.2,
+        "services_pmi": 61.15,
+        "consumer_confidence": 3.5
+      },
+      "2022-01-01": {
+        "manufacturing_pmi": 63.8,
+        "services_pmi": 56.43,
+        "consumer_confidence": -3.7
+      },
+      "2022-02-01": {
+        "manufacturing_pmi": 62.6,
+        "services_pmi": 63.6,
+        "consumer_confidence": -3.7
+      },
+      "2022-03-01": {
+        "manufacturing_pmi": 64,
+        "services_pmi": 60.21,
+        "consumer_confidence": -3.7
+      },
+      "2022-04-01": {
+        "manufacturing_pmi": 62.5,
+        "services_pmi": 56.82,
+        "consumer_confidence": -27.5
+      },
+      "2022-05-01": {
+        "manufacturing_pmi": 60,
+        "services_pmi": 59.6,
+        "consumer_confidence": -27.5
+      },
+      "2022-06-01": {
+        "manufacturing_pmi": 59.1,
+        "services_pmi": 58.08,
+        "consumer_confidence": -27.5
+      },
+      "2022-07-01": {
+        "manufacturing_pmi": 58,
+        "services_pmi": 55.6,
+        "consumer_confidence": -41.7
+      },
+      "2022-08-01": {
+        "manufacturing_pmi": 56.4,
+        "services_pmi": 56.64,
+        "consumer_confidence": -41.7
+      },
+      "2022-09-01": {
+        "manufacturing_pmi": 57.1,
+        "services_pmi": 52.78,
+        "consumer_confidence": -41.7
+      },
+      "2022-10-01": {
+        "manufacturing_pmi": 54.9,
+        "services_pmi": 53.82,
+        "consumer_confidence": -46.6
+      },
+      "2022-11-01": {
+        "manufacturing_pmi": 53.9,
+        "services_pmi": 53.44,
+        "consumer_confidence": -46.6
+      },
+      "2022-12-01": {
+        "manufacturing_pmi": 54.1,
+        "services_pmi": 49.47,
+        "consumer_confidence": -46.6
+      },
+      "2023-01-01": {
+        "manufacturing_pmi": 49.3,
+        "services_pmi": 56.71,
+        "consumer_confidence": -35.5
+      },
+      "2023-02-01": {
+        "manufacturing_pmi": 48.9,
+        "services_pmi": 55.26,
+        "consumer_confidence": -34.8
+      },
+      "2023-03-01": {
+        "manufacturing_pmi": 47,
+        "services_pmi": 54.21,
+        "consumer_confidence": -37.7
+      },
+      "2023-04-01": {
+        "manufacturing_pmi": 45.3,
+        "services_pmi": 52.23,
+        "consumer_confidence": -37.7
+      },
+      "2023-05-01": {
+        "manufacturing_pmi": 43.2,
+        "services_pmi": 52.59,
+        "consumer_confidence": -39.7
+      },
+      "2023-06-01": {
+        "manufacturing_pmi": 44.9,
+        "services_pmi": 49.57,
+        "consumer_confidence": -39.6
+      },
+      "2023-07-01": {
+        "manufacturing_pmi": 38.5,
+        "services_pmi": 42.69,
+        "consumer_confidence": -37.2
+      },
+      "2023-08-01": {
+        "manufacturing_pmi": 39.9,
+        "services_pmi": 50.3,
+        "consumer_confidence": -40.6
+      },
+      "2023-09-01": {
+        "manufacturing_pmi": 44.9,
+        "services_pmi": 52.84,
+        "consumer_confidence": -50.8
+      },
+      "2023-10-01": {
+        "manufacturing_pmi": 40.6,
+        "services_pmi": 52.17,
+        "consumer_confidence": -52.5
+      },
+      "2023-11-01": {
+        "manufacturing_pmi": 42.1,
+        "services_pmi": 53.64,
+        "consumer_confidence": -48
+      },
+      "2023-12-01": {
+        "manufacturing_pmi": 43,
+        "services_pmi": 56.92,
+        "consumer_confidence": -44.4
+      }
+    }
+  },
+  "united kingdom": {
+    "wave1": {
+      "2020-01-01": {
+        "manufacturing_pmi": 50,
+        "services_pmi": 53.9,
+        "consumer_confidence": -9
+      },
+      "2020-02-01": {
+        "manufacturing_pmi": 51.7,
+        "services_pmi": 53.2,
+        "consumer_confidence": -7
+      },
+      "2020-03-01": {
+        "manufacturing_pmi": 47.8,
+        "services_pmi": 34.5,
+        "consumer_confidence": -9
+      },
+      "2020-04-01": {
+        "manufacturing_pmi": 32.6,
+        "services_pmi": 13.4,
+        "consumer_confidence": -34
+      }
+    },
+    "wave2": {
+      "2020-05-01": {
+        "manufacturing_pmi": 40.7,
+        "services_pmi": 29,
+        "consumer_confidence": -34
+      },
+      "2020-06-01": {
+        "manufacturing_pmi": 50.1,
+        "services_pmi": 47.1,
+        "consumer_confidence": -30
+      },
+      "2020-07-01": {
+        "manufacturing_pmi": 53.3,
+        "services_pmi": 56.5,
+        "consumer_confidence": -27
+      },
+      "2020-08-01": {
+        "manufacturing_pmi": 55.2,
+        "services_pmi": 58.8,
+        "consumer_confidence": -27
+      },
+      "2020-09-01": {
+        "manufacturing_pmi": 54.1,
+        "services_pmi": 56.1,
+        "consumer_confidence": -25
+      },
+      "2020-10-01": {
+        "manufacturing_pmi": 53.7,
+        "services_pmi": 51.4,
+        "consumer_confidence": -31
+      },
+      "2020-11-01": {
+        "manufacturing_pmi": 55.6,
+        "services_pmi": 47.6,
+        "consumer_confidence": -33
+      },
+      "2020-12-01": {
+        "manufacturing_pmi": 57.5,
+        "services_pmi": 49.4,
+        "consumer_confidence": -26
+      },
+      "2021-01-01": {
+        "manufacturing_pmi": 54.1,
+        "services_pmi": 39.5,
+        "consumer_confidence": -28
+      },
+      "2021-02-01": {
+        "manufacturing_pmi": 55.1,
+        "services_pmi": 49.5,
+        "consumer_confidence": -23
+      },
+      "2021-03-01": {
+        "manufacturing_pmi": 58.9,
+        "services_pmi": 56.3,
+        "consumer_confidence": -16
+      },
+      "2021-04-01": {
+        "manufacturing_pmi": 60.9,
+        "services_pmi": 61,
+        "consumer_confidence": -15
+      },
+      "2021-05-01": {
+        "manufacturing_pmi": 65.6,
+        "services_pmi": 62.9,
+        "consumer_confidence": -9
+      },
+      "2021-06-01": {
+        "manufacturing_pmi": 63.9,
+        "services_pmi": 62.4,
+        "consumer_confidence": -9
+      },
+      "2021-07-01": {
+        "manufacturing_pmi": 60.4,
+        "services_pmi": 59.6,
+        "consumer_confidence": -7
+      },
+      "2021-08-01": {
+        "manufacturing_pmi": 60.3,
+        "services_pmi": 55,
+        "consumer_confidence": -8
+      },
+      "2021-09-01": {
+        "manufacturing_pmi": 57.1,
+        "services_pmi": 55.4,
+        "consumer_confidence": -13
+      }
+    },
+    "wave3": {
+      "2021-10-01": {
+        "manufacturing_pmi": 57.8,
+        "services_pmi": 59.1,
+        "consumer_confidence": -17
+      },
+      "2021-11-01": {
+        "manufacturing_pmi": 58.1,
+        "services_pmi": 58.5,
+        "consumer_confidence": -14
+      },
+      "2021-12-01": {
+        "manufacturing_pmi": 57.9,
+        "services_pmi": 53.6,
+        "consumer_confidence": -15
+      },
+      "2022-01-01": {
+        "manufacturing_pmi": 57.3,
+        "services_pmi": 54.1,
+        "consumer_confidence": -19
+      },
+      "2022-02-01": {
+        "manufacturing_pmi": 58,
+        "services_pmi": 60.5,
+        "consumer_confidence": -26
+      },
+      "2022-03-01": {
+        "manufacturing_pmi": 55.2,
+        "services_pmi": 62.6,
+        "consumer_confidence": -31
+      },
+      "2022-04-01": {
+        "manufacturing_pmi": 55.8,
+        "services_pmi": 58.9,
+        "consumer_confidence": -38
+      },
+      "2022-05-01": {
+        "manufacturing_pmi": 54.6,
+        "services_pmi": 53.4,
+        "consumer_confidence": -40
+      },
+      "2022-06-01": {
+        "manufacturing_pmi": 52.8,
+        "services_pmi": 54.3,
+        "consumer_confidence": -41
+      },
+      "2022-07-01": {
+        "manufacturing_pmi": 52.1,
+        "services_pmi": 52.6,
+        "consumer_confidence": -41
+      },
+      "2022-08-01": {
+        "manufacturing_pmi": 47.3,
+        "services_pmi": 50.9,
+        "consumer_confidence": -44
+      },
+      "2022-09-01": {
+        "manufacturing_pmi": 48.4,
+        "services_pmi": 50,
+        "consumer_confidence": -49
+      },
+      "2022-10-01": {
+        "manufacturing_pmi": 46.2,
+        "services_pmi": 48.8,
+        "consumer_confidence": -47
+      },
+      "2022-11-01": {
+        "manufacturing_pmi": 46.5,
+        "services_pmi": 48.8,
+        "consumer_confidence": -44
+      },
+      "2022-12-01": {
+        "manufacturing_pmi": 45.3,
+        "services_pmi": 49.9,
+        "consumer_confidence": -42
+      },
+      "2023-01-01": {
+        "manufacturing_pmi": 47,
+        "services_pmi": 48.7,
+        "consumer_confidence": -45
+      },
+      "2023-02-01": {
+        "manufacturing_pmi": 49.3,
+        "services_pmi": 53.5,
+        "consumer_confidence": -38
+      },
+      "2023-03-01": {
+        "manufacturing_pmi": 47.9,
+        "services_pmi": 52.9,
+        "consumer_confidence": -36
+      },
+      "2023-04-01": {
+        "manufacturing_pmi": 47.8,
+        "services_pmi": 55.9,
+        "consumer_confidence": -30
+      },
+      "2023-05-01": {
+        "manufacturing_pmi": 47.1,
+        "services_pmi": 55.2,
+        "consumer_confidence": -27
+      },
+      "2023-06-01": {
+        "manufacturing_pmi": 46.5,
+        "services_pmi": 53.7,
+        "consumer_confidence": -24
+      },
+      "2023-07-01": {
+        "manufacturing_pmi": 45.3,
+        "services_pmi": 51.5,
+        "consumer_confidence": -30
+      },
+      "2023-08-01": {
+        "manufacturing_pmi": 43,
+        "services_pmi": 49.5,
+        "consumer_confidence": -25
+      },
+      "2023-09-01": {
+        "manufacturing_pmi": 44.3,
+        "services_pmi": 49.5,
+        "consumer_confidence": -21
+      },
+      "2023-10-01": {
+        "manufacturing_pmi": 44.8,
+        "services_pmi": 49.3,
+        "consumer_confidence": -30
+      },
+      "2023-11-01": {
+        "manufacturing_pmi": 47.2,
+        "services_pmi": 49.5,
+        "consumer_confidence": -24
+      },
+      "2023-12-01": {
+        "manufacturing_pmi": 46.2,
+        "services_pmi": 50.9,
+        "consumer_confidence": -22
+      }
+    }
+  },
+  "united states": {
+    "wave1": {
+      "2020-01-01": {
+        "manufacturing_pmi": 51.1,
+        "services_pmi": 56,
+        "consumer_confidence": 99.8
+      },
+      "2020-02-01": {
+        "manufacturing_pmi": 50.3,
+        "services_pmi": 57.5,
+        "consumer_confidence": 101
+      },
+      "2020-03-01": {
+        "manufacturing_pmi": 49.7,
+        "services_pmi": 52.9,
+        "consumer_confidence": 89.1
+      },
+      "2020-04-01": {
+        "manufacturing_pmi": 41.7,
+        "services_pmi": 41.7,
+        "consumer_confidence": 71.8
+      }
+    },
+    "wave2": {
+      "2020-05-01": {
+        "manufacturing_pmi": 43.1,
+        "services_pmi": 45.4,
+        "consumer_confidence": 72.3
+      },
+      "2020-06-01": {
+        "manufacturing_pmi": 52.2,
+        "services_pmi": 57.3,
+        "consumer_confidence": 78.1
+      },
+      "2020-07-01": {
+        "manufacturing_pmi": 53.7,
+        "services_pmi": 56.7,
+        "consumer_confidence": 72.5
+      },
+      "2020-08-01": {
+        "manufacturing_pmi": 55.6,
+        "services_pmi": 57.1,
+        "consumer_confidence": 74.1
+      },
+      "2020-09-01": {
+        "manufacturing_pmi": 55.7,
+        "services_pmi": 57.1,
+        "consumer_confidence": 80.4
+      },
+      "2020-10-01": {
+        "manufacturing_pmi": 58.8,
+        "services_pmi": 56.1,
+        "consumer_confidence": 81.8
+      },
+      "2020-11-01": {
+        "manufacturing_pmi": 57.7,
+        "services_pmi": 56.1,
+        "consumer_confidence": 76.9
+      },
+      "2020-12-01": {
+        "manufacturing_pmi": 60.5,
+        "services_pmi": 57.5,
+        "consumer_confidence": 80.7
+      },
+      "2021-01-01": {
+        "manufacturing_pmi": 58.7,
+        "services_pmi": 58.7,
+        "consumer_confidence": 79
+      },
+      "2021-02-01": {
+        "manufacturing_pmi": 60.8,
+        "services_pmi": 56.4,
+        "consumer_confidence": 76.8
+      },
+      "2021-03-01": {
+        "manufacturing_pmi": 64.7,
+        "services_pmi": 62.3,
+        "consumer_confidence": 84.9
+      },
+      "2021-04-01": {
+        "manufacturing_pmi": 60.7,
+        "services_pmi": 63,
+        "consumer_confidence": 88.3
+      },
+      "2021-05-01": {
+        "manufacturing_pmi": 61.2,
+        "services_pmi": 63.9,
+        "consumer_confidence": 82.9
+      },
+      "2021-06-01": {
+        "manufacturing_pmi": 60.6,
+        "services_pmi": 61.2,
+        "consumer_confidence": 85.5
+      },
+      "2021-07-01": {
+        "manufacturing_pmi": 59.5,
+        "services_pmi": 64,
+        "consumer_confidence": 81.2
+      },
+      "2021-08-01": {
+        "manufacturing_pmi": 59.9,
+        "services_pmi": 61.7,
+        "consumer_confidence": 70.3
+      },
+      "2021-09-01": {
+        "manufacturing_pmi": 61.1,
+        "services_pmi": 62.1,
+        "consumer_confidence": 72.8
+      }
+    },
+    "wave3": {
+      "2021-10-01": {
+        "manufacturing_pmi": 60.8,
+        "services_pmi": 66.6,
+        "consumer_confidence": 71.7
+      },
+      "2021-11-01": {
+        "manufacturing_pmi": 61.1,
+        "services_pmi": 67.6,
+        "consumer_confidence": 67.4
+      },
+      "2021-12-01": {
+        "manufacturing_pmi": 58.8,
+        "services_pmi": 61.7,
+        "consumer_confidence": 70.6
+      },
+      "2022-01-01": {
+        "manufacturing_pmi": 57.6,
+        "services_pmi": 60.4,
+        "consumer_confidence": 67.2
+      },
+      "2022-02-01": {
+        "manufacturing_pmi": 58.6,
+        "services_pmi": 57.2,
+        "consumer_confidence": 62.8
+      },
+      "2022-03-01": {
+        "manufacturing_pmi": 57.1,
+        "services_pmi": 58.3,
+        "consumer_confidence": 59.4
+      },
+      "2022-04-01": {
+        "manufacturing_pmi": 55.4,
+        "services_pmi": 57.5,
+        "consumer_confidence": 65.2
+      },
+      "2022-05-01": {
+        "manufacturing_pmi": 56.1,
+        "services_pmi": 56.4,
+        "consumer_confidence": 58.4
+      },
+      "2022-06-01": {
+        "manufacturing_pmi": 53,
+        "services_pmi": 56,
+        "consumer_confidence": 50
+      },
+      "2022-07-01": {
+        "manufacturing_pmi": 52.8,
+        "services_pmi": 56.4,
+        "consumer_confidence": 51.5
+      },
+      "2022-08-01": {
+        "manufacturing_pmi": 52.8,
+        "services_pmi": 56.1,
+        "consumer_confidence": 58.2
+      },
+      "2022-09-01": {
+        "manufacturing_pmi": 50.9,
+        "services_pmi": 55.9,
+        "consumer_confidence": 58.6
+      },
+      "2022-10-01": {
+        "manufacturing_pmi": 50.2,
+        "services_pmi": 54.4,
+        "consumer_confidence": 59.9
+      },
+      "2022-11-01": {
+        "manufacturing_pmi": 49,
+        "services_pmi": 55.5,
+        "consumer_confidence": 56.8
+      },
+      "2022-12-01": {
+        "manufacturing_pmi": 48.4,
+        "services_pmi": 49.2,
+        "consumer_confidence": 59.7
+      },
+      "2023-01-01": {
+        "manufacturing_pmi": 47.4,
+        "services_pmi": 55.2,
+        "consumer_confidence": 64.9
+      },
+      "2023-02-01": {
+        "manufacturing_pmi": 47.7,
+        "services_pmi": 55.1,
+        "consumer_confidence": 67
+      },
+      "2023-03-01": {
+        "manufacturing_pmi": 46.3,
+        "services_pmi": 51.2,
+        "consumer_confidence": 62
+      },
+      "2023-04-01": {
+        "manufacturing_pmi": 47.1,
+        "services_pmi": 51.9,
+        "consumer_confidence": 63.5
+      },
+      "2023-05-01": {
+        "manufacturing_pmi": 46.9,
+        "services_pmi": 50.3,
+        "consumer_confidence": 59.2
+      },
+      "2023-06-01": {
+        "manufacturing_pmi": 46,
+        "services_pmi": 53.9,
+        "consumer_confidence": 63.9
+      },
+      "2023-07-01": {
+        "manufacturing_pmi": 46.4,
+        "services_pmi": 52.7,
+        "consumer_confidence": 72.6
+      },
+      "2023-08-01": {
+        "manufacturing_pmi": 47.6,
+        "services_pmi": 54.5,
+        "consumer_confidence": 71.2
+      },
+      "2023-09-01": {
+        "manufacturing_pmi": 49,
+        "services_pmi": 53.6,
+        "consumer_confidence": 67.7
+      },
+      "2023-10-01": {
+        "manufacturing_pmi": 46.7,
+        "services_pmi": 51.8,
+        "consumer_confidence": 63.8
+      },
+      "2023-11-01": {
+        "manufacturing_pmi": 46.7,
+        "services_pmi": 52.5,
+        "consumer_confidence": 61.3
+      },
+      "2023-12-01": {
+        "manufacturing_pmi": 47.4,
+        "services_pmi": 50.5,
+        "consumer_confidence": 69.7
+      }
+    }
+  }
+}
