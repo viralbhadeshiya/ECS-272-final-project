@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import GeoChart from "./GeoChart";
 import EuroGeo from "./EuropeGeoChart";
 import data from "./GeoChart.world.geo.json";
-import lineData from './line_graph_data.json'
+import lineData from './line_graph_data.json';
+import economyData from './grouped_bar_chart_average_data.json';
 import LineChart from "./LineChart";
+import EconomyBar from "./EconomyBarChart";
 import "./App.css";
 
 function App() {
@@ -41,6 +43,12 @@ function App() {
             globalMapData={lineData}
           />
         )}
+      </div>
+
+      <h2> Economy Grouped Bar Chart for 9 continents </h2>
+      <div className="economy-chart-container">
+        {/* Grouped Bar Chart for the 9 continents */}
+        <EconomyBar data={economyData}/>
       </div>
     </div>
   );

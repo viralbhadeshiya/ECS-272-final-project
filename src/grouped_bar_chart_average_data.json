@@ -1,0 +1,164 @@
+[
+  {
+    "country": "australia",
+    "wave1": {
+      "manufacturing_pmi": "48.40",
+      "services_pmi": "39.40",
+      "consumer_confidence": "89.10"
+    },
+    "wave2": {
+      "manufacturing_pmi": "55.25",
+      "services_pmi": "51.44",
+      "consumer_confidence": "103.18"
+    },
+    "wave3": {
+      "manufacturing_pmi": "52.53",
+      "services_pmi": "50.87",
+      "consumer_confidence": "87.01"
+    }
+  },
+  {
+    "country": "canada",
+    "wave1": {
+      "manufacturing_pmi": "45.38",
+      "services_pmi": "36.95",
+      "consumer_confidence": "48.52"
+    },
+    "wave2": {
+      "manufacturing_pmi": "54.73",
+      "services_pmi": "47.39",
+      "consumer_confidence": "47.46"
+    },
+    "wave3": {
+      "manufacturing_pmi": "51.71",
+      "services_pmi": "49.53",
+      "consumer_confidence": "49.59"
+    }
+  },
+  {
+    "country": "china",
+    "wave1": {
+      "manufacturing_pmi": "47.13",
+      "services_pmi": "47.30",
+      "consumer_confidence": "120.97"
+    },
+    "wave2": {
+      "manufacturing_pmi": "51.02",
+      "services_pmi": "54.08",
+      "consumer_confidence": "120.29"
+    },
+    "wave3": {
+      "manufacturing_pmi": "49.56",
+      "services_pmi": "51.31",
+      "consumer_confidence": "102.43"
+    }
+  },
+  {
+    "country": "europe",
+    "wave1": {
+      "manufacturing_pmi": "43.75",
+      "services_pmi": "35.88",
+      "consumer_confidence": "-12.60"
+    },
+    "wave2": {
+      "manufacturing_pmi": "56.19",
+      "services_pmi": "49.82",
+      "consumer_confidence": "-11.01"
+    },
+    "wave3": {
+      "manufacturing_pmi": "49.60",
+      "services_pmi": "52.00",
+      "consumer_confidence": "-18.31"
+    }
+  },
+  {
+    "country": "japan",
+    "wave1": {
+      "manufacturing_pmi": "45.82",
+      "services_pmi": "38.27",
+      "consumer_confidence": "32.50"
+    },
+    "wave2": {
+      "manufacturing_pmi": "49.20",
+      "services_pmi": "45.55",
+      "consumer_confidence": "32.98"
+    },
+    "wave3": {
+      "manufacturing_pmi": "50.93",
+      "services_pmi": "51.94",
+      "consumer_confidence": "34.26"
+    }
+  },
+  {
+    "country": "new zealand",
+    "wave1": {
+      "manufacturing_pmi": "41.90",
+      "services_pmi": "44.27",
+      "consumer_confidence": "102.45"
+    },
+    "wave2": {
+      "manufacturing_pmi": "54.15",
+      "services_pmi": "50.03",
+      "consumer_confidence": "102.51"
+    },
+    "wave3": {
+      "manufacturing_pmi": "49.79",
+      "services_pmi": "51.53",
+      "consumer_confidence": "84.78"
+    }
+  },
+  {
+    "country": "switzerland",
+    "wave1": {
+      "manufacturing_pmi": "45.47",
+      "services_pmi": "39.91",
+      "consumer_confidence": "-16.35"
+    },
+    "wave2": {
+      "manufacturing_pmi": "58.75",
+      "services_pmi": "53.32",
+      "consumer_confidence": "-11.44"
+    },
+    "wave3": {
+      "manufacturing_pmi": "52.88",
+      "services_pmi": "55.01",
+      "consumer_confidence": "-31.35"
+    }
+  },
+  {
+    "country": "united kingdom",
+    "wave1": {
+      "manufacturing_pmi": "45.52",
+      "services_pmi": "38.75",
+      "consumer_confidence": "-14.75"
+    },
+    "wave2": {
+      "manufacturing_pmi": "56.26",
+      "services_pmi": "52.79",
+      "consumer_confidence": "-21.24"
+    },
+    "wave3": {
+      "manufacturing_pmi": "49.99",
+      "services_pmi": "53.19",
+      "consumer_confidence": "-31.85"
+    }
+  },
+  {
+    "country": "united states",
+    "wave1": {
+      "manufacturing_pmi": "48.20",
+      "services_pmi": "52.03",
+      "consumer_confidence": "90.42"
+    },
+    "wave2": {
+      "manufacturing_pmi": "57.91",
+      "services_pmi": "58.62",
+      "consumer_confidence": "78.74"
+    },
+    "wave3": {
+      "manufacturing_pmi": "51.40",
+      "services_pmi": "55.64",
+      "consumer_confidence": "63.12"
+    }
+  }
+]

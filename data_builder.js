@@ -4,7 +4,10 @@ const csvToJson = require("csvtojson");
 
 const dailyDataFile = "./data/worldometer_coronavirus_daily_data.csv";
 const summaryDataFile = "./data/worldometer_coronavirus_summary_data.csv";
+const economyDataFile = "./data/economic_data.csv";
 const globalMapProportionDataOutputfileName = "./src/global_map_data.json";
+const groupedBarChartOutputfileName = "./src/grouped_bar_chart_average_data.json";
+const groupedBarChartMonthlyOutputfileName = "./src/grouped_bar_chart_monthly_data.json";
 const lineGraphDataOutputfileName = "./src/line_graph_data.json";
 const barRaisingDataOutputfileName = "./src/bar_chart_raising_data.json";
 
@@ -18,6 +21,19 @@ const generateAllDates = (startDate, endDate) => {
     }
     return dates;
 }
+
+const getWave = (selectedDate) => {
+    const selectedDateObj = new Date(selectedDate);
+    const wave1End = new Date('2020-04-30');
+    const wave2End = new Date('2021-09-30');
+
+    let wave;
+    if (selectedDateObj <= wave1End) wave = "wave1";
+    else if (selectedDateObj <= wave2End) wave = "wave2";
+    else wave = "wave3";
+
+    return wave;
+};
 
 const normalizeDate = (date) => {
     const match = date.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
@@ -138,6 +154,102 @@ const sortGlobalDataDateWise = async () => {
     await fs.writeFileSync(globalMapProportionDataOutputfileName, JSON.stringify(sortedData, null, 2));
 }
 
+const calculateMeanOfMetrics = (waveData) => {
+    const totalMetrics = waveData.reduce (
+        (acc, curr) => {
+            acc.manufacturing_pmi += curr.manufacturing_pmi;
+            acc.services_pmi += curr.services_pmi;
+            acc.consumer_confidence += curr.consumer_confidence;
+            return acc;
+        },
+        { manufacturing_pmi: 0, services_pmi: 0, consumer_confidence: 0 }
+    );
+
+    const numEntries = waveData.length;
+    return {
+        manufacturing_pmi: numEntries > 0 ? (totalMetrics.manufacturing_pmi / numEntries).toFixed(2) : 0,
+        services_pmi: numEntries > 0 ? (totalMetrics.services_pmi / numEntries).toFixed(2) : 0,
+        consumer_confidence: numEntries > 0 ? (totalMetrics.consumer_confidence / numEntries).toFixed(2) : 0
+    };
+};
+
+const createDataForBarGraph = async () => {
+    const resultData = {};
+    await new Promise((resolve) => {
+        fs.createReadStream(economyDataFile).pipe(csv()).on("data", (row) => {
+            const rawDate = row["date"];
+            const wave = getWave(rawDate);
+            const country = row["country"];
+            const metric = {
+                manufacturing_pmi: parseFloat(row["manufacturing pmi"] || 0),
+                services_pmi: parseFloat(row["services pmi"] || 0),
+                consumer_confidence: parseFloat(row["consumer confidence"] || 0),
+            };
+
+            if (!resultData[country]) {
+                resultData[country] = { wave1: [], wave2: [], wave3: [] };
+            }
+
+            resultData[country][wave].push(metric);
+        })
+        .on("end", resolve);
+        
+    });
+
+    // Calculate mean values for each metric per wave per country
+    const meanData = Object.keys(resultData).map((country) => {
+        const waves = resultData[country];
+
+        return {
+            country,
+            wave1: calculateMeanOfMetrics(waves.wave1),
+            wave2: calculateMeanOfMetrics(waves.wave2),
+            wave3: calculateMeanOfMetrics(waves.wave3),
+        };
+    });
+
+    fs.writeFileSync(groupedBarChartOutputfileName, JSON.stringify(meanData, null, 2));
+    console.log("Grouped Bar Chart for economy data prepared successfully");
+};
+
+const createMonthlyDataForBarGraph = async () => {
+    const resultData = {};
+
+    await new Promise((resolve) => {
+        fs.createReadStream(economyDataFile).pipe(csv()).on("data", (row) => {
+            const date = row["date"];
+            const wave = getWave(date);
+            const country = row["country"];
+            const metric = {
+                manufacturing_pmi: parseFloat(row["manufacturing pmi"] || 0),
+                services_pmi: parseFloat(row["services pmi"] || 0),
+                consumer_confidence: parseFloat(row["consumer confidence"] || 0),
+            };
+
+            if (wave) {
+                if (!resultData[country]) {
+                    resultData[country] = { wave1: {}, wave2: {}, wave3: {} };
+                }
+
+                const countryEntry = resultData[country];
+                const waveData = countryEntry[wave];
+                if (!waveData[date]) {
+                    waveData[date] = {
+                        manufacturing_pmi: metric.manufacturing_pmi,
+                        services_pmi: metric.services_pmi,
+                        consumer_confidence: metric.consumer_confidence
+                    };
+                }
+            }
+        })
+        .on("end", resolve);
+        
+    });
+
+    fs.writeFileSync(groupedBarChartMonthlyOutputfileName, JSON.stringify(resultData, null, 2));
+    console.log("Monthly Grouped Bar Chart for economy data prepared successfully");
+};
+
 const createDataForLineGraph = async () => {
     const resultData = {};
     const allDates = generateAllDates("2020-01-22", "2022-05-16");
@@ -246,5 +358,11 @@ const barRaisingChartData = async () => {
     // await groupWaveData();
 
     // Bar chart raising graph data
-    await barRaisingChartData();
+    // await barRaisingChartData();
+
+    // Generate Grouped Bar Chart for economy dataset
+    // await createDataForBarGraph();
+
+    // Generate Grouped Bar Chart (MONTHLY) for economy dataset
+    await createMonthlyDataForBarGraph();
 })()

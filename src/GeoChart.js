@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { select, geoPath, geoMercator, zoom } from "d3";
 import globalMapData from './global_map_data.json';
+import * as d3 from 'd3';
 
 function extractCovidData(globalMapData) {
   // Extract all the dates (keys of the outer object)
@@ -243,6 +244,22 @@ function GeoChart({ data, dimensions, onCountryClick, onWaveChange }) {
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, [isPlaying, animationIndex, dates]);
 
+  const buGnColors = [
+    d3.interpolateBuGn(0.0),
+    d3.interpolateBuGn(0.5),
+    d3.interpolateBuGn(0.8),
+  ];
+
+  const timelineStyle = {
+    flex: 1,
+    margin: "0 10px",
+    appearance: "none", 
+    height: "8px", 
+    borderRadius: "4px",
+    background: `linear-gradient(to right, ${buGnColors[0]} 11.86%, ${buGnColors[1]} 73.31%, ${buGnColors[2]} 100%)`,
+    outline: "none",
+  };
+
   return (
     <div ref={wrapperRef}>
       <svg ref={svgRef} style={{ width: "100%", height: "70vh" }}></svg>
@@ -260,15 +277,7 @@ function GeoChart({ data, dimensions, onCountryClick, onWaveChange }) {
             setAnimationIndex(index);
             setSelectedDate(dates[index]);
           }}
-          style={{ 
-            flex: 1, 
-            margin: "0 10px",
-            appearance: "none",
-            height: "8px",
-            borderRadius: "4px",
-            background: "linear-gradient(to right, palegreen 11.86%, green 73.31%, darkgreen 100%)",
-            outline: "none",
-          }}
+          style={timelineStyle}
         />
         <span>{selectedDate}</span>
         <span style={{ marginLeft: "10px", fontWeight: "bold" }}>
