@@ -8,22 +8,26 @@ const RaisingBarChart = ({ data, selectedDate }) => {
     if (!data[selectedDate]) return;
 
     const svg = d3.select(chartRef.current);
-    const width = 600; // Increased width for larger chart
-    const height = 400; // Increased height for larger chart
+    const width = 600; // Larger width for better visibility
+    const height = 400; // Larger height for better visibility
     const margin = { top: 20, right: 30, bottom: 40, left: 150 };
-    const staticBarWidth = width - margin.left - margin.right; // Fixed bar width
+    const staticBarWidth = width - margin.left - margin.right;
 
     // Clear previous chart
     svg.selectAll("*").remove();
 
     const chartData = data[selectedDate].slice(0, 5); // Top 5 countries
+
     const yScale = d3
       .scaleBand()
       .domain(chartData.map((d) => d.Country))
       .range([margin.top, height - margin.bottom])
       .padding(0.2);
 
-    const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+    // Create a color scale keyed by country names
+    const colorScale = d3
+      .scaleOrdinal(d3.schemeCategory10)
+      .domain(Object.keys(data).flatMap((date) => data[date].map((d) => d.Country)));
 
     const yAxis = d3.axisLeft(yScale);
 
@@ -33,7 +37,7 @@ const RaisingBarChart = ({ data, selectedDate }) => {
       .attr("transform", `translate(${margin.left}, 0)`)
       .call(yAxis);
 
-    // Draw bars with fixed length
+    // Draw bars
     svg
       .selectAll(".bar")
       .data(chartData)
@@ -43,7 +47,7 @@ const RaisingBarChart = ({ data, selectedDate }) => {
       .attr("y", (d) => yScale(d.Country))
       .attr("width", staticBarWidth)
       .attr("height", yScale.bandwidth())
-      .attr("fill", (d, i) => colorScale(i));
+      .attr("fill", (d) => colorScale(d.Country)); // Color tied to country
 
     // Add table-like text inside bars
     svg
