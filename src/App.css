@@ -11,9 +11,22 @@ h2 {
   margin-bottom: 10px; /* Space between GeoChart and LineChart */
 }
 
-.line-chart-container {
-  width: 100%;
+.chart-container {
   display: flex;
-  overflow: visible; /* Prevent LineChart from being clipped */
-  margin-top: 20px; /* Add spacing above LineChart */
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+  min-height: 300px;
+}
+
+.line-chart-container {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.raising-bar-chart-container {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

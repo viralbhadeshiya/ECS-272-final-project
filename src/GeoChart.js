@@ -50,7 +50,7 @@ const tooltip = select("body")
   .style("font-size", "12px")
   .style("visibility", "hidden");
 
-function GeoChart({ data, dimensions, onCountryClick, onWaveChange }) {
+function GeoChart({ data, dimensions, onCountryClick, onWaveChange, onDateChange }) {
   const svgRef = useRef();
   const wrapperRef = useRef();
   const [transform, setTransform] = useState(null);
@@ -235,14 +235,18 @@ function GeoChart({ data, dimensions, onCountryClick, onWaveChange }) {
     const interval = setInterval(() => {
       if (isPlaying && animationIndex < dates.length - 1) {
         setAnimationIndex((prevIndex) => prevIndex + 1);
-        setSelectedDate(dates[animationIndex]);
+        const newDate = dates[animationIndex];
+        setSelectedDate(newDate);
+        if (onDateChange) {
+          onDateChange(newDate);
+        }
       } else if (isPlaying && animationIndex === dates.length - 1) {
         setIsPlaying(false);
       }
     }, 50); // Adjust the speed of the animation (50 ms per step)
 
     return () => clearInterval(interval); // Clean up the interval on component unmount
-  }, [isPlaying, animationIndex, dates]);
+  }, [isPlaying, animationIndex, dates, onDateChange]);
 
   const buGnColors = [
     d3.interpolateBuGn(0.0),
@@ -275,7 +279,11 @@ function GeoChart({ data, dimensions, onCountryClick, onWaveChange }) {
           onChange={(e) => {
             const index = Number(e.target.value);
             setAnimationIndex(index);
-            setSelectedDate(dates[index]);
+            const newDate = dates[index];
+            setSelectedDate(newDate);
+            if(onDateChange) {
+              onDateChange(newDate);
+            }
           }}
           style={timelineStyle}
         />
