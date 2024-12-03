@@ -20,11 +20,14 @@ const generateAllDates = (startDate, endDate) => {
 }
 
 const normalizeDate = (date) => {
-    const d = new Date(date);
-    const year = d.getFullYear();
-    const month = String(d.getMonth() + 1).padStart(2, '0');
-    const day = String(d.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
+    const match = date.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+    if (!match) {
+        throw new Error("Invalid date format. Use YYYY-MM-DD.");
+    }
+    const [, year, month, day] = match;
+    const newMonth = String(month).padStart(2, '0');
+    const newDay = String(day).padStart(2, '0');
+    return `${year}-${newMonth}-${newDay}`;
   };
 
 // Prepare preprotion data for global map

@@ -7197,23 +7197,9 @@
       "NewDeath": 0
     },
     {
-      "Country": "China",
-      "TotalCases": 85414,
-      "NewCases": 11,
-      "TotalDeath": 4634,
-      "NewDeath": 0
-    },
-    {
       "Country": "Djibouti",
       "TotalCases": 5416,
       "NewCases": 0,
-      "TotalDeath": 61,
-      "NewDeath": 0
-    },
-    {
-      "Country": "Djibouti",
-      "TotalCases": 5417,
-      "NewCases": 1,
       "TotalDeath": 61,
       "NewDeath": 0
     },
@@ -7225,18 +7211,34 @@
       "NewDeath": 29
     },
     {
-      "Country": "Saudi Arabia",
-      "TotalCases": 335097,
-      "NewCases": 492,
-      "TotalDeath": 4794,
-      "NewDeath": 26
-    },
-    {
       "Country": "Tajikistan",
       "TotalCases": 9769,
       "NewCases": 43,
       "TotalDeath": 76,
       "NewDeath": 1
+    }
+  ],
+  "2020-10-01": [
+    {
+      "Country": "China",
+      "TotalCases": 85414,
+      "NewCases": 11,
+      "TotalDeath": 4634,
+      "NewDeath": 0
+    },
+    {
+      "Country": "Djibouti",
+      "TotalCases": 5417,
+      "NewCases": 1,
+      "TotalDeath": 61,
+      "NewDeath": 0
+    },
+    {
+      "Country": "Saudi Arabia",
+      "TotalCases": 335097,
+      "NewCases": 492,
+      "TotalDeath": 4794,
+      "NewDeath": 26
     },
     {
       "Country": "Tajikistan",
@@ -7246,7 +7248,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-10-01": [
+  "2020-10-02": [
     {
       "Country": "China",
       "TotalCases": 85424,
@@ -7276,7 +7278,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-02": [
+  "2020-10-03": [
     {
       "Country": "China",
       "TotalCases": 85434,
@@ -7306,7 +7308,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-03": [
+  "2020-10-04": [
     {
       "Country": "China",
       "TotalCases": 85450,
@@ -7336,7 +7338,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-10-04": [
+  "2020-10-05": [
     {
       "Country": "China",
       "TotalCases": 85470,
@@ -7366,7 +7368,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-05": [
+  "2020-10-06": [
     {
       "Country": "China",
       "TotalCases": 85482,
@@ -7396,7 +7398,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-06": [
+  "2020-10-07": [
     {
       "Country": "China",
       "TotalCases": 85489,
@@ -7426,7 +7428,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-07": [
+  "2020-10-08": [
     {
       "Country": "China",
       "TotalCases": 85500,
@@ -7456,7 +7458,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-08": [
+  "2020-10-09": [
     {
       "Country": "China",
       "TotalCases": 85521,
@@ -7486,7 +7488,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-10-09": [
+  "2020-10-10": [
     {
       "Country": "China",
       "TotalCases": 85536,
@@ -7516,7 +7518,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-10": [
+  "2020-10-11": [
     {
       "Country": "China",
       "TotalCases": 85557,
@@ -7546,7 +7548,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-11": [
+  "2020-10-12": [
     {
       "Country": "China",
       "TotalCases": 85578,
@@ -7576,7 +7578,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-12": [
+  "2020-10-13": [
     {
       "Country": "China",
       "TotalCases": 85591,
@@ -7606,7 +7608,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-13": [
+  "2020-10-14": [
     {
       "Country": "China",
       "TotalCases": 85611,
@@ -7636,7 +7638,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-14": [
+  "2020-10-15": [
     {
       "Country": "China",
       "TotalCases": 85622,
@@ -7666,7 +7668,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-10-15": [
+  "2020-10-16": [
     {
       "Country": "China",
       "TotalCases": 85646,
@@ -7696,7 +7698,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-16": [
+  "2020-10-17": [
     {
       "Country": "China",
       "TotalCases": 85659,
@@ -7726,7 +7728,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-17": [
+  "2020-10-18": [
     {
       "Country": "China",
       "TotalCases": 85672,
@@ -7756,7 +7758,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-18": [
+  "2020-10-19": [
     {
       "Country": "China",
       "TotalCases": 85685,
@@ -7786,7 +7788,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-19": [
+  "2020-10-20": [
     {
       "Country": "China",
       "TotalCases": 85704,
@@ -7816,7 +7818,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-20": [
+  "2020-10-21": [
     {
       "Country": "China",
       "TotalCases": 85715,
@@ -7846,7 +7848,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-21": [
+  "2020-10-22": [
     {
       "Country": "China",
       "TotalCases": 85729,
@@ -7876,7 +7878,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-10-22": [
+  "2020-10-23": [
     {
       "Country": "China",
       "TotalCases": 85747,
@@ -7906,7 +7908,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-23": [
+  "2020-10-24": [
     {
       "Country": "China",
       "TotalCases": 85775,
@@ -7936,7 +7938,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-24": [
+  "2020-10-25": [
     {
       "Country": "China",
       "TotalCases": 85790,
@@ -7966,7 +7968,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-25": [
+  "2020-10-26": [
     {
       "Country": "China",
       "TotalCases": 85810,
@@ -7996,7 +7998,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-26": [
+  "2020-10-27": [
     {
       "Country": "China",
       "TotalCases": 85826,
@@ -8026,7 +8028,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-27": [
+  "2020-10-28": [
     {
       "Country": "China",
       "TotalCases": 85868,
@@ -8056,7 +8058,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-10-28": [
+  "2020-10-29": [
     {
       "Country": "China",
       "TotalCases": 85915,
@@ -8086,7 +8088,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-29": [
+  "2020-10-30": [
     {
       "Country": "China",
       "TotalCases": 85940,
@@ -8116,7 +8118,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-30": [
+  "2020-10-31": [
     {
       "Country": "China",
       "TotalCases": 85973,
@@ -8146,7 +8148,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-10-31": [
+  "2020-11-01": [
     {
       "Country": "China",
       "TotalCases": 85997,
@@ -8176,7 +8178,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-01": [
+  "2020-11-02": [
     {
       "Country": "China",
       "TotalCases": 86021,
@@ -8206,7 +8208,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-02": [
+  "2020-11-03": [
     {
       "Country": "China",
       "TotalCases": 86070,
@@ -8236,7 +8238,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-11-03": [
+  "2020-11-04": [
     {
       "Country": "China",
       "TotalCases": 86087,
@@ -8266,7 +8268,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-04": [
+  "2020-11-05": [
     {
       "Country": "China",
       "TotalCases": 86115,
@@ -8296,7 +8298,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-05": [
+  "2020-11-06": [
     {
       "Country": "China",
       "TotalCases": 86151,
@@ -8326,7 +8328,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-06": [
+  "2020-11-07": [
     {
       "Country": "China",
       "TotalCases": 86184,
@@ -8356,7 +8358,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-07": [
+  "2020-11-08": [
     {
       "Country": "China",
       "TotalCases": 86212,
@@ -8386,7 +8388,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-08": [
+  "2020-11-09": [
     {
       "Country": "China",
       "TotalCases": 86245,
@@ -8416,7 +8418,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-09": [
+  "2020-11-10": [
     {
       "Country": "China",
       "TotalCases": 86267,
@@ -8446,7 +8448,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-11-10": [
+  "2020-11-11": [
     {
       "Country": "China",
       "TotalCases": 86284,
@@ -8476,7 +8478,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-11": [
+  "2020-11-12": [
     {
       "Country": "China",
       "TotalCases": 86299,
@@ -8506,7 +8508,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-12": [
+  "2020-11-13": [
     {
       "Country": "China",
       "TotalCases": 86307,
@@ -8536,7 +8538,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-11-13": [
+  "2020-11-14": [
     {
       "Country": "China",
       "TotalCases": 86325,
@@ -8566,7 +8568,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-14": [
+  "2020-11-15": [
     {
       "Country": "China",
       "TotalCases": 86338,
@@ -8596,7 +8598,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-15": [
+  "2020-11-16": [
     {
       "Country": "China",
       "TotalCases": 86346,
@@ -8626,7 +8628,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-16": [
+  "2020-11-17": [
     {
       "Country": "China",
       "TotalCases": 86361,
@@ -8656,7 +8658,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-17": [
+  "2020-11-18": [
     {
       "Country": "China",
       "TotalCases": 86369,
@@ -8686,7 +8688,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-11-18": [
+  "2020-11-19": [
     {
       "Country": "China",
       "TotalCases": 86381,
@@ -8716,7 +8718,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-19": [
+  "2020-11-20": [
     {
       "Country": "China",
       "TotalCases": 86398,
@@ -8746,7 +8748,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-20": [
+  "2020-11-21": [
     {
       "Country": "China",
       "TotalCases": 86414,
@@ -8776,7 +8778,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-21": [
+  "2020-11-22": [
     {
       "Country": "China",
       "TotalCases": 86431,
@@ -8806,7 +8808,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-22": [
+  "2020-11-23": [
     {
       "Country": "China",
       "TotalCases": 86442,
@@ -8836,7 +8838,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-23": [
+  "2020-11-24": [
     {
       "Country": "China",
       "TotalCases": 86464,
@@ -8866,7 +8868,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-24": [
+  "2020-11-25": [
     {
       "Country": "China",
       "TotalCases": 86469,
@@ -8896,7 +8898,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-25": [
+  "2020-11-26": [
     {
       "Country": "China",
       "TotalCases": 86490,
@@ -8926,7 +8928,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-26": [
+  "2020-11-27": [
     {
       "Country": "China",
       "TotalCases": 86495,
@@ -8956,7 +8958,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-27": [
+  "2020-11-28": [
     {
       "Country": "China",
       "TotalCases": 86501,
@@ -8986,7 +8988,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-28": [
+  "2020-11-29": [
     {
       "Country": "China",
       "TotalCases": 86512,
@@ -9016,7 +9018,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-29": [
+  "2020-11-30": [
     {
       "Country": "China",
       "TotalCases": 86530,
@@ -9046,7 +9048,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-11-30": [
+  "2020-12-01": [
     {
       "Country": "China",
       "TotalCases": 86542,
@@ -9076,7 +9078,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-01": [
+  "2020-12-02": [
     {
       "Country": "China",
       "TotalCases": 86551,
@@ -9106,7 +9108,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-12-02": [
+  "2020-12-03": [
     {
       "Country": "China",
       "TotalCases": 86567,
@@ -9136,7 +9138,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-03": [
+  "2020-12-04": [
     {
       "Country": "China",
       "TotalCases": 86584,
@@ -9166,7 +9168,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-04": [
+  "2020-12-05": [
     {
       "Country": "China",
       "TotalCases": 86601,
@@ -9196,7 +9198,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-05": [
+  "2020-12-06": [
     {
       "Country": "China",
       "TotalCases": 86619,
@@ -9226,7 +9228,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-06": [
+  "2020-12-07": [
     {
       "Country": "China",
       "TotalCases": 86634,
@@ -9256,7 +9258,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-07": [
+  "2020-12-08": [
     {
       "Country": "China",
       "TotalCases": 86646,
@@ -9286,7 +9288,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-12-08": [
+  "2020-12-09": [
     {
       "Country": "China",
       "TotalCases": 86661,
@@ -9316,7 +9318,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-09": [
+  "2020-12-10": [
     {
       "Country": "China",
       "TotalCases": 86673,
@@ -9346,7 +9348,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-10": [
+  "2020-12-11": [
     {
       "Country": "China",
       "TotalCases": 86688,
@@ -9376,7 +9378,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-11": [
+  "2020-12-12": [
     {
       "Country": "China",
       "TotalCases": 86701,
@@ -9406,7 +9408,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-12": [
+  "2020-12-13": [
     {
       "Country": "China",
       "TotalCases": 86725,
@@ -9436,7 +9438,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-13": [
+  "2020-12-14": [
     {
       "Country": "China",
       "TotalCases": 86741,
@@ -9466,7 +9468,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-14": [
+  "2020-12-15": [
     {
       "Country": "China",
       "TotalCases": 86758,
@@ -9496,7 +9498,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-15": [
+  "2020-12-16": [
     {
       "Country": "China",
       "TotalCases": 86770,
@@ -9526,7 +9528,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-12-16": [
+  "2020-12-17": [
     {
       "Country": "China",
       "TotalCases": 86777,
@@ -9556,7 +9558,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-17": [
+  "2020-12-18": [
     {
       "Country": "China",
       "TotalCases": 86789,
@@ -9586,7 +9588,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-18": [
+  "2020-12-19": [
     {
       "Country": "China",
       "TotalCases": 86806,
@@ -9616,7 +9618,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-19": [
+  "2020-12-20": [
     {
       "Country": "China",
       "TotalCases": 86829,
@@ -9646,7 +9648,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-20": [
+  "2020-12-21": [
     {
       "Country": "China",
       "TotalCases": 86852,
@@ -9676,7 +9678,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-21": [
+  "2020-12-22": [
     {
       "Country": "China",
       "TotalCases": 86867,
@@ -9706,7 +9708,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-22": [
+  "2020-12-23": [
     {
       "Country": "China",
       "TotalCases": 86882,
@@ -9736,7 +9738,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-23": [
+  "2020-12-24": [
     {
       "Country": "China",
       "TotalCases": 86899,
@@ -9766,7 +9768,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-24": [
+  "2020-12-25": [
     {
       "Country": "China",
       "TotalCases": 86913,
@@ -9796,7 +9798,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-25": [
+  "2020-12-26": [
     {
       "Country": "China",
       "TotalCases": 86933,
@@ -9826,7 +9828,7 @@
       "NewDeath": 1
     }
   ],
-  "2020-12-26": [
+  "2020-12-27": [
     {
       "Country": "Kyrgyzstan",
       "TotalCases": 80373,
@@ -9856,7 +9858,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-27": [
+  "2020-12-28": [
     {
       "Country": "Kyrgyzstan",
       "TotalCases": 80535,
@@ -9886,7 +9888,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-28": [
+  "2020-12-29": [
     {
       "Country": "Kyrgyzstan",
       "TotalCases": 80654,
@@ -9916,7 +9918,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-29": [
+  "2020-12-30": [
     {
       "Country": "Kyrgyzstan",
       "TotalCases": 80843,
@@ -9946,7 +9948,7 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-30": [
+  "2020-12-31": [
     {
       "Country": "Kyrgyzstan",
       "TotalCases": 81034,
@@ -9976,7 +9978,6 @@
       "NewDeath": 0
     }
   ],
-  "2020-12-31": [],
   "2021-01-01": [
     {
       "Country": "Kyrgyzstan",
@@ -17887,20 +17888,6 @@
       "NewDeath": 2
     },
     {
-      "Country": "Afghanistan",
-      "TotalCases": 155239,
-      "NewCases": 48,
-      "TotalDeath": 7211,
-      "NewDeath": 5
-    },
-    {
-      "Country": "Benin",
-      "TotalCases": 23890,
-      "NewCases": 0,
-      "TotalDeath": 159,
-      "NewDeath": 0
-    },
-    {
       "Country": "Benin",
       "TotalCases": 23890,
       "NewCases": 0,
@@ -17915,6 +17902,29 @@
       "NewDeath": 2
     },
     {
+      "Country": "Tajikistan",
+      "TotalCases": 17084,
+      "NewCases": 0,
+      "TotalDeath": 124,
+      "NewDeath": 0
+    }
+  ],
+  "2021-10-01": [
+    {
+      "Country": "Afghanistan",
+      "TotalCases": 155239,
+      "NewCases": 48,
+      "TotalDeath": 7211,
+      "NewDeath": 5
+    },
+    {
+      "Country": "Benin",
+      "TotalCases": 23890,
+      "NewCases": 0,
+      "TotalDeath": 159,
+      "NewDeath": 0
+    },
+    {
       "Country": "Kyrgyzstan",
       "TotalCases": 178608,
       "NewCases": 76,
@@ -17927,16 +17937,9 @@
       "NewCases": 0,
       "TotalDeath": 124,
       "NewDeath": 0
-    },
-    {
-      "Country": "Tajikistan",
-      "TotalCases": 17084,
-      "NewCases": 0,
-      "TotalDeath": 124,
-      "NewDeath": 0
     }
   ],
-  "2021-10-01": [
+  "2021-10-02": [
     {
       "Country": "Afghanistan",
       "TotalCases": 155263,
@@ -17966,7 +17969,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-02": [
+  "2021-10-03": [
     {
       "Country": "Benin",
       "TotalCases": 23890,
@@ -17996,7 +17999,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-03": [
+  "2021-10-04": [
     {
       "Country": "Benin",
       "TotalCases": 23890,
@@ -18026,7 +18029,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-04": [
+  "2021-10-05": [
     {
       "Country": "Benin",
       "TotalCases": 23890,
@@ -18056,7 +18059,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-05": [
+  "2021-10-06": [
     {
       "Country": "Benin",
       "TotalCases": 24335,
@@ -18086,7 +18089,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-06": [
+  "2021-10-07": [
     {
       "Country": "Benin",
       "TotalCases": 24335,
@@ -18116,7 +18119,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-07": [
+  "2021-10-08": [
     {
       "Country": "Benin",
       "TotalCases": 24335,
@@ -18146,7 +18149,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-08": [
+  "2021-10-09": [
     {
       "Country": "Benin",
       "TotalCases": 24335,
@@ -18176,7 +18179,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-09": [
+  "2021-10-10": [
     {
       "Country": "Benin",
       "TotalCases": 24335,
@@ -18206,7 +18209,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-10": [
+  "2021-10-11": [
     {
       "Country": "Benin",
       "TotalCases": 24335,
@@ -18236,7 +18239,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-11": [
+  "2021-10-12": [
     {
       "Country": "Benin",
       "TotalCases": 24335,
@@ -18266,7 +18269,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-12": [
+  "2021-10-13": [
     {
       "Country": "Benin",
       "TotalCases": 24560,
@@ -18296,7 +18299,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-13": [
+  "2021-10-14": [
     {
       "Country": "Benin",
       "TotalCases": 24560,
@@ -18326,7 +18329,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-14": [
+  "2021-10-15": [
     {
       "Country": "Benin",
       "TotalCases": 24560,
@@ -18356,7 +18359,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-15": [
+  "2021-10-16": [
     {
       "Country": "Benin",
       "TotalCases": 24560,
@@ -18386,7 +18389,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-16": [
+  "2021-10-17": [
     {
       "Country": "Benin",
       "TotalCases": 24560,
@@ -18416,7 +18419,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-17": [
+  "2021-10-18": [
     {
       "Country": "Benin",
       "TotalCases": 24560,
@@ -18446,7 +18449,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-18": [
+  "2021-10-19": [
     {
       "Country": "Benin",
       "TotalCases": 24560,
@@ -18476,7 +18479,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-19": [
+  "2021-10-20": [
     {
       "Country": "Benin",
       "TotalCases": 24560,
@@ -18506,7 +18509,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-20": [
+  "2021-10-21": [
     {
       "Country": "Benin",
       "TotalCases": 24560,
@@ -18536,7 +18539,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-21": [
+  "2021-10-22": [
     {
       "Country": "Benin",
       "TotalCases": 24560,
@@ -18566,7 +18569,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-22": [
+  "2021-10-23": [
     {
       "Country": "Benin",
       "TotalCases": 24560,
@@ -18596,7 +18599,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-23": [
+  "2021-10-24": [
     {
       "Country": "Benin",
       "TotalCases": 24560,
@@ -18626,7 +18629,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-24": [
+  "2021-10-25": [
     {
       "Country": "Benin",
       "TotalCases": 24678,
@@ -18656,7 +18659,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-25": [
+  "2021-10-26": [
     {
       "Country": "Benin",
       "TotalCases": 24678,
@@ -18686,7 +18689,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-26": [
+  "2021-10-27": [
     {
       "Country": "Benin",
       "TotalCases": 24749,
@@ -18716,7 +18719,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-27": [
+  "2021-10-28": [
     {
       "Country": "Benin",
       "TotalCases": 24749,
@@ -18746,7 +18749,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-28": [
+  "2021-10-29": [
     {
       "Country": "Benin",
       "TotalCases": 24749,
@@ -18776,7 +18779,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-29": [
+  "2021-10-30": [
     {
       "Country": "Benin",
       "TotalCases": 24749,
@@ -18806,7 +18809,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-30": [
+  "2021-10-31": [
     {
       "Country": "Benin",
       "TotalCases": 24749,
@@ -18836,7 +18839,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-10-31": [
+  "2021-11-01": [
     {
       "Country": "Benin",
       "TotalCases": 24749,
@@ -18866,7 +18869,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-01": [
+  "2021-11-02": [
     {
       "Country": "Benin",
       "TotalCases": 24749,
@@ -18896,7 +18899,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-02": [
+  "2021-11-03": [
     {
       "Country": "Benin",
       "TotalCases": 24804,
@@ -18926,7 +18929,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-03": [
+  "2021-11-04": [
     {
       "Country": "Benin",
       "TotalCases": 24804,
@@ -18956,7 +18959,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-04": [
+  "2021-11-05": [
     {
       "Country": "Benin",
       "TotalCases": 24804,
@@ -18986,7 +18989,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-05": [
+  "2021-11-06": [
     {
       "Country": "Benin",
       "TotalCases": 24804,
@@ -19016,7 +19019,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-06": [
+  "2021-11-07": [
     {
       "Country": "Benin",
       "TotalCases": 24804,
@@ -19046,7 +19049,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-07": [
+  "2021-11-08": [
     {
       "Country": "Benin",
       "TotalCases": 24804,
@@ -19076,7 +19079,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-08": [
+  "2021-11-09": [
     {
       "Country": "Benin",
       "TotalCases": 24804,
@@ -19106,7 +19109,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-09": [
+  "2021-11-10": [
     {
       "Country": "Benin",
       "TotalCases": 24833,
@@ -19136,7 +19139,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-10": [
+  "2021-11-11": [
     {
       "Country": "Benin",
       "TotalCases": 24833,
@@ -19166,7 +19169,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-11": [
+  "2021-11-12": [
     {
       "Country": "Benin",
       "TotalCases": 24833,
@@ -19196,7 +19199,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-12": [
+  "2021-11-13": [
     {
       "Country": "Benin",
       "TotalCases": 24833,
@@ -19226,7 +19229,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-13": [
+  "2021-11-14": [
     {
       "Country": "Benin",
       "TotalCases": 24833,
@@ -19256,7 +19259,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-14": [
+  "2021-11-15": [
     {
       "Country": "Benin",
       "TotalCases": 24833,
@@ -19286,7 +19289,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-15": [
+  "2021-11-16": [
     {
       "Country": "Benin",
       "TotalCases": 24833,
@@ -19316,7 +19319,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-16": [
+  "2021-11-17": [
     {
       "Country": "Benin",
       "TotalCases": 24833,
@@ -19346,7 +19349,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-17": [
+  "2021-11-18": [
     {
       "Country": "Benin",
       "TotalCases": 24846,
@@ -19376,7 +19379,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-18": [
+  "2021-11-19": [
     {
       "Country": "Benin",
       "TotalCases": 24846,
@@ -19406,7 +19409,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-19": [
+  "2021-11-20": [
     {
       "Country": "Benin",
       "TotalCases": 24846,
@@ -19436,7 +19439,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-20": [
+  "2021-11-21": [
     {
       "Country": "Benin",
       "TotalCases": 24846,
@@ -19466,7 +19469,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-21": [
+  "2021-11-22": [
     {
       "Country": "Benin",
       "TotalCases": 24846,
@@ -19496,7 +19499,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-22": [
+  "2021-11-23": [
     {
       "Country": "Benin",
       "TotalCases": 24846,
@@ -19526,7 +19529,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-23": [
+  "2021-11-24": [
     {
       "Country": "Benin",
       "TotalCases": 24850,
@@ -19556,7 +19559,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-24": [
+  "2021-11-25": [
     {
       "Country": "Benin",
       "TotalCases": 24850,
@@ -19586,7 +19589,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-25": [
+  "2021-11-26": [
     {
       "Country": "Benin",
       "TotalCases": 24850,
@@ -19616,7 +19619,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-26": [
+  "2021-11-27": [
     {
       "Country": "Benin",
       "TotalCases": 24850,
@@ -19646,7 +19649,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-27": [
+  "2021-11-28": [
     {
       "Country": "Benin",
       "TotalCases": 24850,
@@ -19676,7 +19679,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-28": [
+  "2021-11-29": [
     {
       "Country": "Benin",
       "TotalCases": 24850,
@@ -19706,7 +19709,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-29": [
+  "2021-11-30": [
     {
       "Country": "Benin",
       "TotalCases": 24850,
@@ -19736,7 +19739,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-11-30": [
+  "2021-12-01": [
     {
       "Country": "Benin",
       "TotalCases": 24863,
@@ -19766,7 +19769,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-01": [
+  "2021-12-02": [
     {
       "Country": "Benin",
       "TotalCases": 24863,
@@ -19796,7 +19799,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-02": [
+  "2021-12-03": [
     {
       "Country": "Benin",
       "TotalCases": 24863,
@@ -19826,7 +19829,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-03": [
+  "2021-12-04": [
     {
       "Country": "Benin",
       "TotalCases": 24863,
@@ -19856,7 +19859,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-04": [
+  "2021-12-05": [
     {
       "Country": "Benin",
       "TotalCases": 24863,
@@ -19886,7 +19889,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-05": [
+  "2021-12-06": [
     {
       "Country": "Benin",
       "TotalCases": 24863,
@@ -19916,7 +19919,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-06": [
+  "2021-12-07": [
     {
       "Country": "Benin",
       "TotalCases": 24863,
@@ -19946,7 +19949,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-07": [
+  "2021-12-08": [
     {
       "Country": "Benin",
       "TotalCases": 24863,
@@ -19976,7 +19979,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-08": [
+  "2021-12-09": [
     {
       "Country": "Benin",
       "TotalCases": 24897,
@@ -20006,7 +20009,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-09": [
+  "2021-12-10": [
     {
       "Country": "Benin",
       "TotalCases": 24897,
@@ -20036,7 +20039,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-10": [
+  "2021-12-11": [
     {
       "Country": "Benin",
       "TotalCases": 24897,
@@ -20066,7 +20069,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-11": [
+  "2021-12-12": [
     {
       "Country": "Benin",
       "TotalCases": 24897,
@@ -20096,7 +20099,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-12": [
+  "2021-12-13": [
     {
       "Country": "Benin",
       "TotalCases": 24897,
@@ -20126,7 +20129,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-13": [
+  "2021-12-14": [
     {
       "Country": "Benin",
       "TotalCases": 24897,
@@ -20156,7 +20159,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-14": [
+  "2021-12-15": [
     {
       "Country": "Benin",
       "TotalCases": 24907,
@@ -20186,7 +20189,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-15": [
+  "2021-12-16": [
     {
       "Country": "Benin",
       "TotalCases": 24907,
@@ -20216,7 +20219,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-16": [
+  "2021-12-17": [
     {
       "Country": "Benin",
       "TotalCases": 24907,
@@ -20246,7 +20249,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-17": [
+  "2021-12-18": [
     {
       "Country": "Benin",
       "TotalCases": 24907,
@@ -20276,7 +20279,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-18": [
+  "2021-12-19": [
     {
       "Country": "Benin",
       "TotalCases": 24907,
@@ -20306,7 +20309,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-19": [
+  "2021-12-20": [
     {
       "Country": "Benin",
       "TotalCases": 24907,
@@ -20336,7 +20339,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-20": [
+  "2021-12-21": [
     {
       "Country": "Benin",
       "TotalCases": 24907,
@@ -20366,7 +20369,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-21": [
+  "2021-12-22": [
     {
       "Country": "Benin",
       "TotalCases": 24935,
@@ -20396,7 +20399,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-22": [
+  "2021-12-23": [
     {
       "Country": "Benin",
       "TotalCases": 24935,
@@ -20426,7 +20429,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-23": [
+  "2021-12-24": [
     {
       "Country": "Benin",
       "TotalCases": 24935,
@@ -20456,7 +20459,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-24": [
+  "2021-12-25": [
     {
       "Country": "Benin",
       "TotalCases": 24935,
@@ -20486,7 +20489,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-25": [
+  "2021-12-26": [
     {
       "Country": "Benin",
       "TotalCases": 24935,
@@ -20516,7 +20519,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-26": [
+  "2021-12-27": [
     {
       "Country": "Benin",
       "TotalCases": 24935,
@@ -20546,7 +20549,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-27": [
+  "2021-12-28": [
     {
       "Country": "Benin",
       "TotalCases": 24935,
@@ -20576,7 +20579,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-28": [
+  "2021-12-29": [
     {
       "Country": "Benin",
       "TotalCases": 24935,
@@ -20606,7 +20609,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-29": [
+  "2021-12-30": [
     {
       "Country": "Benin",
       "TotalCases": 24935,
@@ -20636,7 +20639,7 @@
       "NewDeath": 0
     }
   ],
-  "2021-12-30": [
+  "2021-12-31": [
     {
       "Country": "Benin",
       "TotalCases": 24935,
@@ -24524,5 +24527,6 @@
       "TotalDeath": 8623,
       "NewDeath": 0
     }
-  ]
+  ],
+  "2022-05-15": []
 }
