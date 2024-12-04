@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
-import { select, geoPath, geoMercator, zoom } from "d3";
+import { select, geoPath, geoCentroid, geoMercator, zoom } from "d3";
 import globalMapData from './global_map_data.json';
 
 function extractCovidData(globalMapData) {
@@ -139,6 +139,11 @@ function GeoChart({ data, dimensions }) {
       .attr("stroke-width", 0.5)
       .attr("d", (feature) => pathGenerator(feature));
 
+    const europeanCountries = [
+      "Austria", "Belgium", "Croatia", "Denmark", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland",
+      "Italy", "Netherlands", "Norway", "Poland", "Portugal", "Spain", "Sweden", "Switzerland", "United Kingdom"
+    ];
+
     // Overlay shaded regions and add click functionality
     mapGroup
       .selectAll(".red-fill")
@@ -161,7 +166,7 @@ function GeoChart({ data, dimensions }) {
         //console.log(`Country: ${feature.properties.name}, ClipPath Reference: ${clipPathReference}`);
         return clipPathReference;
       });
-    
+
     mapGroup
       .selectAll(".country-border")
       .data(data.features)
@@ -171,6 +176,41 @@ function GeoChart({ data, dimensions }) {
       .attr("stroke", "black")
       .attr("stroke-width", 0.5)
       .attr("d", (feature) => pathGenerator(feature));
+
+    const labels = mapGroup.selectAll(".country-label-group")
+      .data(data.features.filter((feature) => europeanCountries.includes(feature.properties.name)))
+      .join("g")
+      .attr("class", "country-label-group")
+      .attr("transform", (feature) => {
+        const [x,y] = projection(d3.geoCentroid(feature));
+        return `translate(${x},${y})`;
+      });
+
+    labels.append("text")
+      .attr("class", "country-label")
+      .attr("text-anchor", "middle")
+      .attr("dy", "0.35em")
+      .style("font-size", "3px")
+      .style("fill", "black")
+      .style("font-weight", "bold")
+      .text((feature) => feature.properties.name);
+
+    labels.append("rect")
+      .attr("x", function() {
+        return this.parentNode.querySelector("text").getBBox().x;
+      })
+      .attr("y", function() {
+        return this.parentNode.querySelector("text").getBBox().y;
+      })
+      .attr("width", function() {
+        return this.parentNode.querySelector("text").getBBox().width;
+      })
+      .attr("height", function() {
+        return this.parentNode.querySelector("text").getBBox().height;
+      })
+      .style("fill", "white")
+      .style("opacity", 0.7)
+      .lower();
 
     const zoomBehavior = zoom()
       .scaleExtent([1,8])
@@ -185,11 +225,11 @@ function GeoChart({ data, dimensions }) {
 
     svg.call(zoomBehavior);
 
-    const europeCenter = projection([10, 55]);
-    const zoomScale = 3;
+    const europeCenter = projection([25, 56]);
+    const zoomScale = 4;
 
     svg.transition()
-       .duration(700)
+       .duration(1000)
        .call(
         zoomBehavior.transform,
         d3.zoomIdentity
@@ -205,7 +245,8 @@ function GeoChart({ data, dimensions }) {
     const interval = setInterval(() => {
       if (isPlaying && animationIndex < dates.length - 1) {
         setAnimationIndex((prevIndex) => prevIndex + 1);
-        setSelectedDate(dates[animationIndex]);
+        const newDate = dates[animationIndex];
+        setSelectedDate(newDate);
       } else if (isPlaying && animationIndex === dates.length - 1) {
         setIsPlaying(false);
       }
@@ -214,10 +255,42 @@ function GeoChart({ data, dimensions }) {
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, [isPlaying, animationIndex, dates]);
 
+  const buGnColors = [
+    d3.interpolateBuGn(0.0),
+    d3.interpolateBuGn(0.5),
+    d3.interpolateBuGn(0.8),
+  ];
+
+  const timelineStyle = {
+    flex: 0.85,
+    margin: "0 10px",
+    appearance: "none", 
+    height: "8px", 
+    borderRadius: "4px",
+    background: `linear-gradient(to right, ${buGnColors[0]} 11.86%, ${buGnColors[1]} 73.31%, ${buGnColors[2]} 100%)`,
+    outline: "none",
+  };
+
   return (
     <div ref={wrapperRef}>
-      <svg ref={svgRef} style={{ width: "100%", height: "70vh" }}></svg>
-      <div style={{ marginTop: "10px", textAlign: "center" }}>
+      <svg ref={svgRef} style={{ width: "90%", height: "80vh" }}></svg>
+      <div style={{ display: "flex", alignItems: "center", marginTop: "10px" }}>
+        <button onClick={() => setIsPlaying(!isPlaying)}>
+          {isPlaying ? "Pause" : "Play"}
+        </button>
+        <input
+          type="range"
+          min="0"
+          max={dates.length - 1}
+          value={animationIndex}
+          onChange={(e) => {
+            const index = Number(e.target.value);
+            setAnimationIndex(index);
+            const newDate = dates[index];
+            setSelectedDate(newDate);
+          }}
+          style={timelineStyle}
+        />
         <span>{selectedDate}</span>
         <span style={{ marginLeft: "10px", fontWeight: "bold" }}>
           {getWave(selectedDate)}

@@ -53,7 +53,7 @@ function EconomyChart({ data }) {
     const renderMonthlyChart = useCallback(() => {
         if (detailedData && selectedCountry && selectedWave) {
             const margin = { top: 40, right: 60, bottom: 40, left: 60 };
-            const width = 1800 - margin.left - margin.right;
+            const width = 1450 - margin.left - margin.right;
             const height = 500 - margin.top - margin.bottom;
 
             d3.select(svgRef.current).selectAll('*').remove();
@@ -188,7 +188,7 @@ function EconomyChart({ data }) {
     const renderGroupedBarChart = useCallback(() => {
         if (chartData.length > 0) {
             const margin = { top: 40, right: 60, bottom: 40, left: 60 };
-            const width = 1800 - margin.left - margin.right;
+            const width = 1450 - margin.left - margin.right;
             const height = 500 - margin.top - margin.bottom;
 
             d3.select(svgRef.current).selectAll('*').remove();
@@ -298,10 +298,8 @@ function EconomyChart({ data }) {
                     setSelectedWave(d.wave);
                     setDetailedData(processedData);
                     setChartType('monthlyChart');
-
-                    // Pan out effect
-                    //panOut(svg, x0, d.country);
-                });
+                })
+                .style("cursor", "pointer");
             
             // Add country labels
             svg.append('g')
@@ -362,6 +360,7 @@ function EconomyChart({ data }) {
     useEffect(() => {
         if (chartType === 'monthlyChart') {
             renderMonthlyChart();
+            
         } else if (chartType === 'groupedBarChart') {
             renderGroupedBarChart();
         }

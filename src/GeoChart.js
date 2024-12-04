@@ -295,7 +295,7 @@ function GeoChart({ data, dimensions, onCountryClick, onWaveChange, onDateChange
       {hoveredCountry && (
       <div
         style={{
-          position: "absolute",
+          position: "relative",
           pointerEvents: "none", // Ensure the tooltip does not block interactions
           top: "10px",
           left: "50%",
