@@ -9,12 +9,18 @@ import raisingBarData from './bar_chart_raising_data.json';
 import LineChart from "./LineChart";
 import EconomyBar from "./EconomyBarChart";
 import EuropeGeoChart from "./EuropeGeoChart";
+import EuropeTotalCaseLine from "./EuropeTotalCase";
+import EuropeTotalDeathLine from "./EuropeTotalDeaths";
 import "./App.css";
 
 function App() {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedWave, setSelectedWave] = useState(null);
   const [selectedDate, setSelectedDate] = useState("2020-01-22");
+  const europeanCountries = [
+    "Austria", "Belgium", "Croatia", "Denmark", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland",
+    "Italy", "Netherlands", "Norway", "Poland", "Portugal", "Spain", "Sweden", "Switzerland", "United Kingdom"
+  ];
 
   const handleCountryClick = (country) => {
     setSelectedCountry(country);
@@ -29,7 +35,7 @@ function App() {
   }
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{ padding: "20px 100px" }}>
       {/* Main Title */}
       <header style={{ fontFamily: "Roboto, sans-serif", textAlign: "center", marginBottom: "10px", fontWeight: "bold" }}>
         <h1>Impact of COVID-19 Across the World, Across the Waves</h1>
@@ -76,8 +82,32 @@ function App() {
             The European region experienced significant challenges during the COVID-19 pandemic. Countries like Italy and Spain were among the hardest hit during the initial waves, while others managed better containment strategies. This visualization highlights the variations in impact across different countries in Europe.
           </p>
         </div>
-        <div>
+        <div className="euro-chart-container">
           <EuropeGeoChart data={data}/>
+        </div>
+      </section>
+
+      {/* European countries TotalCases Line Chart */}
+      <section style={{ marginBottom: "40px" }}>
+        <div>
+          <h3 style={{ fontFamily:"Roboto, sans-serif" }}>How the European countries experienced different peaks of Total Cases</h3>
+        </div>
+        <div>
+          <EuropeTotalCaseLine 
+            europeanCountries={europeanCountries}
+            globalMapData={lineData}/>
+        </div>
+      </section>
+
+      {/* European countries TotalDeaths Line Chart */}
+      <section style={{ marginBottom: "40px" }}>
+      <div>
+          <h3 style={{ fontFamily:"Roboto, sans-serif" }}>How the European countries experienced different peaks of Total Deaths</h3>
+        </div>
+        <div>
+          <EuropeTotalDeathLine
+          europeanCountries={europeanCountries}
+          globalMapData={lineData}/>
         </div>
       </section>
 

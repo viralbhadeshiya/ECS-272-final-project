@@ -17,7 +17,7 @@ function MultiLineChart({ europeanCountries, globalMapData }) {
             if (countryInfo) {
                 acc.push({
                     date: new Date(currentDate.setDate(currentDate.getDate() + 1)),
-                    totalCases: countryInfo.TotalCases,
+                    totalDeaths: countryInfo.TotalDeath,
                 });
             }
             return acc;
@@ -50,7 +50,7 @@ function MultiLineChart({ europeanCountries, globalMapData }) {
                     .range([0, width]);
 
                 const y = d3.scaleLinear()
-                    .domain([0, d3.max(lineChartData, (d) => d.totalCases)])
+                    .domain([0, d3.max(lineChartData, (d) => d.totalDeaths)])
                     .range([height, 0]);
 
                 const xAxis = d3.axisBottom(x)
@@ -74,7 +74,7 @@ function MultiLineChart({ europeanCountries, globalMapData }) {
                         "d",
                         d3.line()
                             .x((d) => x(d.date))
-                            .y((d) => y(d.totalCases))
+                            .y((d) => y(d.totalDeaths))
                     );
     
                 svg.append("text")

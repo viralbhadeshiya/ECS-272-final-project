@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
-import { select, geoPath, geoCentroid, geoMercator, zoom } from "d3";
+import { select, geoPath, geoMercator, zoom } from "d3";
 import globalMapData from './global_map_data.json';
 
 function extractCovidData(globalMapData) {
@@ -36,7 +36,7 @@ const getWave = (selectedDate) => {
   }
 };
 
-function GeoChart({ data, dimensions }) {
+function EuropeGeoChart({ data, dimensions }) {
   const svgRef = useRef();
   const wrapperRef = useRef();
   const [selectedDate, setSelectedDate] = useState("2020-01-22"); // Default date
@@ -70,25 +70,25 @@ function GeoChart({ data, dimensions }) {
     const pathGenerator = geoPath().projection(projection);
 
     // Append a group to contain all map elements (for zooming)
-    const mapGroup = svg
+    const euroGroup = svg
       .selectAll("g.map-group")
       .data([null])
       .join("g")
       .attr("class", "map-group");
 
-    const clipPaths = svg
+    const euroPaths = svg
       .append("defs")
       .selectAll("clipPath")
       .data(data.features)
       .join("clipPath")
       .attr("id", (feature) => {
         const sanitizedName = feature.properties.name.replace(/[^a-zA-Z0-9]/g, "_");
-        const id = `clip-${sanitizedName}`;
+        const id = `id-${sanitizedName}`;
         //console.log(`Generated clipPath ID: ${id}`);
         return id;
       });
 
-    clipPaths.selectAll("rect")
+    euroPaths.selectAll("rect")
       .data((feature) => [feature])
       .join("rect")
       .attr("x", (feature) => pathGenerator.bounds(feature)[0][0])
@@ -129,7 +129,7 @@ function GeoChart({ data, dimensions }) {
       });
 
     // Render base map
-    mapGroup
+    euroGroup
       .selectAll(".country")
       .data(data.features)
       .join("path")
@@ -145,7 +145,7 @@ function GeoChart({ data, dimensions }) {
     ];
 
     // Overlay shaded regions and add click functionality
-    mapGroup
+    euroGroup
       .selectAll(".red-fill")
       .data(data.features)
       .join("path")
@@ -162,12 +162,12 @@ function GeoChart({ data, dimensions }) {
       })
       .attr("clip-path", (feature) => {
         const sanitizedName = feature.properties.name.replace(/[^a-zA-Z0-9]/g, "_");
-        const clipPathReference = `url(#clip-${sanitizedName})`;
+        const clipPathReference = `url(#id-${sanitizedName})`;
         //console.log(`Country: ${feature.properties.name}, ClipPath Reference: ${clipPathReference}`);
         return clipPathReference;
       });
 
-    mapGroup
+    euroGroup
       .selectAll(".country-border")
       .data(data.features)
       .join("path")
@@ -177,7 +177,7 @@ function GeoChart({ data, dimensions }) {
       .attr("stroke-width", 0.5)
       .attr("d", (feature) => pathGenerator(feature));
 
-    const labels = mapGroup.selectAll(".country-label-group")
+    const labels = euroGroup.selectAll(".country-label-group")
       .data(data.features.filter((feature) => europeanCountries.includes(feature.properties.name)))
       .join("g")
       .attr("class", "country-label-group")
@@ -220,7 +220,7 @@ function GeoChart({ data, dimensions }) {
       ])
       .on("zoom", (event) => {
 
-        mapGroup.attr("transform", event.transform);
+        euroGroup.attr("transform", event.transform);
       });
 
     svg.call(zoomBehavior);
@@ -273,7 +273,7 @@ function GeoChart({ data, dimensions }) {
 
   return (
     <div ref={wrapperRef}>
-      <svg ref={svgRef} style={{ width: "90%", height: "80vh" }}></svg>
+      <svg ref={svgRef} id="europe-svg" style={{ width: "90%", height: "80vh" }}></svg>
       <div style={{ display: "flex", alignItems: "center", marginTop: "10px" }}>
         <button onClick={() => setIsPlaying(!isPlaying)}>
           {isPlaying ? "Pause" : "Play"}
@@ -300,4 +300,4 @@ function GeoChart({ data, dimensions }) {
   );
 }
 
-export default GeoChart;
+export default EuropeGeoChart;
