@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 
 
-function MultiLineChart({ europeanCountries, globalMapData }) {
+function MultiLineChart({ europeanCountries, globalMapData, onWaveChange }) {
     const chartRefs = useRef([]);
     const [selectedWave, setSelectedWave] = useState('wave1');
 
@@ -88,6 +88,7 @@ function MultiLineChart({ europeanCountries, globalMapData }) {
     }, [europeanCountries, selectedWave, globalMapData]);
 
     const handleWaveChange = (event) => {
+        onWaveChange(event.target.value);
         setSelectedWave(event.target.value);
     }
     

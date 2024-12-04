@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
 
-function MultiLineChart({ europeanCountries, globalMapData }) {
+function MultiLineChart({ europeanCountries, globalMapData, wave }) {
     const chartRefs = useRef([]);
-    const [selectedWave, setSelectedWave] = useState('wave1');
 
     const getWaveData = (country, wave, globalMapData) => {
         const waveData = globalMapData[wave];
@@ -30,7 +29,7 @@ function MultiLineChart({ europeanCountries, globalMapData }) {
     useEffect(() => {
         if (europeanCountries.length > 0 && globalMapData) {
             europeanCountries.forEach((country, index) => {
-                const lineChartData = getWaveData(country, selectedWave, globalMapData);
+                const lineChartData = getWaveData(country, wave, globalMapData);
 
                 const margin = { top: 20, right: 50, bottom: 55, left: 60 };
                 const width = 300 - margin.left - margin.right;
@@ -82,33 +81,13 @@ function MultiLineChart({ europeanCountries, globalMapData }) {
                     .attr("y", -10)
                     .attr("text-anchor", "middle")
                     .style("font-size", "12px")
-                    .text(`${country} - ${selectedWave}`);
+                    .text(`${country} - ${wave}`);
             });
         }
-    }, [europeanCountries, selectedWave, globalMapData]);
+    }, [europeanCountries, wave, globalMapData]);
 
-    const handleWaveChange = (event) => {
-        setSelectedWave(event.target.value);
-    }
-    
     return (
         <div>
-            <label>
-                Select Wave:
-                <select value={selectedWave} onChange={handleWaveChange} 
-                style={{
-                    fontSize: "15px",
-                    padding: "5px",
-                    height: "30px",
-                    borderRadius: "5px",
-                    marginBottom: "20px",
-                }}
-                >
-                    <option value="wave1"> Wave 1 </option>
-                    <option value="wave2"> Wave 2 </option>
-                    <option value="wave3"> Wave 3 </option>
-                </select>
-            </label>
             <div
             style={{
                 display: "grid",

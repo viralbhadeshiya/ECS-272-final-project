@@ -53,7 +53,7 @@ function EconomyChart({ data }) {
     const renderMonthlyChart = useCallback(() => {
         if (detailedData && selectedCountry && selectedWave) {
             const margin = { top: 40, right: 60, bottom: 40, left: 60 };
-            const width = 1250 - margin.left - margin.right;
+            const width = 1300 - margin.left - margin.right;
             const height = 500 - margin.top - margin.bottom;
 
             d3.select(svgRef.current).selectAll('*').remove();
@@ -67,7 +67,6 @@ function EconomyChart({ data }) {
                 
             const months = Object.keys(detailedData[selectedCountry]);
             const values = months.map(date => detailedData[selectedCountry][date][selectedMetric]);
-            console.log(values);
 
             const x = d3.scaleBand()
                 .domain(months)
@@ -188,7 +187,7 @@ function EconomyChart({ data }) {
     const renderGroupedBarChart = useCallback(() => {
         if (chartData.length > 0) {
             const margin = { top: 40, right: 60, bottom: 40, left: 60 };
-            const width = 1250 - margin.left - margin.right;
+            const width = 1300 - margin.left - margin.right;
             const height = 500 - margin.top - margin.bottom;
 
             d3.select(svgRef.current).selectAll('*').remove();

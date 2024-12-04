@@ -11,16 +11,22 @@ import EconomyBar from "./EconomyBarChart";
 import EuropeGeoChart from "./EuropeGeoChart";
 import EuropeTotalCaseLine from "./EuropeTotalCase";
 import EuropeTotalDeathLine from "./EuropeTotalDeaths";
+import EuropeBarChart from "./EuropeBarChart";
 import "./App.css";
 
 function App() {
   const [selectedCountry, setSelectedCountry] = useState(null);
+  const [europeWave, setEuropeWave] = useState('wave1');
   const [selectedWave, setSelectedWave] = useState(null);
   const [selectedDate, setSelectedDate] = useState("2020-01-22");
   const europeanCountries = [
     "Austria", "Belgium", "Croatia", "Denmark", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland",
     "Italy", "Netherlands", "Norway", "Poland", "Portugal", "Spain", "Sweden", "Switzerland", "United Kingdom"
   ];
+
+  const handleEuropeWaveChange = (newWave) => {
+    setEuropeWave(newWave);
+  }
 
   const handleCountryClick = (country) => {
     setSelectedCountry(country);
@@ -95,7 +101,8 @@ function App() {
         <div>
           <EuropeTotalCaseLine 
             europeanCountries={europeanCountries}
-            globalMapData={lineData}/>
+            globalMapData={lineData}
+            onWaveChange={handleEuropeWaveChange}/>
         </div>
       </section>
 
@@ -107,7 +114,18 @@ function App() {
         <div>
           <EuropeTotalDeathLine
           europeanCountries={europeanCountries}
-          globalMapData={lineData}/>
+          globalMapData={lineData}
+          wave={europeWave}/>
+        </div>
+      </section>
+
+      <section style={{ marginBottom: "40px" }}>
+        <div>
+          <h3 style={{ fontFamily:"Roboto, sans-serif" }}>Economical Impact on Europe</h3>
+        </div>
+        <div>
+          <EuropeBarChart
+          wave={europeWave}/>
         </div>
       </section>
 

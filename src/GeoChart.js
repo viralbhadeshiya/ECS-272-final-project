@@ -189,7 +189,7 @@ function GeoChart({ data, dimensions, onCountryClick, onWaveChange, onDateChange
       .attr("clip-path", (feature) => {
         const sanitizedName = feature.properties.name.replace(/[^a-zA-Z0-9]/g, "_");
         const clipPathReference = `url(#clip-${sanitizedName})`;
-        console.log(`Country: ${feature.properties.name}, ClipPath Reference: ${clipPathReference}`);
+        //console.log(`Country: ${feature.properties.name}, ClipPath Reference: ${clipPathReference}`);
         return clipPathReference;
       })
       .style("pointer-events", "none");
