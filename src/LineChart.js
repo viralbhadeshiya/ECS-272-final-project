@@ -34,8 +34,8 @@ function LineChart({ country, wave, globalMapData }) {
     // Line Chart
     useEffect(() => {
         if (lineChartData.length > 0) {
-            const margin = { top: 40, right: 30, bottom: 60, left: 60 };
-            const width = 800 - margin.left - margin.right;
+            const margin = { top: 40, right: 10, bottom: 60, left: 60 };
+            const width = 730 - margin.left - margin.right;
             const height = 500 - margin.top - margin.bottom;
 
             d3.select(svgRef.current).selectAll('*').remove();
