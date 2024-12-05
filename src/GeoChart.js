@@ -243,7 +243,7 @@ function GeoChart({ data, dimensions, onCountryClick, onWaveChange, onDateChange
       } else if (isPlaying && animationIndex === dates.length - 1) {
         setIsPlaying(false);
       }
-    }, 50); // Adjust the speed of the animation (50 ms per step)
+    }, 500); // Adjust the speed of the animation
 
     return () => clearInterval(interval); // Clean up the interval on component unmount
   }, [isPlaying, animationIndex, dates, onDateChange]);
