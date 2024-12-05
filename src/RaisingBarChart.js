@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
-const RaisingBarChart = ({ data, selectedDate }) => {
+const RaisingBarChart = ({ data, selectedDate, flagData }) => {
   const chartRef = useRef();
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const RaisingBarChart = ({ data, selectedDate }) => {
     const svg = d3.select(chartRef.current);
     const width = 600; // Larger width for better visibility
     const height = 400; // Larger height for better visibility
-    const margin = { top: 20, right: 30, bottom: 40, left: 150 };
+    const margin = { top: 20, right: 50, bottom: 40, left: 170 };
     const staticBarWidth = width - margin.left - margin.right;
 
     // Clear previous chart
@@ -31,11 +31,14 @@ const RaisingBarChart = ({ data, selectedDate }) => {
 
     const yAxis = d3.axisLeft(yScale);
 
-    // Add Y-axis
+    // Add Y-axis with larger font size for country names
     svg
       .append("g")
       .attr("transform", `translate(${margin.left}, 0)`)
-      .call(yAxis);
+      .call(yAxis)
+      .selectAll("text")
+      .style("font-size", "14px") // Increased font size
+      .style("font-weight", "bold");
 
     // Draw bars
     svg
@@ -49,13 +52,26 @@ const RaisingBarChart = ({ data, selectedDate }) => {
       .attr("height", yScale.bandwidth())
       .attr("fill", (d) => colorScale(d.Country)); // Color tied to country
 
+    // Add larger square flags at the right end of the bars
+    const flagSize = 40; // Increased size for square flags
+    svg
+      .selectAll(".flag")
+      .data(chartData)
+      .join("image")
+      .attr("class", "flag")
+      .attr("x", margin.left + staticBarWidth - flagSize) // Align to the right of the bar
+      .attr("y", (d) => yScale(d.Country) + (yScale.bandwidth() - flagSize) / 2) // Center vertically
+      .attr("width", flagSize)
+      .attr("height", flagSize)
+      .attr("xlink:href", (d) => flagData[d.Country]); // URL of the flag
+
     // Add table-like text inside bars
     svg
       .selectAll(".bar-text")
       .data(chartData)
       .join("g")
       .attr("class", "bar-text-group")
-      .attr("transform", (d) => `translate(${margin.left}, ${yScale(d.Country)})`)
+      .attr("transform", (d) => `translate(${margin.left + 10}, ${yScale(d.Country)})`)
       .each(function (d) {
         const group = d3.select(this);
 
@@ -70,7 +86,7 @@ const RaisingBarChart = ({ data, selectedDate }) => {
 
         group
           .append("text")
-          .attr("x", staticBarWidth / 2) // Right column
+          .attr("x", staticBarWidth / 2 - 70) // Adjust to fit text before the larger flag
           .attr("y", yScale.bandwidth() / 4) // First row
           .style("fill", "white")
           .style("font-size", "12px")
@@ -87,13 +103,13 @@ const RaisingBarChart = ({ data, selectedDate }) => {
 
         group
           .append("text")
-          .attr("x", staticBarWidth / 2) // Right column
+          .attr("x", staticBarWidth / 2 - 70) // Adjust to fit text before the larger flag
           .attr("y", (yScale.bandwidth() / 4) * 3) // Second row
           .style("fill", "white")
           .style("font-size", "12px")
           .text(`NewDeaths: ${d.NewDeath}`);
       });
-  }, [data, selectedDate]);
+  }, [data, selectedDate, flagData]);
 
   return <svg ref={chartRef} width="600" height="400"></svg>; // Updated dimensions
 };

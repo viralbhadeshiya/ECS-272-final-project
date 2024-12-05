@@ -343,6 +343,18 @@ const barRaisingChartData = async () => {
     console.log("Bar chart raising data is done");
 }
 
+const getListofCountry = async () => {
+    const dailyCovidData = await csvToJson().fromFile(dailyDataFile);
+    const country = [];
+    dailyCovidData.forEach(row => {
+        if(!country.includes(row.country)) {
+            country.push(row.country);
+        }
+    });
+
+    console.log("country list", JSON.stringify(country, null, 2));
+}
+
 // Invoke data funtions from here as needed
 (async () => {
     // Prepare global fraction data
@@ -364,5 +376,7 @@ const barRaisingChartData = async () => {
     // await createDataForBarGraph();
 
     // Generate Grouped Bar Chart (MONTHLY) for economy dataset
-    await createMonthlyDataForBarGraph();
+    // await createMonthlyDataForBarGraph();
+
+    await getListofCountry();
 })()

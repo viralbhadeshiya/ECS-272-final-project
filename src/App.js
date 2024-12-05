@@ -8,6 +8,7 @@ import RaisingBarChart from "./RaisingBarChart";
 import raisingBarData from './bar_chart_raising_data.json';
 import LineChart from "./LineChart";
 import EconomyBar from "./EconomyBarChart";
+import {flagData} from './flagData.js';
 import "./App.css";
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
           <RaisingBarChart
             data={raisingBarData}
             selectedDate={selectedDate}
+            flagData={flagData}
             />
         </div>
       </div>
