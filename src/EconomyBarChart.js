@@ -366,6 +366,9 @@ function EconomyChart({ data }) {
     },[chartType, renderMonthlyChart, renderGroupedBarChart]);
 
     const handleMetricChange = (e) => {
+        const processedData = getMetricDataForWave(selectedCountry, selectedWave, e.target.value);
+        setDetailedData(processedData);
+        setChartType('monthlyChart');
         setSelectedMetric(e.target.value);
     };
 

@@ -1,10 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
+import govData from './gov_reg_data.json';
+import vaccineImage from './vaccination.png';
+import homeImage from './home.webp';
 
 function LineChart({ country, wave, globalMapData }) {
     const [lineChartData, setLineChartData] = useState([]);
     const [selectedMetric, setSelectedMetric] = useState("totalCases");
+    const [policyType, setPolicyType] = useState("C6");
     const svgRef = useRef();
+    const tooltipRef = useRef();
 
     // Helper function to filter the data for the selected Country & Wave
     const getWaveData = (country, wave, globalMapData) => {
@@ -29,6 +34,16 @@ function LineChart({ country, wave, globalMapData }) {
         countryData.sort((a,b) => a.date - b.date);
 
         return countryData;
+    };
+    
+    const getRegulationData = (country, policyType) => {
+        const countryData = govData[country];
+        if (!countryData || !countryData[policyType]) return [];
+        return countryData[policyType].map(({ startDate, endDate, initialNote }) => ({
+            startDate: new Date(startDate),
+            endDate: new Date(endDate),
+            note: initialNote,
+        }));
     };
 
     // Line Chart
@@ -81,6 +96,54 @@ function LineChart({ country, wave, globalMapData }) {
                     .x((d) => x(d.date))
                     .y((d) => y(d[selectedMetric]))
                 );
+
+            const iconPath = policyType === 'H7' 
+                ? vaccineImage
+                : homeImage;
+
+            const icon = svg.append('image')
+                .attr('xlink:href', iconPath)
+                .attr('width', 30)
+                .attr('height', 30)
+                .attr('x', x(lineChartData[0].date) - 15)
+                .attr('y', y(lineChartData[0][selectedMetric]) - 15)
+                .style('pointer-events','all');
+
+            // Create an icon to represent the draggable dot
+            icon.call(d3.drag() // Make the circle draggable
+                    .on('drag', (event) => {
+                        const closestDate = x.invert(event.x);
+                        const closestIndex = d3.bisector(d => d.date).left(lineChartData, closestDate);
+                        const closestDataPoint = lineChartData[closestIndex];
+
+                        if (closestDataPoint) {
+                            // Update icon position
+                            icon.attr('x', x(closestDataPoint.date) - 15)
+                                .attr('y', y(closestDataPoint[selectedMetric]) - 15);
+
+                            const regulationData = getRegulationData(country, policyType);
+                            const tooltip = d3.select(tooltipRef.current);
+
+                            let isPolicyActive = false;
+                            regulationData.forEach(({ startDate, endDate, note }) => {
+                                if (closestDataPoint.date >= startDate && closestDataPoint.date <= endDate) {
+                                    isPolicyActive = true;
+                                    tooltip
+                                        .style('opacity', 1)
+                                        .style('left', `${event.pageX - 50}px`)
+                                        .style('top', `${event.pageY + 10}px`)
+                                        .html(
+                                            `<strong>${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}</strong><br/>
+                                            ${note}`
+                                        )
+                                }
+                            });
+
+                            if (!isPolicyActive) {
+                                tooltip.style('opacity', 0);
+                            }
+                        }
+                    }));
             
             svg.append('text')
                 .attr('x', width / 2)
@@ -89,12 +152,11 @@ function LineChart({ country, wave, globalMapData }) {
                 .style('font-size', '16px')
                 .text(`${country} - ${wave} (${selectedMetric.toUpperCase()})`);
         }
-    }, [lineChartData, country, wave, selectedMetric]);
+    }, [lineChartData, country, wave, selectedMetric, policyType]);
 
     useEffect(() => {
         if (country && wave && globalMapData) {
             const dataForWave = getWaveData(country, wave, globalMapData);
-            // console.log(`Filtered data for ${country} in wave ${wave}:`, dataForWave);
             setLineChartData(dataForWave);
         }
     }, [country, wave, globalMapData]);
@@ -103,16 +165,28 @@ function LineChart({ country, wave, globalMapData }) {
         setSelectedMetric(e.target.value);
     };
 
+    const handlePolicyChange = (e) => {
+        setPolicyType(e.target.value);
+    }
+
     return (
         <div>
-            <label>
+            <label style={{ marginRight: '10px', display: 'inline-block' }}>
                 Select Metric: 
-                <select value={selectedMetric} onChange={handleMetricChange}>
+                <select value={selectedMetric} onChange={handleMetricChange} style={{ marginLeft: '5px' }}>
                     <option value="totalCases"> Total Cases</option>
                     <option value="totalDeaths"> Total Deaths</option>
                 </select>
             </label>
+            <label style={{ marginLeft: '20px', display: 'inline-block' }}>
+                Select Policy:
+                <select value={policyType} onChange={handlePolicyChange} style={{ marginleft: '5px' }}>
+                    <option value="C6">Stay-at-Home Policy</option>
+                    <option value="H7">Vaccination Policy</option>
+                </select>
+            </label>
             <div ref={svgRef}></div>
+            <div ref={tooltipRef} style={{ position: "relative", opacity: 0, background: "#fff", padding: "5px", border: "1px solid #000", borderRadius: "5px", pointerEvents: "none" }}></div>
         </div>
     );
 }

@@ -5,11 +5,13 @@ const csvToJson = require("csvtojson");
 const dailyDataFile = "./data/worldometer_coronavirus_daily_data.csv";
 const summaryDataFile = "./data/worldometer_coronavirus_summary_data.csv";
 const economyDataFile = "./data/economic_data.csv";
+const governmentRegulationDataFile = "./data/OxCGRT_latest_responses.csv";
 const globalMapProportionDataOutputfileName = "./src/global_map_data.json";
 const groupedBarChartOutputfileName = "./src/grouped_bar_chart_average_data.json";
 const groupedBarChartMonthlyOutputfileName = "./src/grouped_bar_chart_monthly_data.json";
 const lineGraphDataOutputfileName = "./src/line_graph_data.json";
 const barRaisingDataOutputfileName = "./src/bar_chart_raising_data.json";
+const governmentRegulationOutputfileName = "./src/gov_reg_data.json";
 
 const generateAllDates = (startDate, endDate) => {
     const dates = [];
@@ -35,6 +37,16 @@ const getWave = (selectedDate) => {
     return wave;
 };
 
+function formatDate(dateStr) {
+    // Format date to 'YYYY-MM-DD'
+    const match = dateStr.match(/^(\d{4})(\d{2})(\d{2})$/);
+    if (!match) {
+        throw new Error("Invalid date format. Expected YYYYMMDD");
+    }
+    const [, year, month, day] = match;
+    return `${year}-${month}-${day}`;
+}
+
 const normalizeDate = (date) => {
     const match = date.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
     if (!match) {
@@ -44,7 +56,7 @@ const normalizeDate = (date) => {
     const newMonth = String(month).padStart(2, '0');
     const newDay = String(day).padStart(2, '0');
     return `${year}-${newMonth}-${newDay}`;
-  };
+};
 
 // Prepare preprotion data for global map
 const globalMapPreprotionData = async() => {
@@ -212,6 +224,79 @@ const createDataForBarGraph = async () => {
     console.log("Grouped Bar Chart for economy data prepared successfully");
 };
 
+const createGovRegulationDataForLineGraph = async () => {
+    const resultData = {};
+
+    const countryNameMapping = {
+        "Democratic Republic of Congo": "Dem. Rep. Congo",
+        "Kyrgyz Republic": "Kyrgyzstan",
+        "Slovak Republic": "Slovakia",
+        "Bosnia and Herzegovina": "Bosnia and Herz.",
+        "Central African Republic": "Central African Rep.",
+        "Cote d'Ivoire": "Côte d'Ivoire",
+        "Cyprus": "N. Cyprus",
+        "Czech Republic": "Czech Rep.",
+        "Dominican Republic": "Dominican Rep.",
+        "Guinea": "Eq. Guinea",
+        "Solomon Islands": "Solomon Is.",
+        "South Korea": "Korea",
+        "Sudan": "S. Sudan"
+    };
+
+    await new Promise((resolve) => {
+        fs.createReadStream(governmentRegulationDataFile).pipe(csv()).on("data", (row) => {
+            let policyType = row["PolicyType"];
+            if (policyType) {
+                policyType = policyType.split(":")[0].trim()
+            }
+
+            const startDateRaw = row["StartDate"];
+            const endDateRaw = row["EndDate"];
+
+            if(!startDateRaw || !endDateRaw) {
+                return;
+            }
+
+            const startDate = formatDate(startDateRaw);
+            const endDate = formatDate(endDateRaw);
+
+            if (policyType === "C6" || policyType === "H7") {
+                let country = row["CountryName"].trim();
+                let initialNote = row["InitialNote"];
+
+                if (initialNote) {
+                    initialNote = initialNote.split("Note")[0].trim();
+                    initialNote = initialNote.split("Source")[0].trim();
+                    initialNote = initialNote.split("http")[0].trim();
+                    initialNote = initialNote.replace(/\s+/g, ' ');
+                }
+
+                if (countryNameMapping[country]) {
+                    country = countryNameMapping[country];
+                }
+
+                if (!resultData[country]) {
+                    resultData[country] = {};
+                }
+
+                if (!resultData[country][policyType]) {
+                    resultData[country][policyType] = [];
+                }
+
+                resultData[country][policyType].push({
+                    startDate: startDate,
+                    endDate: endDate,
+                    initialNote: initialNote,
+                });
+            }
+        })
+        .on("end", resolve);
+    });
+
+    fs.writeFileSync(governmentRegulationOutputfileName, JSON.stringify(resultData, null, 2));
+    console.log("Governmental Regulation Information data prepared successfully");
+}
+
 const createMonthlyDataForBarGraph = async () => {
     const resultData = {};
 
@@ -378,5 +463,14 @@ const getListofCountry = async () => {
     // Generate Grouped Bar Chart (MONTHLY) for economy dataset
     // await createMonthlyDataForBarGraph();
 
+<<<<<<< Updated upstream
     await getListofCountry();
+=======
+<<<<<<< HEAD
+    // Generate Governmental Regulation Data
+    await createGovRegulationDataForLineGraph();
+=======
+    await getListofCountry();
+>>>>>>> c12514ac2677fd5abd23ba1d22b73e8579b03c76
+>>>>>>> Stashed changes
 })()

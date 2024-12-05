@@ -70,13 +70,30 @@ const RaisingBarChart = ({ data, selectedDate, flagData }) => {
       .attr("xlink:href", (d) => (d.Country ? flagData[d.Country] : "")) // URL of the flag
       .style("visibility", (d) => (d.Country ? "visible" : "hidden")); // Hide for empty slots
 
+    // Add larger square flags at the right end of the bars
+    const flagSize = 40; // Increased size for square flags
+    svg
+      .selectAll(".flag")
+      .data(chartData)
+      .join("image")
+      .attr("class", "flag")
+      .attr("x", margin.left + staticBarWidth - flagSize) // Align to the right of the bar
+      .attr("y", (d) => yScale(d.Country) + (yScale.bandwidth() - flagSize) / 2) // Center vertically
+      .attr("width", flagSize)
+      .attr("height", flagSize)
+      .attr("xlink:href", (d) => flagData[d.Country]); // URL of the flag
+
     // Add table-like text inside bars
     svg
       .selectAll(".bar-text")
       .data(chartData, (_, i) => i) // Key by index to maintain consistent slots
       .join("g")
       .attr("class", "bar-text-group")
+<<<<<<< Updated upstream
       .attr("transform", (_, i) => `translate(${margin.left + 10}, ${yScale(i)})`)
+=======
+      .attr("transform", (d) => `translate(${margin.left + 10}, ${yScale(d.Country)})`)
+>>>>>>> Stashed changes
       .each(function (d) {
         const group = d3.select(this);
 
@@ -90,6 +107,7 @@ const RaisingBarChart = ({ data, selectedDate, flagData }) => {
             .style("font-size", "12px")
             .text(`TotalCases: ${d.TotalCases}`);
 
+<<<<<<< Updated upstream
           group
             .append("text")
             .attr("x", staticBarWidth / 2 - 70) // Adjust to fit text before the larger flag
@@ -97,6 +115,15 @@ const RaisingBarChart = ({ data, selectedDate, flagData }) => {
             .style("fill", "white")
             .style("font-size", "12px")
             .text(`NewCases: ${d.NewCases}`);
+=======
+        group
+          .append("text")
+          .attr("x", staticBarWidth / 2 - 70) // Adjust to fit text before the larger flag
+          .attr("y", yScale.bandwidth() / 4) // First row
+          .style("fill", "white")
+          .style("font-size", "12px")
+          .text(`NewCases: ${d.NewCases}`);
+>>>>>>> Stashed changes
 
           // Second Row
           group
@@ -107,6 +134,7 @@ const RaisingBarChart = ({ data, selectedDate, flagData }) => {
             .style("font-size", "12px")
             .text(`TotalDeaths: ${d.TotalDeath}`);
 
+<<<<<<< Updated upstream
           group
             .append("text")
             .attr("x", staticBarWidth / 2 - 70) // Adjust to fit text before the larger flag
@@ -115,6 +143,15 @@ const RaisingBarChart = ({ data, selectedDate, flagData }) => {
             .style("font-size", "12px")
             .text(`NewDeaths: ${d.NewDeath}`);
         }
+=======
+        group
+          .append("text")
+          .attr("x", staticBarWidth / 2 - 70) // Adjust to fit text before the larger flag
+          .attr("y", (yScale.bandwidth() / 4) * 3) // Second row
+          .style("fill", "white")
+          .style("font-size", "12px")
+          .text(`NewDeaths: ${d.NewDeath}`);
+>>>>>>> Stashed changes
       });
   }, [data, selectedDate, flagData]);
 
