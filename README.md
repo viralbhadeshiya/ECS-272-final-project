@@ -1,70 +1,14 @@
-# Getting Started with Create React App
+# Software Functionalities
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Our project explores the impact of COVID-19 across the world. We are using a martini glass structure to first explore Europe of how COVID has affected the European countries and then allowing the users to interact with our visualizations that shows the entire global map to explore. 
 
-## Available Scripts
+## Europe Narrative
+1) For the narrative, the one type of interaction that's available is the drop down menu for choosing the waves: Wave 1, Wave 2, and Wave 3. All three visualizations: Line Chart for Deaths, Line Chart for Cases, and Economic Bar Chart are all synced so according to user's choice of which wave to view in detail, they all show the same wave. (i.e. If wave 1 is selected, it will show Wave 1 Line Chart for Death and Cases and wave 1 for the economic bar chart).
+2) The other interaction is the timeline bar for map showing the rate of cases filling up. User could pause or play so they could view the visualization at their own speed. It starts out by showing the entire global map, but starts to zoom into show the European countries. We did not enable the zoom interaction for the users as we wanted the users to concentrate on the rate of filling for Europe.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Interactivity
+Largely, there are 4 visualizations for the users to interact with at the end of the narrative. We wanted the users to explore on their own and find their own insights. 
+1) **Global Map Animation**: Users could use their mouse to zoom in or zoom out. There is a bound set so the user could never leave the view where they no longer see any countries. They could hover over the countries to view the name of the countries and it would also highlight the country's border. Same as in Europe's narrative, there is a timeline bar that user has control of and enabled a "click" feature to click on the countries to trigger our next visualization: Line Graph. (There is a change in mouse cursor to indicate that it's 'clickable')
+2) **Line Chart**: Once a country is clicked from the geographical map animation, it would automatically trigger the Line Chart to appear. It would gather data of the selectedCountry and currentWave (according to the timeline bar) and show a line chart of selectedCountry's selectedWave - Total Cases. (i.e. if Russia is clicked and timeline bar is currently on Wave 1, it would trigger Russia's wave 1 TotalCases Line Chart). User has an option to view Total Cases OR Total Deaths. In additon, user could also select which policy to view: Stay-at-Home Policy or Vaccination Policy by the government. There is an icon for such policy that user could drag along the line and at that certain Date if there is a governmental policy enabled, it would trigger the explanation of what was going on and the detail of the policy.
+3) **Bar Chart Racing**: We did not enable any user interactivity in this visualization as this animation is to help users to understand the geographical map animation better. It shows the top 5 countries with highest rate of speed (We calculated the proportion of filling as cumulativeCases/totalCases).
+4) **Grouped Bar Chart for Economy Status**: There is a drop down menu for the user to select which metrics to view: manufacturing PMI, services PMI, consumer confidence. User could also click on the bar to "focus" (i.e. if user clicks on a bar for Switzerland wave 2, it would trigger a new bar chart that specifically shows all the months for Switzerland wave 2). To go back to the overview grouped bar chart, user could simply click "Refresh" button on the bottom. 
