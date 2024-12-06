@@ -180,7 +180,7 @@ function LineChart({ country, wave, globalMapData }) {
             </label>
             <label style={{ marginLeft: '20px', display: 'inline-block' }}>
                 Select Policy:
-                <select value={policyType} onChange={handlePolicyChange} style={{ marginleft: '5px' }}>
+                <select value={policyType} onChange={handlePolicyChange} style={{ marginLeft: '5px' }}>
                     <option value="C6">Stay-at-Home Policy</option>
                     <option value="H7">Vaccination Policy</option>
                 </select>

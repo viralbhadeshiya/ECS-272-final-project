@@ -368,7 +368,8 @@ function EconomyChart({ data }) {
     const handleMetricChange = (e) => {
         const processedData = getMetricDataForWave(selectedCountry, selectedWave, e.target.value);
         setDetailedData(processedData);
-        setChartType('monthlyChart');
+        if (chartType === "monthlyChart") setChartType('monthlyChart');
+        else setChartType('groupedBarChart');
         setSelectedMetric(e.target.value);
     };
 
@@ -377,7 +378,7 @@ function EconomyChart({ data }) {
         <div>
             <label>
                 Select Metric:
-                <select value={selectedMetric} onChange={handleMetricChange}>
+                <select value={selectedMetric} onChange={handleMetricChange} style={{ marginLeft: '5px' }}>
                     <option value="manufacturing_pmi">Manufacturing PMI</option>
                     <option value="services_pmi">Services PMI</option>
                     <option value="consumer_confidence">Consumer Confidence</option>
