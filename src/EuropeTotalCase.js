@@ -103,6 +103,7 @@ function MultiLineChart({ europeanCountries, globalMapData, onWaveChange }) {
                     height: "30px",
                     borderRadius: "5px",
                     marginBottom: "20px",
+                    marginLeft: '5px',
                 }}
                 >
                     <option value="wave1"> Wave 1 </option>
