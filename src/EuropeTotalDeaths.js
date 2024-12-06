@@ -1,6 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-
+import govData from './gov_reg_data.json';
+import vaccineImage from './vaccination.png';
+import homeImage from './home.webp';
 
 function MultiLineChart({ europeanCountries, globalMapData, wave }) {
     const chartRefs = useRef([]);
@@ -75,7 +77,7 @@ function MultiLineChart({ europeanCountries, globalMapData, wave }) {
                             .x((d) => x(d.date))
                             .y((d) => y(d.totalDeaths))
                     );
-    
+                    
                 svg.append("text")
                     .attr("x", width / 2)
                     .attr("y", -10)

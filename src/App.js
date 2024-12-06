@@ -55,10 +55,30 @@ function App() {
       <section style={{ marginBottom: "40px" }}>
         <div style={{ textIndent: "2em", fontFamily: "Georgia, sans-serif", lineHeight: "1.6", fontSize: "18px" }}>
           <p>
-            Still an ongoing fight, COVID-19, caused by the SARS-CoV-2 virus, emerged in late 2019 and rapidly became a global pandemic. Characterized by symptoms ranging from mild respiratory issues to severe complications, the disease has had a profound impact on public health, economies, and daily life worldwide. 
+            Still an ongoing fight, COVID-19, caused by the SARS-CoV-2 virus, emerged in the late 2019 and rapidly became a global pandemic. Characterized by symptoms ranging from mild respiratory issues to severe complications, the disease has had a profound impact on public health, economies, and daily life worldwide. 
+            With varying levels of success, governments and healthcare systems implemented response strategies over multiple waves of the virus, from managing surges in infections to deploying vaccines and enforcing public health measures.
+            These efforts were essential in mitigating the impact of the pandemic, though challenges in economy or resource availability accompanied.
           </p>
           <p>
             The pandemic unfolded in multiple waves, with distinct patterns of transmission and severity across regions. 
+            In the following narrative, it will focus on examining the effectiveness and unintended consequences of 
+            government policies — primarily lockdowns and vaccination efforts — over the course of three distinct 
+            pandemic waves: 
+          </p>
+          <ol>
+            <li>
+              The initial outbreak in <strong>March 2020</strong>
+            </li>
+            <li>
+              The rise of Beta variant in <strong>May 2020</strong>
+            </li>
+            <li>
+              The emergence of the highly contagious Delta and Omicron variants in <strong>Oct. 2021</strong>
+            </li>
+          </ol>
+          <p>
+            The pandemic represents one of the most disruptive global events in recent history, affecting every continent and reshaping societal norms. In Europe, the pandemic's impact was particularly multifaceted, with countries navigating 
+            unique challenges due to their high population density, interconnected economies, and economic stability. 
           </p>
         </div>
       </section>
