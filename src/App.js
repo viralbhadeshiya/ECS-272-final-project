@@ -100,7 +100,7 @@ function App() {
       <section style={{ marginBottom: "40px" }}>
         <div style={{ fontFamily: "Georgia, sans-serif", lineHeight: "1.6", fontSize: "18px", marginBottom: "20px" }}>
           {/* Wave 1 Narrative */}
-          <h4 style={{ fontFamily: "Roboto, sans-serif", marginTop: "20px" }}>Wave 1: The Early Surge (January - June 2020)</h4>
+          <h4 style={{ fontFamily: "Roboto, sans-serif", marginTop: "20px" }}>Wave 1: The Early Surge (January - May 2020)</h4>
           <p>
             Europe’s first encounter with COVID-19 was characterized by widespread uncertainty and an overwhelmed healthcare system. 
             The virus spread from Asia to Europe, with Italy, Spain, and France reporting alarming increases in cases and deaths by March 2020. 
@@ -126,7 +126,7 @@ function App() {
           </p>
 
           {/* Wave 2 Narrative */}
-          <h4 style={{ fontFamily: "Roboto, sans-serif", marginTop: "20px" }}>Wave 2: The Beta Variant and Partial Recovery (July 2020 - March 2021)</h4>
+          <h4 style={{ fontFamily: "Roboto, sans-serif", marginTop: "20px" }}>Wave 2: The Beta Variant and Partial Recovery (May 2020 - Oct 2021)</h4>
           <p>
             The summer of 2020 brought hope as cases dropped and restrictions eased. However, the resumption of travel and social activities fueled 
             the second wave by late 2020. This wave was driven largely by the Beta variant (B.1.351), which had higher transmissibility and some vaccine resistance.
@@ -151,7 +151,7 @@ function App() {
           </p>
 
           {/* Wave 3 Narrative */}
-          <h4 style={{ fontFamily: "Roboto, sans-serif", marginTop: "20px" }}>Wave 3: The Rise of Delta and Omicron Variants (April 2021 - Late 2021)</h4>
+          <h4 style={{ fontFamily: "Roboto, sans-serif", marginTop: "20px" }}>Wave 3: The Rise of Delta and Omicron Variants (Oct 2021 - Late 2021)</h4>
           <p>
             The third wave saw the emergence of the highly transmissible Delta variant, followed later by the Omicron variant. Despite vaccination efforts, 
             Delta caused significant outbreaks, especially in countries with slow vaccine rollouts or vaccine hesitancy.
