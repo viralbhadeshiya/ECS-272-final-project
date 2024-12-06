@@ -368,7 +368,8 @@ function EconomyChart({ data }) {
     const handleMetricChange = (e) => {
         const processedData = getMetricDataForWave(selectedCountry, selectedWave, e.target.value);
         setDetailedData(processedData);
-        setChartType('monthlyChart');
+        if (chartType === "monthlyChart") setChartType('monthlyChart');
+        else setChartType('groupedBarChart');
         setSelectedMetric(e.target.value);
     };
 
