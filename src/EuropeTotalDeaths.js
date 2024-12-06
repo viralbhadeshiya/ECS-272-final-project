@@ -69,7 +69,7 @@ function MultiLineChart({ europeanCountries, globalMapData, wave }) {
                 svg.append("path")
                     .data([lineChartData])
                     .attr("fill", "none")
-                    .attr("stroke", "red")
+                    .attr("stroke", "blue")
                     .attr("stroke-width", 2)
                     .attr(
                         "d",
